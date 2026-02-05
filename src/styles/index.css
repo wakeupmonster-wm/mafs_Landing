@@ -5,7 +5,6 @@
 
 @layer base {
   :root {
-    background: #000;
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
@@ -75,6 +74,9 @@
     --aqua-gradient-start: 200 98% 83%; /* #AAE1FE */
     --aqua-gradient-end: 182 100% 95%; /* #E6FFFD */
     --bg-gray: 0 0% 98%; /* #F8F8F8 */
+
+    --bg-border-color: 0, 0%, 0%, 0.078;
+    --bg-footer: 240, 3%, 13%;
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -117,15 +119,15 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
     font-family: "Plus Jakarta Sans", sans-serif;
+    background-color: #f0f1f2ce; /* bg-[#f0f1f2] */
   }
 }
 
 .bg-image {
   /* correct function is url(), and path usually starts with / */
   background-image: url("/Background.svg");
-
   /* Recommended settings to make it look good */
   background-size: cover;
   background-position: center;

@@ -89,6 +89,8 @@ export default {
           darkDis: "hsl(var(--dark-dis))",
           buttonDis: "hsl(var(--button-dis))",
         },
+        cardBorder: "hsl(var(--bg-border-color))",
+        footerBg: "hsl(var(--bg-footer))",
       },
       backgroundImage: {
         "aqua-gradient":
