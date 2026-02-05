@@ -131,3 +131,24 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
+
+.marquee-track {
+  will-change: transform;
+  animation: marqueeMove 14s linear infinite;
+}
+
+@keyframes marqueeMove {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  99.999% {
+    transform: translate3d(-40%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+* {
+  backface-visibility: hidden;
+}
