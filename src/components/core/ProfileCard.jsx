@@ -1,16 +1,234 @@
 
-// // eslint-disable-next-line no-unused-vars
-// import { motion } from "framer-motion";
+// // // // eslint-disable-next-line no-unused-vars
+// // // import { motion } from "framer-motion";
 
-// /* ================= PRESET CONFIGURATIONS ================= */
+// // // /* ================= PRESET CONFIGURATIONS ================= */
 
-// // Transition jo Apple jaisa smooth "spring" feel degi
-// const smoothSpring = {
-//   type: "spring",
-//   stiffness: 80,   // Thoda kam stiffness for elegance
-//   damping: 12,     // Control bounce
-//   mass: 0.8,
-// };
+// // // // Transition jo Apple jaisa smooth "spring" feel degi
+// // // const smoothSpring = {
+// // //   type: "spring",
+// // //   stiffness: 80,   // Thoda kam stiffness for elegance
+// // //   damping: 12,     // Control bounce
+// // //   mass: 0.8,
+// // // };
+
+// // // // const chipVariants = {
+// // // //   initial: { 
+// // // //     opacity: 0, 
+// // // //     scale: 0.2, 
+// // // //     x: "-50%", 
+// // // //     y: "-50%",
+// // // //     filter: "blur(4px)" 
+// // // //   },
+// // // //   hover: (p) => ({
+// // // //     opacity: 1, 
+// // // //     scale: 1, 
+// // // //     x: p.tx, 
+// // // //     y: p.ty,
+// // // //     filter: "blur(0px)",
+// // // //     transition: smoothSpring, // Pehle wala fast & smooth transition
+// // // //     // Floating animation jo hover ke baad start hogi
+// // // //     animate: {
+// // // //       y: [p.ty, p.ty - 7, p.ty], 
+// // // //       transition: {
+// // // //         duration: 2.5,
+// // // //         repeat: Infinity,
+// // // //         ease: "easeInOut",
+// // // //       }
+// // // //     }
+// // // //   }),
+// // // // };
+
+
+// // // const chipVariants = {
+// // //   initial: { 
+// // //     opacity: 0, 
+// // //     scale: 0.2, 
+// // //     x: "-50%", 
+// // //     y: "-50%",
+// // //     filter: "blur(4px)" 
+// // //   },
+// // //   hover: (p) => ({
+// // //     opacity: 1, 
+// // //     scale: 1, 
+// // //     x: p.tx, 
+// // //     y: p.ty, // Pehle apni jagah par aayega center se
+// // //     filter: "blur(0px)",
+// // //     transition: smoothSpring, // Bilkul pehle jaisa fast movement
+    
+// // //     // Floating effect yahan separate hai, jo position hit karne ke baad trigger hoga
+// // //     animate: {
+// // //       y: [p.ty, p.ty - 6, p.ty], 
+// // //       transition: {
+// // //         duration: 2.5,
+// // //         repeat: Infinity,
+// // //         ease: "easeInOut",
+// // //         delay: 0.5 // Taki pehle center se nikalne wala animation khatam ho jaye
+// // //       }
+// // //     }
+// // //   }),
+// // // };
+
+
+// // // export default function ProfileCard() {
+// // //   return (
+// // //     <>
+// // //       <style>{`
+// // //         .visual-container {
+// // //           position: relative;
+// // //           height: 320px;
+// // //           width: 100%;
+// // //           display: flex;
+// // //           justify-content: center;
+// // //           align-items: center;
+// // //           background: #ffffff;
+// // //           overflow: visible; /* Chips ko card ke bahar dikhne ke liye */
+// // //         }
+
+// // //         .gradient-glow {
+// // //           position: absolute;
+// // //           inset: 0;
+// // //           background: radial-gradient(circle at 50% 30%, #c1f4f6 0%, #ffffff 70%);
+// // //           opacity: 0;
+// // //           transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+// // //         }
+
+// // //         .card-wrapper:hover .gradient-glow {
+// // //           opacity: 0.6;
+// // //         }
+
+// // //         /* Essential for smooth performance */
+// // //         .chip-element {
+// // //           position: absolute;
+// // //           top: 50%;
+// // //           left: 50%;
+// // //           will-change: transform, opacity;
+// // //           z-index: 5;
+// // //           pointer-events: none;
+// // //         }
+
+// // //         .chip-box {
+// // //           background: white;
+// // //           padding: 10px 20px;
+// // //           border-radius: 100px;
+// // //           font-size: 15px;
+// // //           font-weight: 500;
+// // //           color: #1a1a1a;
+// // //           box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+// // //           display: flex;
+// // //           align-items: center;
+// // //           gap: 8px;
+// // //           border: 1px solid rgba(0,0,0,0.04);
+// // //         }
+
+// // //         .profile-card-main {
+// // //           position: relative;
+// // //           z-index: 10;
+// // //           background: white;
+// // //           border-radius: 24px;
+// // //           padding: 16px 20px;
+// // //           display: flex;
+// // //           align-items: center;
+// // //           gap: 16px;
+// // //           width: 320px;
+// // //           box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+// // //           border: 1px solid rgba(0,0,0,0.02);
+// // //         }
+
+// // //         .avatar-img {
+// // //           width: 68px;
+// // //           height: 68px;
+// // //           border-radius: 50%;
+// // //           object-fit: cover;
+// // //           border: 3px solid #71d7fe;
+// // //         }
+// // //       `}</style>
+
+// // //       <motion.div 
+// // //         className="card-wrapper"
+// // //         initial="initial"
+// // //         whileHover="hover"
+// // //         style={{ 
+// // //           width: "450px", 
+// // //           borderRadius: "32px", 
+// // //           overflow: "hidden", 
+// // //           background: "white",
+// // //           boxShadow: "0 4px 20px rgba(0,0,0,0.03)" 
+// // //         }}
+// // //       >
+// // //         <div className="visual-container">
+// // //           <div className="gradient-glow" />
+
+// // //           {/* 1. Blue Tick (Top Left - Exactly like screenshot) */}
+// // //           <motion.div className="chip-element" variants={chipVariants} custom={{ tx: "-100px", ty: "-130px" }}>
+// // //             <svg width="34" height="34" viewBox="0 0 24 24" fill="none">
+// // //               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#71D7FE"/>
+// // //             </svg>
+// // //           </motion.div>
+
+// // //           {/* 2. Music (Top Right) */}
+// // //           <motion.div className="chip-element" variants={chipVariants} custom={{ tx: "60px", ty: "-150px" }} animate={{ y: ["0%", "-2%", "2%", "0%"] }} 
+// // //   transition={{ 
+// // //     y: { repeat: Infinity, duration: 3, ease: "easeInOut" } 
+// // //   }}>
+// // //             <div className="chip-box">Music 🎵</div>
+// // //           </motion.div>
+
+// // //           {/* 3. Travel (Bottom Left) */}
+// // //           <motion.div className="chip-element" variants={chipVariants} custom={{ tx: "-150px", ty: "60px" }}>
+// // //             <div className="chip-box">Travel ✈️</div>
+// // //           </motion.div>
+
+// // //           {/* 4. Basketball (Bottom Right) */}
+// // //           <motion.div className="chip-element" variants={chipVariants} custom={{ tx: "45px", ty: "85px" }}>
+// // //             <div className="chip-box">Basketball 🏀</div>
+// // //           </motion.div>
+
+// // //           {/* 5. Purple Sparkle (Right Side) */}
+// // //           <motion.div className="chip-element" variants={chipVariants} custom={{ tx: "155px", ty: "15px" }}>
+// // //             <svg width="24" height="24" viewBox="0 0 24 24" fill="#a855f7">
+// // //               <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+// // //             </svg>
+// // //           </motion.div>
+
+// // //           {/* Main Card */}
+// // //           <motion.div 
+// // //             className="profile-card-main"
+// // //             variants={{
+// // //               initial: { y: 0 },
+// // //               hover: { y: -40, transition: { duration: 0.4, ease: "easeOut" } }
+// // //             }}
+// // //           >
+// // //             <img className="avatar-img" src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=200" alt="Elizabeth" />
+// // //             <div>
+// // //               <h3 style={{ margin: 0, fontSize: "20px", fontWeight: "700" }}>Elizabeth (25)</h3>
+// // //               <p style={{ margin: "2px 0 0", color: "#777", fontSize: "15px" }}>7 km away</p>
+// // //             </div>
+// // //           </motion.div>
+// // //         </div>
+
+// // //         <div style={{ padding: "35px 40px" }}>
+// // //           <h2 style={{ fontSize: "32px", margin: "0 0 12px", fontWeight: "800", color: "#222" }}>Create Your Profile</h2>
+// // //           <p style={{ color: "#666", fontSize: "17px", lineHeight: "1.5", margin: 0 }}>
+// // //             Set up your profile in just a few minutes and choose what you’re looking for.
+// // //           </p>
+// // //         </div>
+// // //       </motion.div>
+// // //     </>
+// // //   );
+// // // }
+
+
+
+
+// // // eslint-disable-next-line no-unused-vars
+// // import { motion } from "framer-motion";
+// // const smoothSpring = {
+// //   type: "spring",
+// //   stiffness: 80,
+// //   damping: 12,
+// //   mass: 0.8,
+// // };
 
 // // const chipVariants = {
 // //   initial: { 
@@ -24,51 +242,209 @@
 // //     opacity: 1, 
 // //     scale: 1, 
 // //     x: p.tx, 
-// //     y: p.ty,
+// //     y: p.ty, 
 // //     filter: "blur(0px)",
-// //     transition: smoothSpring, // Pehle wala fast & smooth transition
-// //     // Floating animation jo hover ke baad start hogi
+// //     transition: smoothSpring,
+    
+// //     // Floating effect: Jab target position par pahunch jaye tab move kare
 // //     animate: {
-// //       y: [p.ty, p.ty - 7, p.ty], 
+// //       y: [p.ty, p.ty - 6, p.ty], 
 // //       transition: {
 // //         duration: 2.5,
 // //         repeat: Infinity,
 // //         ease: "easeInOut",
+// //         delay: 0.5 // Initial burst ke baad floating start hogi
 // //       }
 // //     }
 // //   }),
 // // };
 
+// // export default function ProfileCard() {
+// //   return (
+// //     <>
+// //       <style>{`
+// //         .visual-container {
+// //           position: relative;
+// //           height: 320px;
+// //           width: 100%;
+// //           display: flex;
+// //           justify-content: center;
+// //           align-items: center;
+// //           background: #ffffff;
+// //           overflow: visible;
+          
+// //         }
+
+// //         .gradient-glow {
+// //           position: absolute;
+// //           inset: 0;
+// //           background: radial-gradient(circle at 7% 0%, #c1f4f6 0%, #ffffff 250%);
+// //           opacity: 0;
+// //           transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+// //         }
+
+// //         .card-wrapper:hover .gradient-glow {
+// //           opacity: 0.6;
+// //         }
+        
+// //         .chip-element {
+// //           position: absolute;
+// //           top: 50%;
+// //           left: 50%;
+// //           will-change: transform, opacity;
+// //           z-index: 20;
+// //           pointer-events: none;
+// //         }
+
+// //         .chip-box {
+// //           background: white;
+// //           padding: 10px 20px;
+// //           border-radius: 100px;
+// //           font-size: 15px;
+// //           font-weight: 500;
+// //           color: #1a1a1a;
+// //           box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+// //           display: flex;
+// //           align-items: center;
+// //           gap: 8px;
+// //           border: 1px solid rgba(0,0,0,0.04);
+// //         }
+
+// //         .profile-card-main {
+// //           position: relative;
+// //           z-index: 10;
+// //           background: white;
+// //           border-radius: 24px;
+// //           padding: 16px 20px;
+// //           display: flex;
+// //           align-items: center;
+// //           gap: 16px;
+// //           width: 320px;
+// //           box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+// //           border: 1px solid rgba(0,0,0,0.02);
+// //         }
+
+// //         .avatar-img {
+// //           width: 68px;
+// //           height: 68px;
+// //           border-radius: 50%;
+// //           object-fit: cover;
+// //           border: 3px solid #71d7fe;
+// //         }
+// //       `}</style>
+
+// //       <motion.div 
+// //         className="card-wrapper"
+// //         initial="initial"
+// //         whileHover="hover"
+// //         style={{ 
+// //           borderRadius: "32px", 
+// //           overflow: "hidden", 
+// //           background: "white",
+// //           boxShadow: "0 4px 20px rgba(0,0,0,0.03)" 
+// //         }}
+// //       >
+// //         <div className="visual-container">
+// //           <div className="gradient-glow" />
+
+// //           {/* 1. Blue Tick */}
+// //           <motion.div className="chip-element" variants={chipVariants} custom={{ tx: "-100px", ty: "-130px" }}>
+// //             <svg width="34" height="34" viewBox="0 0 24 24" fill="none">
+// //               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#71D7FE"/>
+// //             </svg>
+// //           </motion.div>
+
+// //           {/* 2. Music */}
+// //           <motion.div className="chip-element" variants={chipVariants} custom={{ tx: "60px", ty: "-150px" }}>
+// //             <div className="chip-box">Music 🎵</div>
+// //           </motion.div>
+
+// //           {/* 3. Travel */}
+// //           <motion.div className="chip-element" variants={chipVariants} custom={{ tx: "-150px", ty: "60px" }}>
+// //             <div className="chip-box">Travel ✈️</div>
+// //           </motion.div>
+
+// //           {/* 4. Basketball */}
+// //           <motion.div className="chip-element" variants={chipVariants} custom={{ tx: "45px", ty: "85px" }}>
+// //             <div className="chip-box">Basketball 🏀</div>
+// //           </motion.div>
+
+// //           {/* 5. Purple Sparkle */}
+// //           <motion.div className="chip-element" variants={chipVariants} custom={{ tx: "155px", ty: "15px" }}>
+// //             <svg width="24" height="24" viewBox="0 0 24 24" fill="#a855f7">
+// //               <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+// //             </svg>
+// //           </motion.div>
+
+// //           {/* Main Card */}
+// //           <motion.div 
+// //             className="profile-card-main"
+// //             variants={{
+// //               initial: { y: 60 },
+// //               hover: { y: -40, transition: { duration: 0.4, ease: "easeOut" } }
+// //             }}
+// //           >
+// //             <img className="avatar-img" src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=200" alt="Elizabeth" />
+// //             <div>
+// //               <h3 style={{ margin: 0, fontSize: "20px", fontWeight: "700" }}>Elizabeth (25)</h3>
+// //               <p style={{ margin: "2px 0 0", color: "#777", fontSize: "15px" }}>7 km away</p>
+// //             </div>
+// //           </motion.div>
+// //         </div>
+// //         <div style={{ padding: "35px 40px" }}>
+// //           <h2 style={{ fontSize: "32px", margin: "0 0 12px", fontWeight: "800", color: "#222" }}>Create Your Profile</h2>
+// //           <p style={{ color: "#666", fontSize: "17px", lineHeight: "1.5", margin: 0 }}>
+// //             Set up your profile in just a few minutes and choose what you’re looking for.
+// //           </p>
+// //         </div>
+// //       </motion.div>
+// //     </>
+// //   );
+// // }
+
+
+
+// // eslint-disable-next-line no-unused-vars
+// import { motion } from "framer-motion";
+
+// const smoothSpring = {
+//   type: "spring",
+//   stiffness: 80,
+//   damping: 12,
+//   mass: 0.8,
+// };
 
 // const chipVariants = {
-//   initial: { 
-//     opacity: 0, 
-//     scale: 0.2, 
-//     x: "-50%", 
+//   initial: {
+//     opacity: 0,
+//     scale: 0.2,
+//     x: "-50%",
 //     y: "-50%",
-//     filter: "blur(4px)" 
+//     filter: "blur(4px)",
 //   },
 //   hover: (p) => ({
-//     opacity: 1, 
-//     scale: 1, 
-//     x: p.tx, 
-//     y: p.ty, // Pehle apni jagah par aayega center se
+//     opacity: 1,
+//     scale: 1,
+//     x: p.tx,
+//     y: p.ty,
 //     filter: "blur(0px)",
-//     transition: smoothSpring, // Bilkul pehle jaisa fast movement
-    
-//     // Floating effect yahan separate hai, jo position hit karne ke baad trigger hoga
-//     animate: {
-//       y: [p.ty, p.ty - 6, p.ty], 
-//       transition: {
-//         duration: 2.5,
-//         repeat: Infinity,
-//         ease: "easeInOut",
-//         delay: 0.5 // Taki pehle center se nikalne wala animation khatam ho jaye
-//       }
-//     }
+//     transition: smoothSpring,
 //   }),
 // };
 
+// // ✅ NEW: Separate float variants for the inner wrapper
+// const floatVariants = {
+//   initial: { y: 0 },
+//   hover: (i) => ({
+//     y: [0, -9, 0, 6, 0],
+//     transition: {
+//       duration: 2.6 + i * 0.4,
+//       repeat: Infinity,
+//       ease: "easeInOut",
+//       delay: 0.5 + i * 0.12, // stagger so each chip floats differently
+//     },
+//   }),
+// };
 
 // export default function ProfileCard() {
 //   return (
@@ -81,29 +457,41 @@
 //           display: flex;
 //           justify-content: center;
 //           align-items: center;
-//           background: #ffffff;
-//           overflow: visible; /* Chips ko card ke bahar dikhne ke liye */
+//           overflow: visible;
+//           border-radius : 32px;
 //         }
 
+//         /* ✅ FIXED: Shadow glow instead of lines */
 //         .gradient-glow {
 //           position: absolute;
 //           inset: 0;
-//           background: radial-gradient(circle at 50% 30%, #c1f4f6 0%, #ffffff 70%);
 //           opacity: 0;
 //           transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+//           pointer-events: none;
+          
+//           background:
+//  radial-gradient(ellipse 8000% 45% at 50% 20%, rgba(113, 215, 254, 0.28) 0%, transparent 200%),
+//             radial-gradient(ellipse 70% 55% at 50% 50%, rgba(193, 244, 246, 0.08) 0%, transparent 100%);
 //         }
 
 //         .card-wrapper:hover .gradient-glow {
-//           opacity: 0.6;
+//           opacity: 1;
+//           border-radius : 32px;
 //         }
+//           .card-wrapper {
+//           border: 2.5px solid rgba(255, 255, 255, 0.6);
+//           outline: 2.5px solid rgba(200, 220, 230, 0.25);
+//            backdrop-filter: blur(10px);
+//           -webkit-backdrop-filter: blur(10px);
+//          border-radius : 32px;
+//           }
 
-//         /* Essential for smooth performance */
 //         .chip-element {
 //           position: absolute;
 //           top: 50%;
 //           left: 50%;
 //           will-change: transform, opacity;
-//           z-index: 5;
+//           z-index: 20;
 //           pointer-events: none;
 //         }
 
@@ -144,59 +532,64 @@
 //         }
 //       `}</style>
 
-//       <motion.div 
+//       <motion.div
 //         className="card-wrapper"
 //         initial="initial"
 //         whileHover="hover"
-//         style={{ 
-//           width: "450px", 
-//           borderRadius: "32px", 
-//           overflow: "hidden", 
-//           background: "white",
-//           boxShadow: "0 4px 20px rgba(0,0,0,0.03)" 
+//         style={{
+//           borderRadius: "2px",
+//           overflow: "hidden",
+//           boxShadow: "0 8px 80px rgba(0,0,0,0.03)",
 //         }}
 //       >
 //         <div className="visual-container">
 //           <div className="gradient-glow" />
 
-//           {/* 1. Blue Tick (Top Left - Exactly like screenshot) */}
+//           {/* 1. Blue Tick */}
 //           <motion.div className="chip-element" variants={chipVariants} custom={{ tx: "-100px", ty: "-130px" }}>
-//             <svg width="34" height="34" viewBox="0 0 24 24" fill="none">
-//               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#71D7FE"/>
-//             </svg>
+//             <motion.div variants={floatVariants} custom={0}>
+//               <svg width="34" height="34" viewBox="0 0 24 24" fill="none">
+//                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#71D7FE" />
+//               </svg>
+//             </motion.div>
 //           </motion.div>
 
-//           {/* 2. Music (Top Right) */}
-//           <motion.div className="chip-element" variants={chipVariants} custom={{ tx: "60px", ty: "-150px" }} animate={{ y: ["0%", "-2%", "2%", "0%"] }} 
-//   transition={{ 
-//     y: { repeat: Infinity, duration: 3, ease: "easeInOut" } 
-//   }}>
-//             <div className="chip-box">Music 🎵</div>
+//           {/* 2. Music */}
+//           <motion.div className="chip-element" variants={chipVariants} custom={{ tx: "60px", ty: "-150px" }}>
+//             <motion.div variants={floatVariants} custom={1}>
+//               <div className="chip-box">Music 🎵</div>
+//             </motion.div>
 //           </motion.div>
-
-//           {/* 3. Travel (Bottom Left) */}
+        
+//           {/* 3. Travel */}
 //           <motion.div className="chip-element" variants={chipVariants} custom={{ tx: "-150px", ty: "60px" }}>
-//             <div className="chip-box">Travel ✈️</div>
+//             <motion.div variants={floatVariants} custom={2}>
+//               <div className="chip-box">Travel ✈️</div>
+//             </motion.div>
 //           </motion.div>
 
-//           {/* 4. Basketball (Bottom Right) */}
+//           {/* 4. Basketball */}
 //           <motion.div className="chip-element" variants={chipVariants} custom={{ tx: "45px", ty: "85px" }}>
-//             <div className="chip-box">Basketball 🏀</div>
+//             <motion.div variants={floatVariants} custom={3}>
+//               <div className="chip-box">Basketball 🏀</div>
+//             </motion.div>
 //           </motion.div>
 
-//           {/* 5. Purple Sparkle (Right Side) */}
+//           {/* 5. Purple Sparkle */}
 //           <motion.div className="chip-element" variants={chipVariants} custom={{ tx: "155px", ty: "15px" }}>
-//             <svg width="24" height="24" viewBox="0 0 24 24" fill="#a855f7">
-//               <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
-//             </svg>
+//             <motion.div variants={floatVariants} custom={4}>
+//               <svg width="24" height="24" viewBox="0 0 24 24" fill="#a855f7">
+//                 <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+//               </svg>
+//             </motion.div>
 //           </motion.div>
 
 //           {/* Main Card */}
-//           <motion.div 
+//           <motion.div
 //             className="profile-card-main"
 //             variants={{
-//               initial: { y: 0 },
-//               hover: { y: -40, transition: { duration: 0.4, ease: "easeOut" } }
+//               initial: { y: 60 },
+//               hover: { y: -40, transition: { duration: 0.4, ease: "easeOut" } },
 //             }}
 //           >
 //             <img className="avatar-img" src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=200" alt="Elizabeth" />
@@ -210,7 +603,7 @@
 //         <div style={{ padding: "35px 40px" }}>
 //           <h2 style={{ fontSize: "32px", margin: "0 0 12px", fontWeight: "800", color: "#222" }}>Create Your Profile</h2>
 //           <p style={{ color: "#666", fontSize: "17px", lineHeight: "1.5", margin: 0 }}>
-//             Set up your profile in just a few minutes and choose what you’re looking for.
+//             Set up your profile in just a few minutes and choose what you&apos;re looking for.
 //           </p>
 //         </div>
 //       </motion.div>
@@ -221,10 +614,15 @@
 
 
 
+
+
+
+
+
+
+
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-
-/* ================= PRESET CONFIGURATIONS ================= */
 
 const smoothSpring = {
   type: "spring",
@@ -234,174 +632,165 @@ const smoothSpring = {
 };
 
 const chipVariants = {
-  initial: { 
-    opacity: 0, 
-    scale: 0.2, 
-    x: "-50%", 
+  initial: {
+    opacity: 0,
+    scale: 0.2,
+    x: "-50%",
     y: "-50%",
-    filter: "blur(4px)" 
+    filter: "blur(4px)",
   },
   hover: (p) => ({
-    opacity: 1, 
-    scale: 1, 
-    x: p.tx, 
-    y: p.ty, 
+    opacity: 1,
+    scale: 1,
+    x: p.tx,
+    y: p.ty,
     filter: "blur(0px)",
     transition: smoothSpring,
-    
-    // Floating effect: Jab target position par pahunch jaye tab move kare
-    animate: {
-      y: [p.ty, p.ty - 6, p.ty], 
-      transition: {
-        duration: 2.5,
-        repeat: Infinity,
-        ease: "easeInOut",
-        delay: 0.5 // Initial burst ke baad floating start hogi
-      }
-    }
+  }),
+};
+
+const floatVariants = {
+  initial: { y: 0 },
+  hover: (i) => ({
+    y: [0, -9, 0, 6, 0],
+    transition: {
+      duration: 2.6 + i * 0.4,
+      repeat: Infinity,
+      ease: "easeInOut",
+      delay: 0.5 + i * 0.12,
+    },
   }),
 };
 
 export default function ProfileCard() {
   return (
-    <>
-      <style>{`
-        .visual-container {
-          position: relative;
-          height: 320px;
-          width: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background: #ffffff;
-          overflow: visible;
-          
-        }
-
-        .gradient-glow {
-          position: absolute;
-          inset: 0;
-          background: radial-gradient(circle at 80% 80%, #c1f4f6 30%, #ffffff 250%);
-          opacity: 0;
-          transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .card-wrapper:hover .gradient-glow {
-          opacity: 0.6;
-        }
-        
-        .chip-element {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          will-change: transform, opacity;
-          z-index: 20;
-          pointer-events: none;
-        }
-
-        .chip-box {
-          background: white;
-          padding: 10px 20px;
-          border-radius: 100px;
-          font-size: 15px;
-          font-weight: 500;
-          color: #1a1a1a;
-          box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          border: 1px solid rgba(0,0,0,0.04);
-        }
-
-        .profile-card-main {
-          position: relative;
-          z-index: 10;
-          background: white;
-          border-radius: 24px;
-          padding: 16px 20px;
-          display: flex;
-          align-items: center;
-          gap: 16px;
-          width: 320px;
-          box-shadow: 0 15px 35px rgba(0,0,0,0.07);
-          border: 1px solid rgba(0,0,0,0.02);
-        }
-
-        .avatar-img {
-          width: 68px;
-          height: 68px;
-          border-radius: 50%;
-          object-fit: cover;
-          border: 3px solid #71d7fe;
-        }
-      `}</style>
-
-      <motion.div 
-        className="card-wrapper"
-        initial="initial"
-        whileHover="hover"
-        style={{ 
-          borderRadius: "32px", 
-          overflow: "hidden", 
-          background: "white",
-          boxShadow: "0 4px 20px rgba(0,0,0,0.03)" 
+    <motion.div
+      initial="initial"
+      whileHover="hover"
+      style={{
+        borderRadius: "32px",
+        overflow: "hidden",
+        border: "2.5px solid rgba(255, 255, 255, 0.6)",
+        outline: "2.5px solid rgba(200, 220, 230, 0.25)",
+        backdropFilter: "blur(10px)",
+        WebkitBackdropFilter: "blur(10px)",
+        boxShadow: "0 8px 80px rgba(0,0,0,0.03)",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
+      <div
+        style={{
+          position: "relative",
+          height: "320px",
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          overflow: "visible",
+          flex: "1 1 auto",
         }}
       >
-        <div className="visual-container">
-          <div className="gradient-glow" />
+        {/* Gradient glow on hover */}
+        <motion.div
+          variants={{
+            initial: { opacity: 0 },
+            hover: { opacity: 1 },
+          }}
+          transition={{ duration: 0.6 }}
+          style={{
+            position: "absolute",
+            inset: 0,
+            pointerEvents: "none",
+            background:
+              "radial-gradient(ellipse 8000% 45% at 50% 20%, rgba(113, 215, 254, 0.28) 0%, transparent 200%), radial-gradient(ellipse 70% 55% at 50% 50%, rgba(193, 244, 246, 0.08) 0%, transparent 100%)",
+          }}
+        />
 
-          {/* 1. Blue Tick */}
-          <motion.div className="chip-element" variants={chipVariants} custom={{ tx: "-100px", ty: "-130px" }}>
+        {/* Blue Tick */}
+        <motion.div style={{ position: "absolute", top: "50%", left: "50%", zIndex: 20, pointerEvents: "none" }} variants={chipVariants} custom={{ tx: "-100px", ty: "-130px" }}>
+          <motion.div variants={floatVariants} custom={0}>
             <svg width="34" height="34" viewBox="0 0 24 24" fill="none">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#71D7FE"/>
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#71D7FE" />
             </svg>
           </motion.div>
+        </motion.div>
 
-          {/* 2. Music */}
-          <motion.div className="chip-element" variants={chipVariants} custom={{ tx: "60px", ty: "-150px" }}>
-            <div className="chip-box">Music 🎵</div>
+        {/* Music */}
+        <motion.div style={{ position: "absolute", top: "50%", left: "50%", zIndex: 20, pointerEvents: "none" }} variants={chipVariants} custom={{ tx: "60px", ty: "-150px" }}>
+          <motion.div variants={floatVariants} custom={1}>
+            <div style={{ background: "white", padding: "10px 20px", borderRadius: "100px", fontSize: "15px", fontWeight: 500, color: "#1a1a1a", boxShadow: "0 10px 25px rgba(0,0,0,0.06)", display: "flex", alignItems: "center", gap: "8px", border: "1px solid rgba(0,0,0,0.04)" }}>
+              Music 🎵
+            </div>
           </motion.div>
+        </motion.div>
 
-          {/* 3. Travel */}
-          <motion.div className="chip-element" variants={chipVariants} custom={{ tx: "-150px", ty: "60px" }}>
-            <div className="chip-box">Travel ✈️</div>
+        {/* Travel */}
+        <motion.div style={{ position: "absolute", top: "50%", left: "50%", zIndex: 20, pointerEvents: "none" }} variants={chipVariants} custom={{ tx: "-150px", ty: "60px" }}>
+          <motion.div variants={floatVariants} custom={2}>
+            <div style={{ background: "white", padding: "10px 20px", borderRadius: "100px", fontSize: "15px", fontWeight: 500, color: "#1a1a1a", boxShadow: "0 10px 25px rgba(0,0,0,0.06)", display: "flex", alignItems: "center", gap: "8px", border: "1px solid rgba(0,0,0,0.04)" }}>
+              Travel ✈️
+            </div>
           </motion.div>
+        </motion.div>
 
-          {/* 4. Basketball */}
-          <motion.div className="chip-element" variants={chipVariants} custom={{ tx: "45px", ty: "85px" }}>
-            <div className="chip-box">Basketball 🏀</div>
+        {/* Basketball */}
+        <motion.div style={{ position: "absolute", top: "50%", left: "50%", zIndex: 20, pointerEvents: "none" }} variants={chipVariants} custom={{ tx: "45px", ty: "85px" }}>
+          <motion.div variants={floatVariants} custom={3}>
+            <div style={{ background: "white", padding: "10px 20px", borderRadius: "100px", fontSize: "15px", fontWeight: 500, color: "#1a1a1a", boxShadow: "0 10px 25px rgba(0,0,0,0.06)", display: "flex", alignItems: "center", gap: "8px", border: "1px solid rgba(0,0,0,0.04)" }}>
+              Basketball 🏀
+            </div>
           </motion.div>
+        </motion.div>
 
-          {/* 5. Purple Sparkle */}
-          <motion.div className="chip-element" variants={chipVariants} custom={{ tx: "155px", ty: "15px" }}>
+        {/* Purple Sparkle */}
+        <motion.div style={{ position: "absolute", top: "50%", left: "50%", zIndex: 20, pointerEvents: "none" }} variants={chipVariants} custom={{ tx: "155px", ty: "15px" }}>
+          <motion.div variants={floatVariants} custom={4}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="#a855f7">
               <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
             </svg>
           </motion.div>
+        </motion.div>
 
-          {/* Main Card */}
-          <motion.div 
-            className="profile-card-main"
-            variants={{
-              initial: { y: 60 },
-              hover: { y: -40, transition: { duration: 0.4, ease: "easeOut" } }
-            }}
-          >
-            <img className="avatar-img" src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=200" alt="Elizabeth" />
-            <div>
-              <h3 style={{ margin: 0, fontSize: "20px", fontWeight: "700" }}>Elizabeth (25)</h3>
-              <p style={{ margin: "2px 0 0", color: "#777", fontSize: "15px" }}>7 km away</p>
-            </div>
-          </motion.div>
-        </div>
+        {/* Main Profile Card */}
+        <motion.div
+          variants={{
+            initial: { y: 60 },
+            hover: { y: -40, transition: { duration: 0.4, ease: "easeOut" } },
+          }}
+          style={{
+            position: "relative",
+            zIndex: 10,
+            background: "white",
+            borderRadius: "24px",
+            padding: "16px 20px",
+            display: "flex",
+            alignItems: "center",
+            gap: "16px",
+            width: "320px",
+            boxShadow: "0 15px 35px rgba(0,0,0,0.07)",
+            border: "1px solid rgba(0,0,0,0.02)",
+          }}
+        >
+          <img
+            style={{ width: "68px", height: "68px", borderRadius: "50%", objectFit: "cover", border: "3px solid #71d7fe" }}
+            src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=200"
+            alt="Elizabeth"
+          />
+          <div>
+            <h3 style={{ margin: 0, fontSize: "20px", fontWeight: 700 }}>Elizabeth (25)</h3>
+            <p style={{ margin: "2px 0 0", color: "#777", fontSize: "15px" }}>7 km away</p>
+          </div>
+        </motion.div>
+      </div>
 
-        <div style={{ padding: "35px 40px" }}>
-          <h2 style={{ fontSize: "32px", margin: "0 0 12px", fontWeight: "800", color: "#222" }}>Create Your Profile</h2>
-          <p style={{ color: "#666", fontSize: "17px", lineHeight: "1.5", margin: 0 }}>
-            Set up your profile in just a few minutes and choose what you’re looking for.
-          </p>
-        </div>
-      </motion.div>
-    </>
+      <div style={{ padding: "35px 40px" }}>
+        <h2 style={{ fontSize: "32px", margin: "0 0 12px", fontWeight: 800, color: "#222" }}>Create Your Profile</h2>
+        <p style={{ color: "#666", fontSize: "17px", lineHeight: 1.5, margin: 0 }}>
+          Set up your profile in just a few minutes and choose what you&apos;re looking for.
+        </p>
+      </div>
+    </motion.div>
   );
 }

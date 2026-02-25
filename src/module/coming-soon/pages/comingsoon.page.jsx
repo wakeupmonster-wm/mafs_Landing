@@ -40,7 +40,7 @@ import { Sparkles } from "lucide-react";
 export default function ComingSoonPage() {
   return (
     // bg-aqua-gradient-start
-    <div className="min-h-[80vh] relative flex flex-col items-center justify-center px-6 text-center overflow-hidden">
+    <div className="min-h-[80vh] relative flex flex-col items-center justify-center px-6 text-center overflow-x-hidden">
       {/* Background Orbs - Kept your original style */}
       <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-aqua-gradient blur-[120px] opacity-95" />
 
@@ -69,4 +69,4 @@ export default function ComingSoonPage() {
       </main>
     </div>
   );
-}
+} 

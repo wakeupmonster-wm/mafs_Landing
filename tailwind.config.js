@@ -9,6 +9,9 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      animation: {
+        "spin-fast": "spin 1s linear infinite",
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
@@ -89,6 +92,8 @@ export default {
           darkDis: "hsl(var(--dark-dis))",
           buttonDis: "hsl(var(--button-dis))",
         },
+        cardBorder: "hsl(var(--bg-border-color))",
+        footerBg: "hsl(var(--bg-footer))",
       },
       backgroundImage: {
         "aqua-gradient":
