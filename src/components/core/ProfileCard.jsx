@@ -1,4 +1,3 @@
-
 // // // // eslint-disable-next-line no-unused-vars
 // // // import { motion } from "framer-motion";
 
@@ -13,23 +12,23 @@
 // // // };
 
 // // // // const chipVariants = {
-// // // //   initial: { 
-// // // //     opacity: 0, 
-// // // //     scale: 0.2, 
-// // // //     x: "-50%", 
+// // // //   initial: {
+// // // //     opacity: 0,
+// // // //     scale: 0.2,
+// // // //     x: "-50%",
 // // // //     y: "-50%",
-// // // //     filter: "blur(4px)" 
+// // // //     filter: "blur(4px)"
 // // // //   },
 // // // //   hover: (p) => ({
-// // // //     opacity: 1, 
-// // // //     scale: 1, 
-// // // //     x: p.tx, 
+// // // //     opacity: 1,
+// // // //     scale: 1,
+// // // //     x: p.tx,
 // // // //     y: p.ty,
 // // // //     filter: "blur(0px)",
 // // // //     transition: smoothSpring, // Pehle wala fast & smooth transition
 // // // //     // Floating animation jo hover ke baad start hogi
 // // // //     animate: {
-// // // //       y: [p.ty, p.ty - 7, p.ty], 
+// // // //       y: [p.ty, p.ty - 7, p.ty],
 // // // //       transition: {
 // // // //         duration: 2.5,
 // // // //         repeat: Infinity,
@@ -39,26 +38,25 @@
 // // // //   }),
 // // // // };
 
-
 // // // const chipVariants = {
-// // //   initial: { 
-// // //     opacity: 0, 
-// // //     scale: 0.2, 
-// // //     x: "-50%", 
+// // //   initial: {
+// // //     opacity: 0,
+// // //     scale: 0.2,
+// // //     x: "-50%",
 // // //     y: "-50%",
-// // //     filter: "blur(4px)" 
+// // //     filter: "blur(4px)"
 // // //   },
 // // //   hover: (p) => ({
-// // //     opacity: 1, 
-// // //     scale: 1, 
-// // //     x: p.tx, 
+// // //     opacity: 1,
+// // //     scale: 1,
+// // //     x: p.tx,
 // // //     y: p.ty, // Pehle apni jagah par aayega center se
 // // //     filter: "blur(0px)",
 // // //     transition: smoothSpring, // Bilkul pehle jaisa fast movement
-    
+
 // // //     // Floating effect yahan separate hai, jo position hit karne ke baad trigger hoga
 // // //     animate: {
-// // //       y: [p.ty, p.ty - 6, p.ty], 
+// // //       y: [p.ty, p.ty - 6, p.ty],
 // // //       transition: {
 // // //         duration: 2.5,
 // // //         repeat: Infinity,
@@ -68,7 +66,6 @@
 // // //     }
 // // //   }),
 // // // };
-
 
 // // // export default function ProfileCard() {
 // // //   return (
@@ -144,16 +141,16 @@
 // // //         }
 // // //       `}</style>
 
-// // //       <motion.div 
+// // //       <motion.div
 // // //         className="card-wrapper"
 // // //         initial="initial"
 // // //         whileHover="hover"
-// // //         style={{ 
-// // //           width: "450px", 
-// // //           borderRadius: "32px", 
-// // //           overflow: "hidden", 
+// // //         style={{
+// // //           width: "450px",
+// // //           borderRadius: "32px",
+// // //           overflow: "hidden",
 // // //           background: "white",
-// // //           boxShadow: "0 4px 20px rgba(0,0,0,0.03)" 
+// // //           boxShadow: "0 4px 20px rgba(0,0,0,0.03)"
 // // //         }}
 // // //       >
 // // //         <div className="visual-container">
@@ -167,9 +164,9 @@
 // // //           </motion.div>
 
 // // //           {/* 2. Music (Top Right) */}
-// // //           <motion.div className="chip-element" variants={chipVariants} custom={{ tx: "60px", ty: "-150px" }} animate={{ y: ["0%", "-2%", "2%", "0%"] }} 
-// // //   transition={{ 
-// // //     y: { repeat: Infinity, duration: 3, ease: "easeInOut" } 
+// // //           <motion.div className="chip-element" variants={chipVariants} custom={{ tx: "60px", ty: "-150px" }} animate={{ y: ["0%", "-2%", "2%", "0%"] }}
+// // //   transition={{
+// // //     y: { repeat: Infinity, duration: 3, ease: "easeInOut" }
 // // //   }}>
 // // //             <div className="chip-box">Music 🎵</div>
 // // //           </motion.div>
@@ -192,7 +189,7 @@
 // // //           </motion.div>
 
 // // //           {/* Main Card */}
-// // //           <motion.div 
+// // //           <motion.div
 // // //             className="profile-card-main"
 // // //             variants={{
 // // //               initial: { y: 0 },
@@ -218,9 +215,6 @@
 // // //   );
 // // // }
 
-
-
-
 // // // eslint-disable-next-line no-unused-vars
 // // import { motion } from "framer-motion";
 // // const smoothSpring = {
@@ -231,24 +225,24 @@
 // // };
 
 // // const chipVariants = {
-// //   initial: { 
-// //     opacity: 0, 
-// //     scale: 0.2, 
-// //     x: "-50%", 
+// //   initial: {
+// //     opacity: 0,
+// //     scale: 0.2,
+// //     x: "-50%",
 // //     y: "-50%",
-// //     filter: "blur(4px)" 
+// //     filter: "blur(4px)"
 // //   },
 // //   hover: (p) => ({
-// //     opacity: 1, 
-// //     scale: 1, 
-// //     x: p.tx, 
-// //     y: p.ty, 
+// //     opacity: 1,
+// //     scale: 1,
+// //     x: p.tx,
+// //     y: p.ty,
 // //     filter: "blur(0px)",
 // //     transition: smoothSpring,
-    
+
 // //     // Floating effect: Jab target position par pahunch jaye tab move kare
 // //     animate: {
-// //       y: [p.ty, p.ty - 6, p.ty], 
+// //       y: [p.ty, p.ty - 6, p.ty],
 // //       transition: {
 // //         duration: 2.5,
 // //         repeat: Infinity,
@@ -272,7 +266,7 @@
 // //           align-items: center;
 // //           background: #ffffff;
 // //           overflow: visible;
-          
+
 // //         }
 
 // //         .gradient-glow {
@@ -286,7 +280,7 @@
 // //         .card-wrapper:hover .gradient-glow {
 // //           opacity: 0.6;
 // //         }
-        
+
 // //         .chip-element {
 // //           position: absolute;
 // //           top: 50%;
@@ -333,15 +327,15 @@
 // //         }
 // //       `}</style>
 
-// //       <motion.div 
+// //       <motion.div
 // //         className="card-wrapper"
 // //         initial="initial"
 // //         whileHover="hover"
-// //         style={{ 
-// //           borderRadius: "32px", 
-// //           overflow: "hidden", 
+// //         style={{
+// //           borderRadius: "32px",
+// //           overflow: "hidden",
 // //           background: "white",
-// //           boxShadow: "0 4px 20px rgba(0,0,0,0.03)" 
+// //           boxShadow: "0 4px 20px rgba(0,0,0,0.03)"
 // //         }}
 // //       >
 // //         <div className="visual-container">
@@ -377,7 +371,7 @@
 // //           </motion.div>
 
 // //           {/* Main Card */}
-// //           <motion.div 
+// //           <motion.div
 // //             className="profile-card-main"
 // //             variants={{
 // //               initial: { y: 60 },
@@ -401,8 +395,6 @@
 // //     </>
 // //   );
 // // }
-
-
 
 // // eslint-disable-next-line no-unused-vars
 // import { motion } from "framer-motion";
@@ -468,7 +460,7 @@
 //           opacity: 0;
 //           transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 //           pointer-events: none;
-          
+
 //           background:
 //  radial-gradient(ellipse 8000% 45% at 50% 20%, rgba(113, 215, 254, 0.28) 0%, transparent 200%),
 //             radial-gradient(ellipse 70% 55% at 50% 50%, rgba(193, 244, 246, 0.08) 0%, transparent 100%);
@@ -560,7 +552,7 @@
 //               <div className="chip-box">Music 🎵</div>
 //             </motion.div>
 //           </motion.div>
-        
+
 //           {/* 3. Travel */}
 //           <motion.div className="chip-element" variants={chipVariants} custom={{ tx: "-150px", ty: "60px" }}>
 //             <motion.div variants={floatVariants} custom={2}>
@@ -611,18 +603,9 @@
 //   );
 // }
 
-
-
-
-
-
-
-
-
-
-
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import Border from "./border";
 
 const smoothSpring = {
   type: "spring",
@@ -664,133 +647,258 @@ const floatVariants = {
 
 export default function ProfileCard() {
   return (
-    <motion.div
-      initial="initial"
-      whileHover="hover"
-      style={{
-        borderRadius: "32px",
-        overflow: "hidden",
-        border: "2.5px solid rgba(255, 255, 255, 0.6)",
-        outline: "2.5px solid rgba(200, 220, 230, 0.25)",
-        backdropFilter: "blur(10px)",
-        WebkitBackdropFilter: "blur(10px)",
-        boxShadow: "0 8px 80px rgba(0,0,0,0.03)",
-        height: "100%",
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      <div
+    <Border>
+      <motion.div
+        initial="initial"
+        whileHover="hover"
         style={{
-          position: "relative",
-          height: "320px",
-          width: "100%",
+          borderRadius: "28px",
+          overflow: "hidden",
+          border: "4px solid white",
+          // outline: "2.5px solid rgba(200, 220, 230, 0.25)",
+          backdropFilter: "blur(10px)",
+          WebkitBackdropFilter: "blur(10px)",
+          // boxShadow: "0 8px 80px rgba(0,0,0,0.03)",
+          height: "100%",
           display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          overflow: "visible",
-          flex: "1 1 auto",
+          flexDirection: "column",
         }}
+        className="shadow-lg"
       >
-        {/* Gradient glow on hover */}
-        <motion.div
-          variants={{
-            initial: { opacity: 0 },
-            hover: { opacity: 1 },
-          }}
-          transition={{ duration: 0.6 }}
-          style={{
-            position: "absolute",
-            inset: 0,
-            pointerEvents: "none",
-            background:
-              "radial-gradient(ellipse 8000% 45% at 50% 20%, rgba(113, 215, 254, 0.28) 0%, transparent 200%), radial-gradient(ellipse 70% 55% at 50% 50%, rgba(193, 244, 246, 0.08) 0%, transparent 100%)",
-          }}
-        />
-
-        {/* Blue Tick */}
-        <motion.div style={{ position: "absolute", top: "50%", left: "50%", zIndex: 20, pointerEvents: "none" }} variants={chipVariants} custom={{ tx: "-100px", ty: "-130px" }}>
-          <motion.div variants={floatVariants} custom={0}>
-            <svg width="34" height="34" viewBox="0 0 24 24" fill="none">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#71D7FE" />
-            </svg>
-          </motion.div>
-        </motion.div>
-
-        {/* Music */}
-        <motion.div style={{ position: "absolute", top: "50%", left: "50%", zIndex: 20, pointerEvents: "none" }} variants={chipVariants} custom={{ tx: "60px", ty: "-150px" }}>
-          <motion.div variants={floatVariants} custom={1}>
-            <div style={{ background: "white", padding: "10px 20px", borderRadius: "100px", fontSize: "15px", fontWeight: 500, color: "#1a1a1a", boxShadow: "0 10px 25px rgba(0,0,0,0.06)", display: "flex", alignItems: "center", gap: "8px", border: "1px solid rgba(0,0,0,0.04)" }}>
-              Music 🎵
-            </div>
-          </motion.div>
-        </motion.div>
-
-        {/* Travel */}
-        <motion.div style={{ position: "absolute", top: "50%", left: "50%", zIndex: 20, pointerEvents: "none" }} variants={chipVariants} custom={{ tx: "-150px", ty: "60px" }}>
-          <motion.div variants={floatVariants} custom={2}>
-            <div style={{ background: "white", padding: "10px 20px", borderRadius: "100px", fontSize: "15px", fontWeight: 500, color: "#1a1a1a", boxShadow: "0 10px 25px rgba(0,0,0,0.06)", display: "flex", alignItems: "center", gap: "8px", border: "1px solid rgba(0,0,0,0.04)" }}>
-              Travel ✈️
-            </div>
-          </motion.div>
-        </motion.div>
-
-        {/* Basketball */}
-        <motion.div style={{ position: "absolute", top: "50%", left: "50%", zIndex: 20, pointerEvents: "none" }} variants={chipVariants} custom={{ tx: "45px", ty: "85px" }}>
-          <motion.div variants={floatVariants} custom={3}>
-            <div style={{ background: "white", padding: "10px 20px", borderRadius: "100px", fontSize: "15px", fontWeight: 500, color: "#1a1a1a", boxShadow: "0 10px 25px rgba(0,0,0,0.06)", display: "flex", alignItems: "center", gap: "8px", border: "1px solid rgba(0,0,0,0.04)" }}>
-              Basketball 🏀
-            </div>
-          </motion.div>
-        </motion.div>
-
-        {/* Purple Sparkle */}
-        <motion.div style={{ position: "absolute", top: "50%", left: "50%", zIndex: 20, pointerEvents: "none" }} variants={chipVariants} custom={{ tx: "155px", ty: "15px" }}>
-          <motion.div variants={floatVariants} custom={4}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="#a855f7">
-              <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
-            </svg>
-          </motion.div>
-        </motion.div>
-
-        {/* Main Profile Card */}
-        <motion.div
-          variants={{
-            initial: { y: 60 },
-            hover: { y: -40, transition: { duration: 0.4, ease: "easeOut" } },
-          }}
+        <div
           style={{
             position: "relative",
-            zIndex: 10,
-            background: "white",
-            borderRadius: "24px",
-            padding: "16px 20px",
+            height: "320px",
+            width: "100%",
             display: "flex",
+            justifyContent: "center",
             alignItems: "center",
-            gap: "16px",
-            width: "320px",
-            boxShadow: "0 15px 35px rgba(0,0,0,0.07)",
-            border: "1px solid rgba(0,0,0,0.02)",
+            overflow: "visible",
+            flex: "1 1 auto",
           }}
         >
-          <img
-            style={{ width: "68px", height: "68px", borderRadius: "50%", objectFit: "cover", border: "3px solid #71d7fe" }}
-            src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=200"
-            alt="Elizabeth"
+          {/* Gradient glow on hover */}
+          <motion.div
+            variants={{
+              initial: { opacity: 0 },
+              hover: { opacity: 1 },
+            }}
+            transition={{ duration: 0.6 }}
+            style={{
+              position: "absolute",
+              inset: 0,
+              pointerEvents: "none",
+              background:
+                "radial-gradient(ellipse 8000% 45% at 50% 20%, rgba(113, 215, 254, 0.28) 0%, transparent 200%), radial-gradient(ellipse 70% 55% at 50% 50%, rgba(193, 244, 246, 0.08) 0%, transparent 100%)",
+            }}
           />
-          <div>
-            <h3 style={{ margin: 0, fontSize: "20px", fontWeight: 700 }}>Elizabeth (25)</h3>
-            <p style={{ margin: "2px 0 0", color: "#777", fontSize: "15px" }}>7 km away</p>
-          </div>
-        </motion.div>
-      </div>
 
-      <div style={{ padding: "35px 40px" }}>
-        <h2 style={{ fontSize: "32px", margin: "0 0 12px", fontWeight: 800, color: "#222" }}>Create Your Profile</h2>
-        <p style={{ color: "#666", fontSize: "17px", lineHeight: 1.5, margin: 0 }}>
-          Set up your profile in just a few minutes and choose what you&apos;re looking for.
-        </p>
-      </div>
-    </motion.div>
+          {/* Blue Tick */}
+          <motion.div
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              zIndex: 20,
+              pointerEvents: "none",
+            }}
+            variants={chipVariants}
+            custom={{ tx: "-100px", ty: "-130px" }}
+          >
+            <motion.div variants={floatVariants} custom={0}>
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                  fill="#71D7FE"
+                />
+              </svg>
+            </motion.div>
+          </motion.div>
+
+          {/* Music */}
+          <motion.div
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              zIndex: 20,
+              pointerEvents: "none",
+            }}
+            variants={chipVariants}
+            custom={{ tx: "60px", ty: "-150px" }}
+          >
+            <motion.div variants={floatVariants} custom={1}>
+              <div
+                style={{
+                  background: "white",
+                  padding: "10px 20px",
+                  borderRadius: "100px",
+                  fontSize: "15px",
+                  fontWeight: 500,
+                  color: "#1a1a1a",
+                  boxShadow: "0 10px 25px rgba(0,0,0,0.06)",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  border: "1px solid rgba(0,0,0,0.04)",
+                }}
+              >
+                Music 🎵
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Travel */}
+          <motion.div
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              zIndex: 20,
+              pointerEvents: "none",
+            }}
+            variants={chipVariants}
+            custom={{ tx: "-150px", ty: "60px" }}
+          >
+            <motion.div variants={floatVariants} custom={2}>
+              <div
+                style={{
+                  background: "white",
+                  padding: "10px 20px",
+                  borderRadius: "100px",
+                  fontSize: "15px",
+                  fontWeight: 500,
+                  color: "#1a1a1a",
+                  boxShadow: "0 10px 25px rgba(0,0,0,0.06)",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  border: "1px solid rgba(0,0,0,0.04)",
+                }}
+              >
+                Travel ✈️
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Basketball */}
+          <motion.div
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              zIndex: 20,
+              pointerEvents: "none",
+            }}
+            variants={chipVariants}
+            custom={{ tx: "45px", ty: "85px" }}
+          >
+            <motion.div variants={floatVariants} custom={3}>
+              <div
+                style={{
+                  background: "white",
+                  padding: "10px 20px",
+                  borderRadius: "100px",
+                  fontSize: "15px",
+                  fontWeight: 500,
+                  color: "#1a1a1a",
+                  boxShadow: "0 10px 25px rgba(0,0,0,0.06)",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  border: "1px solid rgba(0,0,0,0.04)",
+                }}
+              >
+                Basketball 🏀
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Purple Sparkle */}
+          <motion.div
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              zIndex: 20,
+              pointerEvents: "none",
+            }}
+            variants={chipVariants}
+            custom={{ tx: "155px", ty: "15px" }}
+          >
+            <motion.div variants={floatVariants} custom={4}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="#a855f7">
+                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+              </svg>
+            </motion.div>
+          </motion.div>
+
+          {/* Main Profile Card */}
+          <motion.div
+            variants={{
+              initial: { y: 60 },
+              hover: { y: -40, transition: { duration: 0.4, ease: "easeOut" } },
+            }}
+            style={{
+              position: "relative",
+              zIndex: 10,
+              background: "white",
+              borderRadius: "24px",
+              padding: "16px 20px",
+              display: "flex",
+              alignItems: "center",
+              gap: "16px",
+              width: "320px",
+              boxShadow: "0 15px 35px rgba(0,0,0,0.07)",
+              border: "1px solid rgba(0,0,0,0.02)",
+            }}
+          >
+            <img
+              style={{
+                width: "68px",
+                height: "68px",
+                borderRadius: "50%",
+                objectFit: "cover",
+                border: "3px solid #71d7fe",
+              }}
+              src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=200"
+              alt="Elizabeth"
+            />
+            <div>
+              <h3 style={{ margin: 0, fontSize: "20px", fontWeight: 700 }}>
+                Elizabeth (25)
+              </h3>
+              <p style={{ margin: "2px 0 0", color: "#777", fontSize: "15px" }}>
+                7 km away
+              </p>
+            </div>
+          </motion.div>
+        </div>
+
+        <div style={{ padding: "35px 40px" }}>
+          <h2
+            style={{
+              fontSize: "32px",
+              margin: "0 0 12px",
+              fontWeight: 800,
+              color: "#222",
+            }}
+          >
+            Create Your Profile
+          </h2>
+          <p
+            style={{
+              color: "#666",
+              fontSize: "17px",
+              lineHeight: 1.5,
+              margin: 0,
+            }}
+          >
+            Set up your profile in just a few minutes and choose what
+            you&apos;re looking for.
+          </p>
+        </div>
+      </motion.div>
+    </Border>
   );
 }

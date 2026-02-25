@@ -13,14 +13,14 @@ import Footer from "./module/home/components/footer";
 export default function App() {
   return (
     <>
-    <HeroAnimation/>
       {/* <ComingSoonPage /> */}
-      <Dashboard/>
-        <PeopleAnimation />
-      <PremiumRewardsAnimation/>
-       <FAQAccordion/>
-        <Waitlist />
-        <Footer/>
+      <HeroAnimation />
+      <Dashboard />
+      <PeopleAnimation />
+      <PremiumRewardsAnimation />
+      <FAQAccordion />
+      <Waitlist />
+      <Footer />
     </>
   );
 }

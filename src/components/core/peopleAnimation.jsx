@@ -117,7 +117,6 @@
 //   );
 // }
 
-
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import peoples from "@/constants/peoples";
@@ -147,7 +146,7 @@ export default function PeopleAnimation() {
   return (
     <section className="w-full h-auto p-20">
       {/* Space above for scroll room */}
-      <div className="h-[50vh]" />
+      {/* <div className="h-[50vh]" /> */}
 
       <main ref={sectionRef} className="mx-auto max-w-7xl h-auto">
         <div className="mx-auto w-[735px] h-[735px] relative flex items-center justify-center py-10">
@@ -217,7 +216,7 @@ export default function PeopleAnimation() {
       </main>
 
       {/* Space below */}
-      <div className="h-[50vh]" />
+      {/* <div className="h-[50vh]" /> */}
     </section>
   );
 }
@@ -264,11 +263,7 @@ function ScrollCard({
   );
 
   // Cards scale up from small to full size
-  const scale = useTransform(
-    scrollYProgress,
-    [cardStart, cardEnd],
-    [0.6, 1]
-  );
+  const scale = useTransform(scrollYProgress, [cardStart, cardEnd], [0.6, 1]);
 
   return (
     <motion.div

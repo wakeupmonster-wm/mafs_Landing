@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -134,7 +134,6 @@
   background-repeat: no-repeat;
 }
 
-
 .marquee-track {
   will-change: transform;
   animation: marqueeMove 14s linear infinite;
@@ -155,7 +154,6 @@
   backface-visibility: hidden;
 }
 
-
 @keyframes rotateFull {
   from {
     transform: rotate(0deg);
@@ -167,4 +165,13 @@
 
 .rotate-svg {
   animation: rotateFull 4s linear infinite;
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50 rounded-xl;
+  }
+
+  .glow-border {
+  }
 }

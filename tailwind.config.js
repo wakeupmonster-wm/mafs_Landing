@@ -101,6 +101,10 @@ export default {
         "aqua-gradient-start": "hsl(var(--aqua-gradient-start))",
         "aqua-gradient-end": "hsl(var(--aqua-gradient-end))",
       },
+      fontFamily: {
+        sans: ['"Plus Jakarta Sans"', "ui-sans-serif", "system-ui"],
+        inter: ["Inter", "ui-sans-serif", "system-ui"],
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
