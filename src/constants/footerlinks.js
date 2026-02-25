@@ -1,4 +1,5 @@
 export const navigation = [
+  { id: 0, label: "About Us", href: "/about" },
   { id: 1, label: "How It Works", href: "/how-it-works" },
   { id: 2, label: "Features", href: "/features" },
   { id: 3, label: "Join the Waitlist", href: "/waitlist" },

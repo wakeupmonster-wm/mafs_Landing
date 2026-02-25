@@ -7,6 +7,7 @@ import TermsAndConditionsPage from "@/module/home/pages/terms-conditions.page";
 import FeaturesPage from "@/module/home/pages/features.page";
 import HowItWorksPage from "@/module/home/pages/how-it-works.page";
 import WaitlistPage from "@/module/home/pages/waitlist.page";
+import AboutPage from "@/module/home/pages/about.page";
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
   {
     path: "/contact-us",
     element: <ContactUsPage />,
+  },
+  {
+    path: "/about",
+    element: <AboutPage />,
   },
   {
     path: "/terms-conditions",

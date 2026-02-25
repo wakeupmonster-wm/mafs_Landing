@@ -1,10 +1,14 @@
 import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Link } from "react-router";
+import JoinModal from "@/module/home/components/JoinModal";
+import { useState } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function HeroAnimation() {
+  const [isJoinModalOpen, setIsJoinModalOpen] = useState(false);
   useEffect(() => {
     // Phone Animation
     gsap.to("#phone-hero", {
@@ -35,7 +39,7 @@ export default function HeroAnimation() {
 
   return (
     <div className="overflow-x-hidden w-full bg-[#F0F1F3]">
-      
+
       {/* ===== Custom CSS for Perfect Rotation ===== */}
       <style>{`
         /* Clockwise Animation */
@@ -94,10 +98,16 @@ export default function HeroAnimation() {
         {/* Navigation */}
         <div className="absolute top-6 sm:top-8 md:top-10 right-6 sm:right-8 md:right-10 lg:right-14 z-30">
           <nav className="bg-white/90 backdrop-blur-md rounded-full px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 border border-white/60 shadow-[0_2px_20px_rgba(0,0,0,0.06)] flex items-center gap-3 sm:gap-5 md:gap-7">
-            <a href="#" className="text-[#4B5563] hover:text-[#111827] text-[13px] sm:text-sm font-medium transition-colors whitespace-nowrap">About</a>
-            <a href="#" className="text-[#4B5563] hover:text-[#111827] text-[13px] sm:text-sm font-medium transition-colors whitespace-nowrap">Features</a>
-            <a href="#" className="text-[#4B5563] hover:text-[#111827] text-[13px] sm:text-sm font-medium transition-colors whitespace-nowrap">FAQ</a>
-            <a href="#" className="text-[#4B5563] hover:text-[#111827] text-[13px] sm:text-sm font-medium transition-colors whitespace-nowrap">Join Now</a>
+            <Link to="/about" className="text-[#4B5563] hover:text-[#111827] text-[13px] sm:text-sm font-medium transition-colors whitespace-nowrap">About</Link>
+
+            <Link to="/features" className="text-[#4B5563] hover:text-[#111827] text-[13px] sm:text-sm font-medium transition-colors whitespace-nowrap">Features</Link>
+            <button
+              onClick={() => document.getElementById('faq-section')?.scrollIntoView({ behavior: 'smooth' })}
+              className="text-[#4B5563] hover:text-[#111827] text-[13px] sm:text-sm font-medium transition-colors whitespace-nowrap"
+            >
+              FAQ
+            </button>
+            <Link to="/waitlist" className="text-[#4B5563] hover:text-[#111827] text-[13px] sm:text-sm font-medium transition-colors whitespace-nowrap">Join Now</Link>
           </nav>
         </div>
 
@@ -163,13 +173,23 @@ export default function HeroAnimation() {
                   Launching soon across Australia <span className="text-sm">🇦🇺</span>
                 </p>
               </div>
-              <div>
-                <img src="/Image (6).png" alt="QR Code" className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-xl" />
-              </div>
+              <button
+                onClick={() => setIsJoinModalOpen(true)}
+                className="group relative transition-transform duration-300 hover:scale-105 active:scale-95"
+              >
+                <div className="absolute -inset-2 bg-[#46C7CD]/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                <img src="/Image (6).png" alt="QR Code" className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-xl border-2 border-transparent group-hover:border-[#46C7CD]/30 transition-all" />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="bg-[#46C7CD] text-white text-[10px] font-bold px-2 py-1 rounded shadow-lg uppercase tracking-wider">Click to Scan</div>
+                </div>
+              </button>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Join Modal */}
+      <JoinModal isOpen={isJoinModalOpen} onClose={() => setIsJoinModalOpen(false)} />
 
       {/* ===== BENEFITS SECTION ===== */}
       <section
@@ -196,7 +216,7 @@ export default function HeroAnimation() {
 
           {/* ===== 1. OUTER CIRCLE ===== */}
           <div className="absolute inset-0 rounded-full border border-[#E5E7EB] bg-gradient-to-b from-white/80 to-transparent flex items-center justify-center">
-            
+
             {/* Cyan glow */}
             <div className="absolute right-0 w-1/2 h-1/2 bg-[#22D3EE] opacity-0 group-[.is-active]:opacity-30 blur-[80px] md:blur-[100px] lg:blur-[120px] rounded-full transition-opacity duration-1000" />
 
@@ -229,7 +249,7 @@ export default function HeroAnimation() {
 
             {/* ===== 2. MIDDLE CIRCLE ===== */}
             <div className="w-[72%] h-[72%] rounded-full border border-[#E5E7EB]/60 bg-white/40 flex items-center justify-center relative">
-              
+
               {/* Inner Blue Arc (ANTI-CLOCKWISE) */}
               <svg
                 className="absolute inset-0 w-full h-full opacity-0 group-[.is-active]:opacity-100 transition-opacity duration-1000 pointer-events-none"
@@ -248,15 +268,15 @@ export default function HeroAnimation() {
                   <circle
                     cx="100"
                     cy="100"
-                    r="99" 
+                    r="99"
                     stroke="url(#arcGradientInner)"
                     // Slightly thicker stroke to match visual weight of outer circle
-                    strokeWidth="3.5" 
+                    strokeWidth="3.5"
                     strokeDasharray="130 490"
                     strokeLinecap="round"
                   />
                 </g>
-                
+
               </svg>
 
               {/* ===== 3. INNER STATIC CIRCLE ===== */}

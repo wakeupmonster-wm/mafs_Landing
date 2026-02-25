@@ -82,7 +82,7 @@ const Footer = () => {
         <div className="flex flex-col lg:flex-row gap-8 sm:gap-10 md:gap-12 lg:gap-16 mb-10 sm:mb-12 md:mb-16 lg:mb-20">
 
           {/* Left Side: Large Logo Area */}
-          <div className="w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-2/5 flex items-center justify-start lg:justify-start">
+          <div className="w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-2/5 flex items-start justify-start lg:justify-start">
             <img
               src={mafsVector}
               alt="MAFS Logo"
@@ -92,7 +92,7 @@ const Footer = () => {
 
           {/* Right Side: Navigation Links */}
           <div className="w-full lg:w-1/2 xl:w-3/5">
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-8 xl:gap-12 text-sm sm:text-base text-gray-400">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-8 xl:gap-12 text-gray-400">
 
               {/* Col 1: Navigation */}
               <div className="col-span-1">
@@ -105,8 +105,8 @@ const Footer = () => {
               </div>
 
               {/* Col 3: Contact */}
-              <div className="col-span-2 sm:col-span-1 flex flex-col space-y-3 sm:space-y-4">
-                <Link to="/contact-us" className="text-gray-400 text-base sm:text-lg md:text-xl font-medium hover:text-white cursor-pointer transition-colors duration-200">
+              <div className="col-span-2 sm:col-span-1 flex flex-col space-y-2.5">
+                <Link to="/contact-us" className="font-['Inter'] font-normal text-[16px] leading-[24px] text-gray-400 hover:text-white transition-colors duration-200">
                   Contact Us
                 </Link>
                 <FooterLinks data={contacts} />
@@ -119,16 +119,16 @@ const Footer = () => {
         <div className="w-full h-[1px] sm:h-[1.5px] bg-white/20 mb-6 sm:mb-8" />
 
         {/* Bottom Bar: Copyright & Tagline */}
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 text-xs sm:text-sm md:text-base lg:text-lg text-gray-500 font-medium tracking-wide">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 text-gray-500">
 
           {/* Copyright */}
-          <p className="uppercase text-center sm:text-left order-2 sm:order-1">
+          <p className="font-['Inter'] font-normal text-[16px] leading-[24px] align-middle text-center sm:text-left order-2 sm:order-1">
             © 2025 MATCH AT FIRST SWIPE.
           </p>
 
           {/* Built for Australia */}
           <div className="flex items-center gap-1.5 sm:gap-2 order-1 sm:order-2">
-            <span className="text-sm sm:text-base md:text-lg">Built for Australia</span>
+            <span className="font-['Inter'] font-normal text-[16px] leading-[24px] align-middle">Built for Australia</span>
             <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-gray-500 fill-gray-500" />
           </div>
         </div>
