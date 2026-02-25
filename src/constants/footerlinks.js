@@ -3,7 +3,7 @@ export const navigation = [
   { id: 2, label: "Features", href: "/features" },
   { id: 3, label: "Join the Waitlist", href: "/waitlist" },
   { id: 4, label: "Privacy Policy", href: "/privacy" },
-  { id: 5, label: "T & C", href: "/terms" },
+  { id: 5, label: "T & C", href: "/terms-conditions" },
 ];
 
 export const social = [

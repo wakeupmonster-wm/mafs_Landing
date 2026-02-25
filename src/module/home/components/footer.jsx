@@ -67,6 +67,7 @@
 
 import React from "react";
 import { Heart } from "lucide-react";
+import { Link } from "react-router";
 import mafsVector from "@/assets/svg/mafs-vectors.svg";
 import { contacts, navigation, social } from "@/constants/footerlinks";
 import FooterLinks from "@/components/core/footer-links";
@@ -76,10 +77,10 @@ const Footer = () => {
     <footer className="p-3 sm:p-4 md:p-6 lg:p-8 mx-auto">
       {/* Main Dark Card Container */}
       <main className="w-full bg-footerBg text-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 xl:p-20 md:px-12 lg:px-20 xl:px-32 relative overflow-hidden">
-        
+
         {/* Top Section: Logo & Links */}
         <div className="flex flex-col lg:flex-row gap-8 sm:gap-10 md:gap-12 lg:gap-16 mb-10 sm:mb-12 md:mb-16 lg:mb-20">
-          
+
           {/* Left Side: Large Logo Area */}
           <div className="w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-2/5 flex items-center justify-start lg:justify-start">
             <img
@@ -92,7 +93,7 @@ const Footer = () => {
           {/* Right Side: Navigation Links */}
           <div className="w-full lg:w-1/2 xl:w-3/5">
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-8 xl:gap-12 text-sm sm:text-base text-gray-400">
-              
+
               {/* Col 1: Navigation */}
               <div className="col-span-1">
                 <FooterLinks data={navigation} />
@@ -105,9 +106,9 @@ const Footer = () => {
 
               {/* Col 3: Contact */}
               <div className="col-span-2 sm:col-span-1 flex flex-col space-y-3 sm:space-y-4">
-                <span className="text-gray-400 text-base sm:text-lg md:text-xl font-medium hover:text-white cursor-pointer transition-colors duration-200">
+                <Link to="/contact-us" className="text-gray-400 text-base sm:text-lg md:text-xl font-medium hover:text-white cursor-pointer transition-colors duration-200">
                   Contact Us
-                </span>
+                </Link>
                 <FooterLinks data={contacts} />
               </div>
             </div>
@@ -119,7 +120,7 @@ const Footer = () => {
 
         {/* Bottom Bar: Copyright & Tagline */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 text-xs sm:text-sm md:text-base lg:text-lg text-gray-500 font-medium tracking-wide">
-          
+
           {/* Copyright */}
           <p className="uppercase text-center sm:text-left order-2 sm:order-1">
             © 2025 MATCH AT FIRST SWIPE.

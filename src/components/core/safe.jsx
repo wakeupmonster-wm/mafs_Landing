@@ -1,59 +1,11 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { useState } from "react";
 import { Check, ArrowUp } from "lucide-react";
 
-// Mock data matching the screenshot
-const profiles = [
-  {
-    image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=800&q=80",
-    name: "MONICA",
-    age: 24,
-    distance: "5 km"
-  },
-  {
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80",
-    name: "ELIZA",
-    age: 22,
-    distance: "3 km"
-  },
-  {
-    image: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=800&q=80",
-    name: "SARA",
-    age: 25,
-    distance: "8 km"
-  }
-];
-
-// Profile Card Component
-const ProfileCard = ({ profile, isTop, index, isHovered }) => {
-  // Animation settings
-  const rotation = isTop ? 6 : -8;
-  const xOffset = isTop ? 30 : -20;
-
+// Profile Card Component for reusable styling
+const ProfileCard = ({ image, name, age, distance, isTop, rotation, xOffset, zIndex, isHovered }) => {
   return (
     <motion.div
-      layout
-      initial={{ opacity: 0, scale: 0.8, x: 0, rotate: 0 }}
-      animate={{
-        opacity: 1,
-        scale: isTop ? (isHovered ? 1.05 : 1) : 0.9,
-        rotate: isHovered ? rotation * 1.5 : rotation,
-        x: isHovered ? xOffset * 1.8 : xOffset,
-        y: isHovered ? -10 : 0,
-        zIndex: 20 - index,
-      }}
-      exit={{
-        x: 400,
-        rotate: 30,
-        opacity: 0,
-        scale: 0.9,
-        transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
-      }}
-      transition={{
-        type: "spring",
-        stiffness: 260,
-        damping: 20
-      }}
       style={{
         position: "absolute",
         width: "210px",
@@ -63,7 +15,7 @@ const ProfileCard = ({ profile, isTop, index, isHovered }) => {
         borderRadius: "24px",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundImage: `url(${profile.image})`,
+        backgroundImage: `url(${image})`,
         border: "4px solid white",
         boxShadow: "0 15px 40px rgba(0,0,0,0.15)",
         display: "flex",
@@ -71,7 +23,19 @@ const ProfileCard = ({ profile, isTop, index, isHovered }) => {
         justifyContent: "space-between",
         padding: "16px",
         color: "white",
+        zIndex: zIndex,
         overflow: "hidden"
+      }}
+      animate={{
+        rotate: isHovered ? rotation * 1.5 : rotation,
+        x: isHovered ? xOffset * 1.8 : xOffset,
+        y: isHovered ? -10 : 0,
+        scale: isHovered ? 1.05 : 1,
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 260,
+        damping: 20
       }}
     >
       {/* Story Bars */}
@@ -101,7 +65,7 @@ const ProfileCard = ({ profile, isTop, index, isHovered }) => {
       <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
           <span style={{ fontWeight: 800, fontSize: "16px", textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}>
-            {profile.name} ({profile.age})
+            {name} ({age})
           </span>
           <div style={{ background: "#3b82f6", borderRadius: "50%", padding: "2px", width: "14px", height: "14px", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <Check size={10} color="white" strokeWidth={4} />
@@ -120,7 +84,7 @@ const ProfileCard = ({ profile, isTop, index, isHovered }) => {
             alignItems: "center",
             gap: "4px"
           }}>
-            <span role="img" aria-label="location">📍</span> {profile.distance}
+            <span role="img" aria-label="location">📍</span> {distance}
           </div>
 
           <div style={{
@@ -143,23 +107,22 @@ const ProfileCard = ({ profile, isTop, index, isHovered }) => {
 
 export default function ExploreMatchesCard() {
   const [isHovered, setIsHovered] = useState(false);
-  const [stack, setStack] = useState([0, 1, 2]);
 
-  // Interval logic to cycle cards like playing cards
-  useEffect(() => {
-    let interval;
-    if (isHovered) {
-      interval = setInterval(() => {
-        setStack((prev) => {
-          const newStack = [...prev];
-          const top = newStack.shift();
-          newStack.push(top);
-          return newStack;
-        });
-      }, 2500); // 2.5s gap for a smooth cycling feel
+  // Mock data matching the screenshot
+  const profiles = [
+    {
+      image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=800&q=80",
+      name: "MONICA",
+      age: 24,
+      distance: "5 km"
+    },
+    {
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80",
+      name: "ELIZA",
+      age: 22,
+      distance: "3 km"
     }
-    return () => clearInterval(interval);
-  }, [isHovered]);
+  ];
 
   return (
     <>
@@ -192,17 +155,31 @@ export default function ExploreMatchesCard() {
           background: "radial-gradient(circle at 50% 100%, #b2eff2 0%, #ffffff 70%)",
           overflow: "visible"
         }}>
-          <AnimatePresence mode="popLayout">
-            {stack.slice(0, 2).map((imgIndex, i) => (
-              <ProfileCard
-                key={imgIndex} // key is the original index to track identity for AnimatePresence
-                profile={profiles[imgIndex]}
-                isTop={i === 0}
-                index={i}
-                isHovered={isHovered}
-              />
-            ))}
-          </AnimatePresence>
+          {/* Back Card */}
+          <ProfileCard
+            image={profiles[1].image}
+            name={profiles[1].name}
+            age={profiles[1].age}
+            distance={profiles[1].distance}
+            isTop={false}
+            rotation={-8}
+            xOffset={-20}
+            zIndex={10}
+            isHovered={isHovered}
+          />
+
+          {/* Front Card */}
+          <ProfileCard
+            image={profiles[0].image}
+            name={profiles[0].name}
+            age={profiles[0].age}
+            distance={profiles[0].distance}
+            isTop={true}
+            rotation={6}
+            xOffset={30}
+            zIndex={20}
+            isHovered={isHovered}
+          />
         </div>
 
         {/* Content Section */}
