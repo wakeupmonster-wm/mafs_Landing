@@ -1,4 +1,3 @@
-
 // // // // // eslint-disable-next-line no-unused-vars
 // // // // import { motion } from "framer-motion";
 
@@ -38,8 +37,8 @@
 // // // //           position: absolute;
 // // // //           inset: 0;
 // // // //           background: radial-gradient(
-// // // //             circle at 50% 35%, 
-// // // //             rgba(193, 244, 246, 0.9) 0%, 
+// // // //             circle at 50% 35%,
+// // // //             rgba(193, 244, 246, 0.9) 0%,
 // // // //             rgba(255, 255, 255, 0) 80%
 // // // //           );
 // // // //           opacity: 0;
@@ -90,8 +89,8 @@
 // // // //           <div className="conv-bg-glow" />
 
 // // // //           {/* LEFT AVATAR - Moves to Top Left */}
-// // // //           <motion.img 
-// // // //             src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200" 
+// // // //           <motion.img
+// // // //             src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200"
 // // // //             className="avatar"
 // // // //             variants={{
 // // // //               initial: { x: -25, y: -10 },
@@ -99,7 +98,7 @@
 // // // //             }}
 // // // //           />
 // // // //           {/* Star near Left Avatar (Screenshot style) */}
-// // // //           <motion.div 
+// // // //           <motion.div
 // // // //             className="star-element"
 // // // //             style={{ left: '15%', top: '45%' }}
 // // // //             variants={{
@@ -113,8 +112,8 @@
 // // // //           </motion.div>
 
 // // // //           {/* RIGHT AVATAR - Moves to Bottom Right */}
-// // // //           <motion.img 
-// // // //             src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200" 
+// // // //           <motion.img
+// // // //             src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200"
 // // // //             className="avatar"
 // // // //             style={{ zIndex: 31 }}
 // // // //             variants={{
@@ -123,7 +122,7 @@
 // // // //             }}
 // // // //           />
 // // // //           {/* Star near Right Avatar */}
-// // // //           <motion.div 
+// // // //           <motion.div
 // // // //             className="star-element"
 // // // //             style={{ right: '12%', top: '35%' }}
 // // // //             variants={{
@@ -137,13 +136,13 @@
 // // // //           </motion.div>
 
 // // // //           {/* CHAT BUBBLE 1 - Comes after Avatars reach destination */}
-// // // //           <motion.div 
+// // // //           <motion.div
 // // // //             className="chat-bubble"
 // // // //             variants={{
 // // // //               initial: { opacity: 0, scale: 0.7, x: -30, y: -20 },
-// // // //               hover: { 
-// // // //                 opacity: 1, scale: 1, x: 50, y: -90, 
-// // // //                 transition: { ...smoothSpring, delay: 1 } 
+// // // //               hover: {
+// // // //                 opacity: 1, scale: 1, x: 50, y: -90,
+// // // //                 transition: { ...smoothSpring, delay: 1 }
 // // // //               }
 // // // //             }}
 // // // //           >
@@ -151,13 +150,13 @@
 // // // //           </motion.div>
 
 // // // //           {/* CHAT BUBBLE 2 */}
-// // // //           <motion.div 
+// // // //           <motion.div
 // // // //             className="chat-bubble"
 // // // //             variants={{
 // // // //               initial: { opacity: 0, scale: 0.7, x: 30, y: 40 },
-// // // //               hover: { 
-// // // //                 opacity: 1, scale: 1, x: -60, y: 80, 
-// // // //                 transition: { ...smoothSpring, delay: 1 } 
+// // // //               hover: {
+// // // //                 opacity: 1, scale: 1, x: -60, y: 80,
+// // // //                 transition: { ...smoothSpring, delay: 1 }
 // // // //               }
 // // // //             }}
 // // // //           >
@@ -173,8 +172,6 @@
 // // // //     </>
 // // // //   );
 // // // // }
-
-
 
 // // // // eslint-disable-next-line no-unused-vars
 // // // import { motion } from "framer-motion";
@@ -474,7 +471,6 @@
 // // //   );
 // // // }
 
-
 // // // eslint-disable-next-line no-unused-vars
 // // import { motion } from "framer-motion";
 
@@ -728,7 +724,6 @@
 // //   );
 // // }
 
-
 // // eslint-disable-next-line no-unused-vars
 // import { motion } from "framer-motion";
 
@@ -851,23 +846,23 @@
 //           pointer-events: none;
 //         }
 
-//         .conv-footer { 
-//           padding: 40px; 
+//         .conv-footer {
+//           padding: 40px;
 //           background: white;
 //           border-radius: 0 0 32px 32px;
 //         }
-//         .conv-footer h2 { 
-//           margin: 0; 
-//           font-size: 32px; 
-//           font-weight: 800; 
-//           color: #111; 
-//           letter-spacing: -0.5px; 
+//         .conv-footer h2 {
+//           margin: 0;
+//           font-size: 32px;
+//           font-weight: 800;
+//           color: #111;
+//           letter-spacing: -0.5px;
 //         }
-//         .conv-footer p { 
-//           color: #666; 
-//           margin-top: 10px; 
-//           font-size: 18px; 
-//           line-height: 1.5; 
+//         .conv-footer p {
+//           color: #666;
+//           margin-top: 10px;
+//           font-size: 18px;
+//           line-height: 1.5;
 //         }
 //       `}</style>
 
@@ -975,10 +970,9 @@
 //   );
 // }
 
-
-
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import Border from "./border";
 
 const smoothSpring = {
   type: "spring",
@@ -1002,212 +996,281 @@ const floatVariants = {
 
 export default function StartConversationCard() {
   return (
-    <motion.div
-      initial="initial"
-      whileHover="hover"
-      style={{
-        width: "100%",
-        overflow: "hidden",
-        cursor: "pointer",
-        borderRadius: "32px",
-        boxShadow: "0 5px 20px rgba(0,0,0,0.03)",
-        border: "2.5px solid rgba(255, 255, 255, 0.6)",
-        outline: "2.5px solid rgba(200, 220, 230, 0.25)",
-        backdropFilter: "blur(10px)",
-        WebkitBackdropFilter: "blur(10px)",
-        height: "100%",
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      <div
+    <Border>
+      <motion.div
+        initial="initial"
+        whileHover="hover"
         style={{
-          position: "relative",
-          height: "340px",
+          width: "100%",
+          overflow: "hidden",
+          cursor: "pointer",
+          borderRadius: "28px",
+          // boxShadow: "0 5px 20px rgba(0,0,0,0.03)",
+          border: "4px solid white",
+          // outline: "2.5px solid rgba(200, 220, 230, 0.25)",
+          backdropFilter: "blur(10px)",
+          WebkitBackdropFilter: "blur(10px)",
+          height: "100%",
           display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          overflow: "visible",
-          flex: "1 1 auto",
+          flexDirection: "column",
         }}
+        className="shadow-lg"
       >
-        {/* Top cyan glow */}
-        <motion.div
-          variants={{ initial: { opacity: 0 }, hover: { opacity: 1 } }}
-          transition={{ duration: 0.65 }}
+        <div
           style={{
-            position: "absolute",
-            top: "-2px",
-            left: "-2px",
-            right: "-2px",
-            bottom: 0,
-            pointerEvents: "none",
-            background:
-               "radial-gradient(ellipse 8000% 45% at 50% 20%, rgba(113, 215, 254, 0.28) 0%, transparent 200%), radial-gradient(ellipse 70% 55% at 50% 50%, rgba(193, 244, 246, 0.08) 0%, transparent 100%)",
-            zIndex: 1,
-          }}
-        />
-        {/* Bottom purple glow */}
-        <motion.div
-          variants={{ initial: { opacity: 0 }, hover: { opacity: 1 } }}
-          transition={{ duration: 0.65 }}
-          style={{
-            position: "absolute",
-            bottom: "-60px",
-            left: "-40px",
-            right: "-40px",
-            height: "160px",
-            pointerEvents: "none",
-            background: "radial-gradient(ellipse 60% 80% at 50% 20%, rgba(168, 85, 247, 0.14) 0%, transparent 70%)",
-            filter: "blur(12px)",
-            zIndex: 1,
-          }}
-        />
-
-        {/* Left Avatar */}
-        <motion.img
-          src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200"
-          alt="User 1"
-          style={{
-            width: "95px",
-            height: "95px",
-            borderRadius: "50%",
-            border: "4px solid white",
-            boxShadow: "0 12px 30px rgba(0,0,0,0.1)",
-            objectFit: "cover",
-            position: "absolute",
-            zIndex: 30,
-          }}
-          variants={{
-            initial: { x: -25, y: -10 },
-            hover: { x: -160, y: -80, transition: smoothSpring },
-          }}
-        />
-
-        {/* Star Top-Left */}
-        <motion.div
-          style={{ position: "absolute", left: "15%", top: "22%", zIndex: 20, pointerEvents: "none" }}
-          variants={{
-            initial: { scale: 0, opacity: 0 },
-            hover: { scale: 1, opacity: 1, transition: { delay: 0.5, type: "spring", stiffness: 200 } },
+            position: "relative",
+            height: "340px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            overflow: "visible",
+            flex: "1 1 auto",
           }}
         >
-          <motion.div variants={floatVariants} custom={0}>
-            <svg width="26" height="26" viewBox="0 0 24 24">
-              <defs>
-                <linearGradient id="starLeft" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#71D7FE" />
-                  <stop offset="100%" stopColor="#a855f7" />
-                </linearGradient>
-              </defs>
-              <path
-                d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"
-                fill="url(#starLeft)"
-                filter="drop-shadow(0 2px 6px rgba(113, 215, 254, 0.5))"
-              />
-            </svg>
+          {/* Top cyan glow */}
+          <motion.div
+            variants={{ initial: { opacity: 0 }, hover: { opacity: 1 } }}
+            transition={{ duration: 0.65 }}
+            style={{
+              position: "absolute",
+              top: "-2px",
+              left: "-2px",
+              right: "-2px",
+              bottom: 0,
+              pointerEvents: "none",
+              background:
+                "radial-gradient(ellipse 8000% 45% at 50% 20%, rgba(113, 215, 254, 0.28) 0%, transparent 200%), radial-gradient(ellipse 70% 55% at 50% 50%, rgba(193, 244, 246, 0.08) 0%, transparent 100%)",
+              zIndex: 1,
+            }}
+          />
+          {/* Bottom purple glow */}
+          <motion.div
+            variants={{ initial: { opacity: 0 }, hover: { opacity: 1 } }}
+            transition={{ duration: 0.65 }}
+            style={{
+              position: "absolute",
+              bottom: "-60px",
+              left: "-40px",
+              right: "-40px",
+              height: "160px",
+              pointerEvents: "none",
+              background:
+                "radial-gradient(ellipse 60% 80% at 50% 20%, rgba(168, 85, 247, 0.14) 0%, transparent 70%)",
+              filter: "blur(12px)",
+              zIndex: 1,
+            }}
+          />
+
+          {/* Left Avatar */}
+          <motion.img
+            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200"
+            alt="User 1"
+            style={{
+              width: "95px",
+              height: "95px",
+              borderRadius: "50%",
+              border: "4px solid white",
+              boxShadow: "0 12px 30px rgba(0,0,0,0.1)",
+              objectFit: "cover",
+              position: "absolute",
+              zIndex: 30,
+            }}
+            variants={{
+              initial: { x: -25, y: -10 },
+              hover: { x: -160, y: -80, transition: smoothSpring },
+            }}
+          />
+
+          {/* Star Top-Left */}
+          <motion.div
+            style={{
+              position: "absolute",
+              left: "15%",
+              top: "22%",
+              zIndex: 20,
+              pointerEvents: "none",
+            }}
+            variants={{
+              initial: { scale: 0, opacity: 0 },
+              hover: {
+                scale: 1,
+                opacity: 1,
+                transition: { delay: 0.5, type: "spring", stiffness: 200 },
+              },
+            }}
+          >
+            <motion.div variants={floatVariants} custom={0}>
+              <svg width="26" height="26" viewBox="0 0 24 24">
+                <defs>
+                  <linearGradient
+                    id="starLeft"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stopColor="#71D7FE" />
+                    <stop offset="100%" stopColor="#a855f7" />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"
+                  fill="url(#starLeft)"
+                  filter="drop-shadow(0 2px 6px rgba(113, 215, 254, 0.5))"
+                />
+              </svg>
+            </motion.div>
           </motion.div>
-        </motion.div>
 
-        {/* Right Avatar */}
-        <motion.img
-          src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200"
-          alt="User 2"
-          style={{
-            width: "95px",
-            height: "95px",
-            borderRadius: "50%",
-            border: "4px solid white",
-            boxShadow: "0 12px 30px rgba(0,0,0,0.1)",
-            objectFit: "cover",
-            position: "absolute",
-            zIndex: 31,
-          }}
-          variants={{
-            initial: { x: 25, y: 15 },
-            hover: { x: 160, y: 60, transition: smoothSpring },
-          }}
-        />
+          {/* Right Avatar */}
+          <motion.img
+            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200"
+            alt="User 2"
+            style={{
+              width: "95px",
+              height: "95px",
+              borderRadius: "50%",
+              border: "4px solid white",
+              boxShadow: "0 12px 30px rgba(0,0,0,0.1)",
+              objectFit: "cover",
+              position: "absolute",
+              zIndex: 31,
+            }}
+            variants={{
+              initial: { x: 25, y: 15 },
+              hover: { x: 160, y: 60, transition: smoothSpring },
+            }}
+          />
 
-        {/* Star Bottom-Right */}
-        <motion.div
-          style={{ position: "absolute", right: "12%", bottom: "20%", zIndex: 20, pointerEvents: "none" }}
-          variants={{
-            initial: { scale: 0, opacity: 0 },
-            hover: { scale: 1.1, opacity: 1, transition: { delay: 0.7, type: "spring", stiffness: 200 } },
-          }}
-        >
-          <motion.div variants={floatVariants} custom={1}>
-            <svg width="22" height="22" viewBox="0 0 24 24">
-              <defs>
-                <linearGradient id="starRight" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#a855f7" />
-                  <stop offset="100%" stopColor="#71D7FE" />
-                </linearGradient>
-              </defs>
-              <path
-                d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"
-                fill="url(#starRight)"
-                filter="drop-shadow(0 2px 6px rgba(168, 85, 247, 0.5))"
-              />
-            </svg>
+          {/* Star Bottom-Right */}
+          <motion.div
+            style={{
+              position: "absolute",
+              right: "12%",
+              bottom: "20%",
+              zIndex: 20,
+              pointerEvents: "none",
+            }}
+            variants={{
+              initial: { scale: 0, opacity: 0 },
+              hover: {
+                scale: 1.1,
+                opacity: 1,
+                transition: { delay: 0.7, type: "spring", stiffness: 200 },
+              },
+            }}
+          >
+            <motion.div variants={floatVariants} custom={1}>
+              <svg width="22" height="22" viewBox="0 0 24 24">
+                <defs>
+                  <linearGradient
+                    id="starRight"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stopColor="#a855f7" />
+                    <stop offset="100%" stopColor="#71D7FE" />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"
+                  fill="url(#starRight)"
+                  filter="drop-shadow(0 2px 6px rgba(168, 85, 247, 0.5))"
+                />
+              </svg>
+            </motion.div>
           </motion.div>
-        </motion.div>
 
-        {/* Chat Bubbles */}
-        <motion.div
+          {/* Chat Bubbles */}
+          <motion.div
+            style={{
+              position: "absolute",
+              background: "white",
+              padding: "14px 24px",
+              borderRadius: "20px",
+              fontSize: "15px",
+              fontWeight: 500,
+              color: "#1a1a1a",
+              boxShadow: "0 10px 35px rgba(0,0,0,0.07)",
+              zIndex: 25,
+              whiteSpace: "nowrap",
+              border: "1px solid rgba(0,0,0,0.02)",
+            }}
+            variants={{
+              initial: { opacity: 0, scale: 0.7, x: -30, y: -20 },
+              hover: {
+                opacity: 1,
+                scale: 1,
+                x: 50,
+                y: -90,
+                transition: { ...smoothSpring, delay: 1 },
+              },
+            }}
+          >
+            Hey! I liked your profile.
+          </motion.div>
+
+          <motion.div
+            style={{
+              position: "absolute",
+              background: "white",
+              padding: "14px 24px",
+              borderRadius: "20px",
+              fontSize: "15px",
+              fontWeight: 500,
+              color: "#1a1a1a",
+              boxShadow: "0 10px 35px rgba(0,0,0,0.07)",
+              zIndex: 25,
+              whiteSpace: "nowrap",
+              border: "1px solid rgba(0,0,0,0.02)",
+            }}
+            variants={{
+              initial: { opacity: 0, scale: 0.7, x: 30, y: 40 },
+              hover: {
+                opacity: 1,
+                scale: 1,
+                x: -60,
+                y: 80,
+                transition: { ...smoothSpring, delay: 1 },
+              },
+            }}
+          >
+            Thanks! Glad we matched.
+          </motion.div>
+        </div>
+
+        <div
           style={{
-            position: "absolute",
+            padding: "40px",
             background: "white",
-            padding: "14px 24px",
-            borderRadius: "20px",
-            fontSize: "15px",
-            fontWeight: 500,
-            color: "#1a1a1a",
-            boxShadow: "0 10px 35px rgba(0,0,0,0.07)",
-            zIndex: 25,
-            whiteSpace: "nowrap",
-            border: "1px solid rgba(0,0,0,0.02)",
-          }}
-          variants={{
-            initial: { opacity: 0, scale: 0.7, x: -30, y: -20 },
-            hover: { opacity: 1, scale: 1, x: 50, y: -90, transition: { ...smoothSpring, delay: 1 } },
+            borderRadius: "0 0 32px 32px",
           }}
         >
-          Hey! I liked your profile.
-        </motion.div>
-
-        <motion.div
-          style={{
-            position: "absolute",
-            background: "white",
-            padding: "14px 24px",
-            borderRadius: "20px",
-            fontSize: "15px",
-            fontWeight: 500,
-            color: "#1a1a1a",
-            boxShadow: "0 10px 35px rgba(0,0,0,0.07)",
-            zIndex: 25,
-            whiteSpace: "nowrap",
-            border: "1px solid rgba(0,0,0,0.02)",
-          }}
-          variants={{
-            initial: { opacity: 0, scale: 0.7, x: 30, y: 40 },
-            hover: { opacity: 1, scale: 1, x: -60, y: 80, transition: { ...smoothSpring, delay: 1 } },
-          }}
-        >
-          Thanks! Glad we matched.
-        </motion.div>
-      </div>
-
-      <div style={{ padding: "40px", background: "white", borderRadius: "0 0 32px 32px" }}>
-        <h2 style={{ margin: 0, fontSize: "32px", fontWeight: 800, color: "#111", letterSpacing: "-0.5px" }}>
-          Start a Conversation
-        </h2>
-        <p style={{ color: "#666", marginTop: "10px", fontSize: "18px", lineHeight: 1.5 }}>
-          Connect and chat easily once there&apos;s mutual interest.
-        </p>
-      </div>
-    </motion.div>
+          <h2
+            style={{
+              margin: 0,
+              fontSize: "32px",
+              fontWeight: 800,
+              color: "#111",
+              letterSpacing: "-0.5px",
+            }}
+          >
+            Start a Conversation
+          </h2>
+          <p
+            style={{
+              color: "#666",
+              marginTop: "10px",
+              fontSize: "18px",
+              lineHeight: 1.5,
+            }}
+          >
+            Connect and chat easily once there&apos;s mutual interest.
+          </p>
+        </div>
+      </motion.div>
+    </Border>
   );
 }

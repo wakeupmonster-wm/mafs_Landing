@@ -1,8 +1,7 @@
-
 // // // import ProfileCard from "../components/core/ProfileCard"; // Aapka pehle wala card
 // // // import PremiumBenefitsCard from "../components/core/PremiumBenefitsCard"; // Naya wala card
-// // // import StartConversationCard from "../components/core/StartConversationCard"; 
-// // // import ExploreMatchesCard from "../components/core/ExploreMatchesCard"; 
+// // // import StartConversationCard from "../components/core/StartConversationCard";
+// // // import ExploreMatchesCard from "../components/core/ExploreMatchesCard";
 // // // export default function Dashboard() {
 // // //   return (
 // // //     <>
@@ -21,7 +20,7 @@
 // // //         /* Dono cards ki width control karne ke liye */
 // // //         .card-column {
 // // //           flex: 1;
-// // //           max-width: 480px; 
+// // //           max-width: 480px;
 // // //           display: flex;
 // // //           justify-content: center;
 // // //         }
@@ -43,14 +42,13 @@
 // // //           <div className="card-column">
 // // //           <ExploreMatchesCard />
 // // //         </div>
-    
+
 // // //       </div>
 // // //        <div className="main-wrapper">
 // // //         <div className="card-column">
 // // //           <StartConversationCard />
 // // //         </div>
-        
-       
+
 // // //         <div className="card-column">
 // // //           <PremiumBenefitsCard />
 // // //         </div>
@@ -58,7 +56,6 @@
 // // //     </>
 // // //   );
 // // // }
-
 
 import ProfileCard from "../components/core/ProfileCard";
 import ExploreMatchesCard from "../components/core/ExploreMatchesCard";
@@ -81,19 +78,24 @@ export default function Dashboard() {
         }
 
         .dashboard-header {
+          display : flex;
+          flex-direction: column;
+          gap: 6px;
           text-align: center;
           margin-bottom: 32px;
         }
 
         .dashboard-header h1 {
-          font-size: 32px;
+          width:420px;
+          font-size: 36px;
           font-weight: 700;
           color: #1a1a1a;
-          margin: 0 0 8px 0;
+          margin: 0 auto;
           line-height: 1.2;
         }
 
         .dashboard-header p {
+          width:400px;
           font-size: 14px;
           color: #6b6b6b;
           max-width: 600px;
@@ -102,7 +104,7 @@ export default function Dashboard() {
         }
 
         .dashboard-container {
-          max-width: 1320px;
+          max-width: 1200px;
           margin: 0 auto;
         }
 
@@ -115,12 +117,12 @@ export default function Dashboard() {
 
         /* Row 1: SMALL left, BIG right */
         .profile { 
-          grid-column: 1 / 5; /* 3 columns = SMALL */
+          grid-column: 1 / 6; /* 3 columns = SMALL */
           grid-row: 1;
         }
         
         .explore { 
-          grid-column: 5 / 11; /* 7 columns = BIG */
+          grid-column: 6 / 12; /* 7 columns = BIG */
           grid-row: 1;
         }
         
@@ -134,8 +136,6 @@ export default function Dashboard() {
           grid-column: 7 / 11; /* 4 columns = SMALL */
           grid-row: 2;
         }
-
-     
 
         @media (max-width: 1024px) {
           .dashboard-wrapper {
@@ -169,9 +169,14 @@ export default function Dashboard() {
       `}</style>
 
       <div className="dashboard-wrapper">
+        <img
+          src="/Light → Figure - Line Gradient → ZzXR4Xa701pprKwAZYChrznQWE.png.png"
+          className="w-48 h-2 mb-6 mx-auto"
+          alt=""
+        />
         <div className="dashboard-header">
-          <h1>How MATCH AT FIRST SWIPE Works</h1>
-          <p>
+          <h1 className="!font-sans">How MATCH AT FIRST SWIPE Works</h1>
+          <p className="font-inter">
             From setting up your profile to unlocking premium rewards,
             everything is designed to stay simple and effortless.
           </p>

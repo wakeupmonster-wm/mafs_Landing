@@ -65,8 +65,8 @@
 // //         </div>
 
 // //         <div className="flex-1 flex items-center justify-center relative">
-// //           {/* <div 
-// //         className="absolute inset-0" 
+// //           {/* <div
+// //         className="absolute inset-0"
 // //         style={{
 // //           background: 'radial-gradient(ellipse at center, #7dd3dd 0%, #a8e6f0 30%, #d4f1f9 50%, #e8f7fa 70%, #f5f5f5 100%)'
 // //         }}
@@ -136,9 +136,6 @@
 // //   );
 // // }
 
-
-
-
 // import { useEffect, useRef, useState } from "react";
 
 // export default function PremiumRewardsAnimation() {
@@ -168,7 +165,7 @@
 
 //     // Card width + gap ka calculation (adjust according to your card size)
 //     const cardWidth = 96 + 24; // 96px card width + 24px gap (md breakpoint ke liye)
-    
+
 //     const animate = () => {
 //       x -= speed;
 
@@ -218,7 +215,7 @@
 //                 "radial-gradient(ellipse 100% 60% at 50% 50%, #6dd0db 0%, #8ddde6 25%, #b5e9f0 45%, #d9f3f7 65%, #f0f9fb 85%, #ffffff 100%)",
 //             }}
 //           />
-          
+
 //           {/* Cards Animation Track */}
 //           <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2">
 //             <div className="mx-auto overflow-hidden w-[320px] sm:w-[400px] md:w-[480px]">
@@ -261,7 +258,7 @@
 //                 src="/Phone → Phone (1).png"
 //                 alt="Phone mockup"
 //               />
-              
+
 //               {/* Dynamic Phone Screen Content */}
 //               <div className="absolute inset-0 flex items-center justify-center">
 //                 <div className="relative" style={{
@@ -306,9 +303,6 @@
 //   );
 // }
 
-
-
-
 import { useEffect, useRef, useState } from "react";
 
 export default function PremiumRewardsAnimation() {
@@ -325,25 +319,25 @@ export default function PremiumRewardsAnimation() {
   // image -> Moving cards ke liye (white background wali)
   // phoneImage -> Phone mockup screen ke liye (transparent/no background)
   const cards = [
-    { 
-      id: 1, 
-      image: "/Image (3).png",           // Card ke liye (white bg)
-      phoneImage: "/Image (3).png"    // Phone screen ke liye (transparent)
+    {
+      id: 1,
+      image: "/Image (3).png", // Card ke liye (white bg)
+      phoneImage: "/Image (3).png", // Phone screen ke liye (transparent)
     },
-    { 
-      id: 2, 
+    {
+      id: 2,
       image: "/Content.png",
-      phoneImage: "/Content.png"
+      phoneImage: "/Content.png",
     },
-    { 
-      id: 3, 
+    {
+      id: 3,
       image: "/Image (4).png",
-      phoneImage: "/Image (4).png"
+      phoneImage: "/Image (4).png",
     },
-    { 
-      id: 4, 
+    {
+      id: 4,
       image: "/Image (5).png",
-      phoneImage: "/Image (5).png"
+      phoneImage: "/Image (5).png",
     },
   ];
 
@@ -357,13 +351,14 @@ export default function PremiumRewardsAnimation() {
 
     // Card width + gap calculation
     const cardWidth = 96 + 24; // card width + gap
-    
+
     const animate = () => {
       x -= speed;
 
       // Calculate current card index based on scroll position
       const totalScrollDistance = Math.abs(x);
-      const currentIndex = Math.floor(totalScrollDistance / cardWidth) % cards.length;
+      const currentIndex =
+        Math.floor(totalScrollDistance / cardWidth) % cards.length;
       setCurrentCardIndex(currentIndex);
 
       if (Math.abs(x) >= track.scrollWidth / 2) {
@@ -388,7 +383,7 @@ export default function PremiumRewardsAnimation() {
             className="inline-block w-48 h-2 mb-6"
             alt=""
           />
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+          <h1 className="text-3xl font-sans md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
             A Little More Than Just
             <br />
             Matching
@@ -410,7 +405,7 @@ export default function PremiumRewardsAnimation() {
                 "radial-gradient(ellipse 100% 60% at 50% 50%, #6dd0db 0%, #8ddde6 25%, #b5e9f0 45%, #d9f3f7 65%, #f0f9fb 85%, #ffffff 100%)",
             }}
           />
-          
+
           {/* Moving Cards Track */}
           <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 z-0">
             <div className="mx-auto overflow-hidden w-[320px] sm:w-[400px] md:w-[480px]">
@@ -448,16 +443,16 @@ export default function PremiumRewardsAnimation() {
                 src="/Phone → Phone (1).png"
                 alt="Phone mockup"
               />
-              
+
               {/* Phone Screen Content - Transparent icon images */}
-              <div 
+              <div
                 className="absolute flex items-center justify-center"
                 style={{
                   // Adjust these values to match your phone mockup screen area
-                  top: '15%',
-                  left: '10%',
-                  width: '80%',
-                  height: '70%',
+                  top: "15%",
+                  left: "10%",
+                  width: "80%",
+                  height: "70%",
                 }}
               >
                 {/* Current Card Icon - Transparent background */}
@@ -466,9 +461,11 @@ export default function PremiumRewardsAnimation() {
                   src={cards[currentCardIndex].phoneImage}
                   alt="Card image"
                   className="max-w-full h-32 ml-6 object-contain animate-fadeIn mb-[235px]"
-                  style={{
-                    // No background - transparent image will show phone bg
-                  }}
+                  style={
+                    {
+                      // No background - transparent image will show phone bg
+                    }
+                  }
                 />
               </div>
             </div>
