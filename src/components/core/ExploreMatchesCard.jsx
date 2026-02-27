@@ -274,6 +274,7 @@ export default function ExploreMatchesCard() {
   const [delayedIndex, setDelayedIndex] = useState(1);
   const [isHovered, setIsHovered] = useState(false);
   const [isExiting, setIsExiting] = useState(false);
+   const [activeState, setActiveState] = useState(false);
 
   useEffect(() => {
     const next = (currentIndex + 1) % images.length;
@@ -300,8 +301,13 @@ export default function ExploreMatchesCard() {
   return (
     <Border>
       <motion.div
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+        // onMouseEnter={() => setIsHovered(true)}
+        // onMouseLeave={() => setIsHovered(false)}
+         onMouseEnter={() => setActiveState(true)}
+        onMouseLeave={() => setActiveState(false)}
+        // ✅ Mobile touch
+        onTouchStart={() => setActiveState(true)}
+        onTouchEnd={() => setActiveState(false)}
         style={{
           width: "100%",
           borderRadius: "28px",

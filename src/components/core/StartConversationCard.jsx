@@ -558,6 +558,7 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import Border from "./border";
+import { useState } from "react";
 
 const smoothSpring = {
   type: "spring",
@@ -581,12 +582,16 @@ const floatVariants = {
 export default function StartConversationCard() {
   // ✅ Sirf mobile ke liye
   const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
+  const [activeState, setActiveState] = useState(false);
 
   return (
     <Border>
       <motion.div
         initial="initial"
+         animate={activeState ? "hover" : "initial"}
         whileHover="hover"
+         onTouchStart={() => setActiveState(true)}   // ✅ mobile touch start
+        onTouchEnd={() => setActiveState(false)}
         className="shadow-lg"
         style={{
           width: "100%",
