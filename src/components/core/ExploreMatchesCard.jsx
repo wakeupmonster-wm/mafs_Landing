@@ -301,10 +301,10 @@ export default function ExploreMatchesCard() {
   return (
     <Border>
       <motion.div
-        // onMouseEnter={() => setIsHovered(true)}
-        // onMouseLeave={() => setIsHovered(false)}
-         onMouseEnter={() => setActiveState(true)}
-        onMouseLeave={() => setActiveState(false)}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        //  onMouseEnter={() => setActiveState(true)}
+        // onMouseLeave={() => setActiveState(false)}
         // ✅ Mobile touch
         onTouchStart={() => setActiveState(true)}
         onTouchEnd={() => setActiveState(false)}
