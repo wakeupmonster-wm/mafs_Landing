@@ -44,7 +44,7 @@ export default function StartConversationCard() {
         <div
           style={{
             position: "relative",
-            height: "325px",
+            height: "360px",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -229,8 +229,8 @@ export default function StartConversationCard() {
           </h2>
           <p
             style={{
-              color: "#6b6b6b",
-              marginTop: "4px",
+              color: "#707070",
+              marginTop: "2px",
               fontSize: "16px",
               lineHeight: 1.6,
             }}

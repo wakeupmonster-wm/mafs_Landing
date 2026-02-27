@@ -1,78 +1,84 @@
-import React, { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Header from "../components/core/Header";
+import React from "react";
+import { motion } from "framer-motion";
 
-gsap.registerPlugin(ScrollTrigger);
-
-export default function NewHome() {
-  const compRef = useRef(null);
-  const phoneRef = useRef(null);
-  const concentricRef = useRef(null);
-
-  useEffect(() => {
-    // gsap.context properly scopes our animations and makes cleanup effortless
-    let ctx = gsap.context(() => {
-      gsap.to(phoneRef.current, {
-        scrollTrigger: {
-          trigger: "#hero-section",
-          start: "top top",
-          endTrigger: "#benefits-section",
-          end: "center center",
-          scrub: 1,
-          onUpdate: (self) => {
-            if (concentricRef.current) {
-              // Toggle class based on scroll progress
-              concentricRef.current.classList.toggle(
-                "is-active",
-                self.progress > 0.7
-              );
-            }
-          },
-        },
-        y: "110vh",
-        ease: "power2.inOut",
-      });
-    }, compRef);
-
-    return () => ctx.revert(); // Perfect React cleanup
-  }, []);
+const BackgroundPattern = () => {
+  // Animation settings for the pulsing effect
+  const circleVariants = {
+    initial: {
+      opacity: 0,
+      scale: 0.8,
+      x: "-50%",
+      y: "-50%",
+    },
+    animate: (customDelay) => ({
+      opacity: [0, 0.5, 0], // Fades in and out
+      scale: [0.8, 1.2], // Grows slightly
+      x: "-50%",
+      y: "-50%",
+      transition: {
+        duration: 4,
+        repeat: Infinity,
+        delay: customDelay,
+        ease: "easeInOut",
+      },
+    }),
+  };
 
   return (
-    <main ref={compRef} className="w-full h-screen flex flex-col bg-aqua relative">
-      {/* Header ko yahan top par place kiya hai */}
-      <div className="absolute top-0 max-w-7xl z-50 border mx-auto">
-        <Header />
+    <div
+      style={{
+        position: "absolute",
+        width: "100%",
+        height: "100%",
+        top: 0,
+        left: 0,
+        zIndex: 0, // Cards ke peeche rahega
+        overflow: "hidden",
+        pointerEvents: "none", // Mouse interaction card par hi rahe
+      }}
+    >
+      <div style={{ position: "relative", width: "100%", height: "100%" }}>
+        {/* Outer Circle */}
+        <motion.div
+          variants={circleVariants}
+          initial="initial"
+          animate="animate"
+          custom={0}
+          style={circleStyle("788px", "rgba(0,0,5,0.5)")}
+        />
+
+        {/* Middle Circle */}
+        <motion.div
+          variants={circleVariants}
+          initial="initial"
+          animate="animate"
+          // custom={1}
+          style={circleStyle("702px", "rgba(0,0,5,0.5)")}
+        />
+
+        {/* Inner Circle */}
+        <motion.div
+          variants={circleVariants}
+          initial="initial"
+          animate="animate"
+          // custom={2}
+          style={circleStyle("632px", "rgba(0,0,0,0.5)")}
+        />
       </div>
-
-      {/* Hero Section (GSAP Trigger Start) */}
-      {/* <section
-        id="hero-section"
-        className="min-h-screen border border-red-500 max-w-7xl mx-auto w-full pt-32 flex justify-center items-center"
-      >
-        <h1 className="text-4xl font-bold">Hero Section</h1>
-
-        {/* Animated Phone Element 
-        <div
-          ref={phoneRef}
-          className="w-40 h-80 bg-black rounded-3xl text-white flex items-center justify-center absolute z-20"
-        >
-          Phone
-        </div>
-      </section> */}
-
-      {/* Benefits Section (GSAP Trigger End) */}
-      {/* <section
-        id="benefits-section"
-        className="min-h-screen border border-blue-500 max-w-7xl mx-auto w-full flex justify-center items-center"
-      >
-        <div
-          ref={concentricRef}
-          className="w-64 h-64 border-4 border-gray-300 rounded-full flex items-center justify-center transition-all duration-500"
-        >
-          Concentric Target
-        </div>
-      </section> */}
-    </main>
+    </div>
   );
-}
+};
+
+// Helper function for styling circles
+const circleStyle = (size, color) => ({
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  width: size,
+  height: size,
+  borderRadius: "50%",
+  border: `1px solid ${color}`, // Border animation yahan se aati hai
+  willChange: "transform, opacity",
+});
+
+export default BackgroundPattern;

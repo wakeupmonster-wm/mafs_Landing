@@ -45,7 +45,7 @@ export default function PremiumBenefitsCard() {
         <div
           style={{
             position: "relative",
-            height: "307px",
+            height: "350px",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -78,7 +78,7 @@ export default function PremiumBenefitsCard() {
               pointerEvents: "none",
             }}
             variants={iconVariants}
-            custom={{ tx: "-120px", ty: "-130px" }}
+            custom={{ tx: "-130px", ty: "-125px" }}
             animate={{ y: ["0%", "-8%", "0%"] }}
             transition={{
               y: {
@@ -115,7 +115,7 @@ export default function PremiumBenefitsCard() {
               pointerEvents: "none",
             }}
             variants={iconVariants}
-            custom={{ tx: "-22px", ty: "-156px" }}
+            custom={{ tx: "-32px", ty: "-150px" }}
             animate={{ y: ["0%", "-12%", "0%"] }}
             transition={{
               y: {
@@ -152,7 +152,7 @@ export default function PremiumBenefitsCard() {
               pointerEvents: "none",
             }}
             variants={iconVariants}
-            custom={{ tx: "80px", ty: "-130px" }}
+            custom={{ tx: "70px", ty: "-125px" }}
             animate={{ y: ["0%", "-8%", "0%"] }}
             transition={{
               y: {
@@ -184,7 +184,7 @@ export default function PremiumBenefitsCard() {
           <motion.div
             variants={{
               initial: { scale: 1, y: 0 },
-              hover: { scale: 0.92, y: 40, transition: { duration: 0.5 } },
+              hover: { scale: 1, y: 45, transition: { duration: 0.5 } },
             }}
             style={{
               position: "relative",
@@ -246,8 +246,9 @@ export default function PremiumBenefitsCard() {
           <h2 style={{ margin: 0, fontSize: "30px", fontWeight: 800 }}>
             Unlock Premium Benefits
           </h2>
-          <p style={{ color: "#666", marginTop: "10px", fontSize: "17px" }}>
-            Premium members get access to exclusive features and daily rewards.
+          <p style={{ color: "#707070", marginTop: "2px", fontSize: "16px" }}>
+            Premium members get access to exclusive <br /> features and daily
+            rewards.
           </p>
         </div>
       </motion.div>

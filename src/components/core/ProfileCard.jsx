@@ -659,14 +659,10 @@ export default function ProfileCard() {
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          
         }}
-        
         className="shadow-lg"
-        
       >
-
-       {/* <motion.div
+        {/* <motion.div
         initial="initial"
         whileHover="hover"
         style={{
@@ -847,26 +843,21 @@ export default function ProfileCard() {
               initial: { y: 60 },
               hover: { y: -2, transition: { duration: 0.4, ease: "easeOut" } },
             }}
-          // style={{
-          //   position: "relative",
-          //   zIndex: 10,
-          //   background: "white",
-          //   borderRadius: "24px",
-          //   padding: "16px 20px",
-          //   display: "flex",
-          //   alignItems: "center",
-          //   gap: "16px",
-          //   width: "320px",
-          //   boxShadow: "0 15px 35px rgba(0,0,0,0.07)",
-          //   border: "1px solid rgba(0,0,0,0.02)",
-          // }}
+            // style={{
+            //   position: "relative",
+            //   zIndex: 10,
+            //   background: "white",
+            //   borderRadius: "24px",
+            //   padding: "16px 20px",
+            //   display: "flex",
+            //   alignItems: "center",
+            //   gap: "16px",
+            //   width: "320px",
+            //   boxShadow: "0 15px 35px rgba(0,0,0,0.07)",
+            //   border: "1px solid rgba(0,0,0,0.02)",
+            // }}
           >
-            <img
-
-              src="/Frame 112.png"
-              alt="Elizabeth"
-              className="w-92 h-36"
-            />
+            <img src="/Frame 112.png" alt="Elizabeth" className="w-92 h-36" />
             {/* <div>
               <h3 style={{ margin: 0, fontSize: "20px", fontWeight: 700 }}>
                 Elizabeth (25)
@@ -891,10 +882,10 @@ export default function ProfileCard() {
           </h2>
           <p
             style={{
-              color: "#666",
-              fontSize: "17px",
+              color: "#707070",
+              fontSize: "16px",
               lineHeight: 1.5,
-              margin: 0,
+              margin: "2px",
             }}
           >
             Set up your profile in just a few minutes and choose what

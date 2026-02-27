@@ -1,0 +1,79 @@
+body {
+  --framer-aspect-ratio-supported: auto;
+}
+
+.phone-halt-container {
+  flex: none;
+  gap: 48px;
+  width: 100%;
+  max-width: 1200px;
+  height: 800px !important;
+  position: relative;
+  overflow: visible;
+}
+
+.background-pattern {
+  aspect-ratio: 1;
+  height: 92%;
+  width: var(--framer-aspect-ratio-supported, 736px);
+  flex: none;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  overflow: hidden;
+  /* transform: translate(-50%); */
+}
+
+.outer-circle {
+  aspect-ratio: 1;
+  height: var(--framer-aspect-ratio-supported, 736px);
+  flex-flow: row;
+  flex: none;
+  place-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 0;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+
+.middle-circle {
+  aspect-ratio: 0.998578;
+  height: var(--framer-aspect-ratio-supported, 657px);
+  flex-flow: column;
+  flex: none;
+  place-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 89%;
+  padding: 0;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+
+.inner-circle {
+  aspect-ratio: 1;
+  height: var(--framer-aspect-ratio-supported, 591px);
+  flex-flow: row;
+  flex: none;
+  place-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 80%;
+  padding: 0;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
