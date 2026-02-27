@@ -37,7 +37,7 @@ const FAQAccordion = () => {
   };
 
   return (
-    <div className="min-h-screen pt-44 md:pt-96 md:px-4 sm:px-6 lg:px-8" id="faq-section">
+    <div className="min-h-screen pt-44  md:px-4 sm:px-6 lg:px-8" id="faq-section">
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Section - Title and Description */}
@@ -138,5 +138,4 @@ const FAQAccordion = () => {
     </div>
   );
 };
-
 export default FAQAccordion;

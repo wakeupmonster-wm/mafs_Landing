@@ -408,6 +408,7 @@ export default function HeroAnimation() {
   }, []);
 
   // Close mobile menu on resize
+  
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
@@ -451,6 +452,7 @@ export default function HeroAnimation() {
       `}</style>
 
       {/* ===== HERO SECTION ===== */}
+
       <section id="hero-section" className="relative min-h-screen">
         <div className="absolute inset-0 z-0">
           <img

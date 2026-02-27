@@ -1,3 +1,4 @@
+
 import React, { useRef } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -135,11 +136,11 @@ function ScrollCard({
   scrollYProgress,
 }) {
   // Stagger logic - smoother and longer animation window
-  const staggerWindow = 0.2;
+  const staggerWindow = 0.15;
   const perCardDelay = (index / totalItems) * staggerWindow;
 
-  const cardStart = 0.15 + perCardDelay;
-  const cardEnd = Math.min(cardStart + 0.35, 0.65);
+  const cardStart = 0.05 + perCardDelay;
+  const cardEnd = Math.min(cardStart + 0.25, 0.5);
 
   // Use CSS custom properties approach for responsive radius
   // We'll compute for the largest and use CSS clamp via multiple transforms

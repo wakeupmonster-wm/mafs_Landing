@@ -732,7 +732,7 @@ export default function ProfileCard() {
                   fill="#71D7FE"
                 />
               </svg> */}
-              <img src="public/Verified badge.png" alt="" className="w-8 h-8" />
+              <img src="/Verified badge.png" alt="" className="w-8 h-8" />
             </motion.div>
           </motion.div>
 
