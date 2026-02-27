@@ -46,7 +46,7 @@ export default function HeroContent({ phoneRef }) {
             <img
               src="/Phone.png"
               alt="Phone"
-              className="w-[200px] sm:w-[220px] md:w-[260px] lg:w-[280px] xl:w-[290px] drop-shadow-[0_25px_50px_rgba(5,5,5,0.70)]"
+              className="w-[160px] sm:w-[220px] md:w-[260px] lg:w-[280px] xl:w-[290px] drop-shadow-[0_25px_50px_rgba(5,5,5,0.70)]"
             />
           </div>
         </div>
