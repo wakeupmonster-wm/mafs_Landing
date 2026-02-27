@@ -16,7 +16,7 @@ export default function Header() {
     },
     {
       title: "Join Now",
-      path: "/waitlist",
+      path: "/waitlist"
     },
   ];
 
