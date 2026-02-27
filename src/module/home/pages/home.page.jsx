@@ -91,7 +91,7 @@ export default function HomePage() {
             }
           },
         },
-        y: "155vh",
+        y: "150vh",
         ease: "power2.inOut",
       });
     });

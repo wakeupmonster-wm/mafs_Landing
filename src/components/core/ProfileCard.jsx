@@ -606,6 +606,7 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import Border from "./border";
+import { useState } from "react";
 
 const smoothSpring = {
   type: "spring",
@@ -646,11 +647,15 @@ const floatVariants = {
 };
 
 export default function ProfileCard() {
+  const [isActive, setIsActive] = useState(false);
   return (
     <Border>
       <motion.div
         initial="initial"
+         animate={isActive ? "hover" : "initial"}
         whileHover="hover"
+        onTouchStart={() => setIsActive(true)}
+        onTouchEnd={() => setIsActive(false)}
         style={{
           borderRadius: "28px",
           overflow: "hidden",
