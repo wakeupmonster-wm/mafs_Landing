@@ -24,8 +24,11 @@ export default function HomePage() {
   const concentricRef = useRef(null);
 
   useEffect(() => {
-    // gsap.context properly scopes our animations and makes cleanup effortless
-    let ctx = gsap.context(() => {
+  let ctx = gsap.context(() => {
+    const mm = gsap.matchMedia();
+
+    // ✅ Desktop
+    mm.add("(min-width: 1024px)", () => {
       gsap.to(phoneRef.current, {
         scrollTrigger: {
           trigger: "#hero-section",
@@ -35,7 +38,6 @@ export default function HomePage() {
           scrub: 1,
           onUpdate: (self) => {
             if (concentricRef.current) {
-              // Toggle class based on scroll progress
               concentricRef.current.classList.toggle(
                 "is-active",
                 self.progress > 0.7
@@ -46,10 +48,85 @@ export default function HomePage() {
         y: "100vh",
         ease: "power2.inOut",
       });
-    }, compRef);
+    });
 
-    return () => ctx.revert(); // Perfect React cleanup
-  }, []);
+    // ✅ Tablet
+    mm.add("(min-width: 768px) and (max-width: 1023px)", () => {
+      gsap.to(phoneRef.current, {
+        scrollTrigger: {
+          trigger: "#hero-section",
+          start: "top top",
+          endTrigger: "#benefits-section",
+          end: "center center",
+          scrub: 1,
+          onUpdate: (self) => {
+            if (concentricRef.current) {
+              concentricRef.current.classList.toggle(
+                "is-active",
+                self.progress > 0.82
+              );
+            }
+          },
+        },
+        y: "140vh",
+        ease: "power2.inOut",
+      });
+    });
+
+    // ✅ Mobile
+    mm.add("(max-width: 767px)", () => {
+      gsap.to(phoneRef.current, {
+        scrollTrigger: {
+          trigger: "#hero-section",
+          start: "top top",
+          endTrigger: "#benefits-section",
+          end: "center center",
+          scrub: 1,
+          onUpdate: (self) => {
+            if (concentricRef.current) {
+              concentricRef.current.classList.toggle(
+                "is-active",
+                self.progress > 0.88
+              );
+            }
+          },
+        },
+        y: "150vh",
+        ease: "power2.inOut",
+      });
+    });
+  }, compRef);
+
+  return () => ctx.revert();
+}, []);
+
+  // useEffect(() => {
+  //   // gsap.context properly scopes our animations and makes cleanup effortless
+  //   let ctx = gsap.context(() => {
+  //     gsap.to(phoneRef.current, {
+  //       scrollTrigger: {
+  //         trigger: "#hero-section",
+  //         start: "top top",
+  //         endTrigger: "#benefits-section",
+  //         end: "center center",
+  //         scrub: 1,
+  //         onUpdate: (self) => {
+  //           if (concentricRef.current) {
+  //             // Toggle class based on scroll progress
+  //             concentricRef.current.classList.toggle(
+  //               "is-active",
+  //               self.progress > 0.7
+  //             );
+  //           }
+  //         },
+  //       },
+  //       y: "100vh",
+  //       ease: "power2.inOut",
+  //     });
+  //   }, compRef);
+
+  //   return () => ctx.revert(); // Perfect React cleanup
+  // }, []);
 
   return (
     <div ref={compRef} className="overflow-x-hidden w-full">

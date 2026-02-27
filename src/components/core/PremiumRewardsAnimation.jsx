@@ -181,7 +181,7 @@ const rightFadeEnd = rightVisible + cardStep * 2;
 
               <div
                 className="absolute flex items-center justify-center"
-                style={{ top: "15%", left: "10%", width: "80%", height: "70%" }}
+                style={{ top: "18%", left: "10%", width: "80%", height: "70%" }}
               >
                 <img
                   key={currentCardIndex}
