@@ -74,6 +74,7 @@
     --aqua-gradient-start: 200 98% 83%; /* #AAE1FE */
     --aqua-gradient-end: 182 100% 95%; /* #E6FFFD */
     --bg-gray: 0 0% 98%; /* #F8F8F8 */
+    --bg-aqua: 182, 59%, 54%;
 
     --bg-border-color: 0, 0%, 0%, 0.078;
     --bg-footer: 240, 3%, 13%;

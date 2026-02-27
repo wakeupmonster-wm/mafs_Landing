@@ -53,14 +53,14 @@
 //           from { transform: rotate(360deg); }
 //           to { transform: rotate(0deg); }
 //         }
-        
+
 //         /* Classes applied to the GROUP (<g>) inside SVG */
 //         .spin-content-cw {
 //           animation: spin-cw 10s linear infinite;
 //           animation-play-state: paused;
 //           will-change: transform; /* Critical for performance & preventing shake */
 //         }
-        
+
 //         .spin-content-ccw {
 //           animation: spin-ccw 10s linear infinite;
 //           animation-play-state: paused;

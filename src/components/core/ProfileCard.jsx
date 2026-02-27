@@ -654,17 +654,37 @@ export default function ProfileCard() {
         style={{
           borderRadius: "28px",
           overflow: "hidden",
+          background: "white",
           border: "4px solid white",
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          
+        }}
+        
+        className="shadow-lg"
+        
+      >
+
+       {/* <motion.div
+        initial="initial"
+        whileHover="hover"
+        style={{
+          width: "100%",
+          overflow: "hidden",
+          cursor: "pointer",
+          borderRadius: "28px",
+          // boxShadow: "0 5px 20px rgba(0,0,0,0.03)",
+          // border: "4px solid white",
           // outline: "2.5px solid rgba(200, 220, 230, 0.25)",
           backdropFilter: "blur(10px)",
           WebkitBackdropFilter: "blur(10px)",
-          // boxShadow: "0 8px 80px rgba(0,0,0,0.03)",
           height: "100%",
           display: "flex",
           flexDirection: "column",
         }}
         className="shadow-lg"
-      >
+      > */}
         <div
           style={{
             position: "relative",
@@ -677,19 +697,19 @@ export default function ProfileCard() {
             flex: "1 1 auto",
           }}
         >
-          {/* Gradient glow on hover */}
+          {/* Gradient glow on hover - Shifted Up & Seamless */}
           <motion.div
             variants={{
               initial: { opacity: 0 },
               hover: { opacity: 1 },
             }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
             style={{
               position: "absolute",
               inset: 0,
               pointerEvents: "none",
               background:
-                "radial-gradient(ellipse 8000% 45% at 50% 20%, rgba(113, 215, 254, 0.28) 0%, transparent 200%), radial-gradient(ellipse 70% 55% at 50% 50%, rgba(193, 244, 246, 0.08) 0%, transparent 100%)",
+                "linear-gradient(180deg, #A8F2F7 0%, #A8F2F7 5%, rgba(168, 242, 247, 0.6) 45%, rgba(168, 242, 247, 0.3) 65%, rgba(255, 255, 255, 0) 85%, #FFFFFF 100%)",
             }}
           />
 
@@ -697,21 +717,22 @@ export default function ProfileCard() {
           <motion.div
             style={{
               position: "absolute",
-              top: "50%",
+              top: "45%",
               left: "50%",
               zIndex: 20,
               pointerEvents: "none",
             }}
             variants={chipVariants}
-            custom={{ tx: "-100px", ty: "-130px" }}
+            custom={{ tx: "-100px", ty: "-100px" }}
           >
             <motion.div variants={floatVariants} custom={0}>
-              <svg width="34" height="34" viewBox="0 0 24 24" fill="none">
+              {/* <svg width="34" height="34" viewBox="0 0 24 24" fill="none">
                 <path
                   d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
                   fill="#71D7FE"
                 />
-              </svg>
+              </svg> */}
+              <img src="public/Verified badge.png" alt="" className="w-8 h-8" />
             </motion.div>
           </motion.div>
 
@@ -725,10 +746,10 @@ export default function ProfileCard() {
               pointerEvents: "none",
             }}
             variants={chipVariants}
-            custom={{ tx: "60px", ty: "-150px" }}
+            custom={{ tx: "60px", ty: "-120px" }}
           >
             <motion.div variants={floatVariants} custom={1}>
-              <div
+              {/* <div
                 style={{
                   background: "white",
                   padding: "10px 20px",
@@ -744,7 +765,8 @@ export default function ProfileCard() {
                 }}
               >
                 Music 🎵
-              </div>
+              </div> */}
+              <img src="/Frame 114.png" alt="" className="w-24 h-10" />
             </motion.div>
           </motion.div>
 
@@ -752,32 +774,16 @@ export default function ProfileCard() {
           <motion.div
             style={{
               position: "absolute",
-              top: "50%",
-              left: "50%",
+              top: "42%",
+              left: "45%",
               zIndex: 20,
               pointerEvents: "none",
             }}
             variants={chipVariants}
-            custom={{ tx: "-150px", ty: "60px" }}
+            custom={{ tx: "-150px", ty: "80px" }}
           >
             <motion.div variants={floatVariants} custom={2}>
-              <div
-                style={{
-                  background: "white",
-                  padding: "10px 20px",
-                  borderRadius: "100px",
-                  fontSize: "15px",
-                  fontWeight: 500,
-                  color: "#1a1a1a",
-                  boxShadow: "0 10px 25px rgba(0,0,0,0.06)",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "8px",
-                  border: "1px solid rgba(0,0,0,0.04)",
-                }}
-              >
-                Travel ✈️
-              </div>
+              <img src="/Frame 113.png" alt="" className="w-24 h-10" />
             </motion.div>
           </motion.div>
 
@@ -785,16 +791,16 @@ export default function ProfileCard() {
           <motion.div
             style={{
               position: "absolute",
-              top: "50%",
+              top: "43%",
               left: "50%",
               zIndex: 20,
               pointerEvents: "none",
             }}
             variants={chipVariants}
-            custom={{ tx: "45px", ty: "85px" }}
+            custom={{ tx: "45px", ty: "105px" }}
           >
             <motion.div variants={floatVariants} custom={3}>
-              <div
+              {/* <div
                 style={{
                   background: "white",
                   padding: "10px 20px",
@@ -810,7 +816,8 @@ export default function ProfileCard() {
                 }}
               >
                 Basketball 🏀
-              </div>
+              </div> */}
+              <img src="/Frame 115.png" alt="" className="w-28 h-10" />
             </motion.div>
           </motion.div>
 
@@ -818,18 +825,19 @@ export default function ProfileCard() {
           <motion.div
             style={{
               position: "absolute",
-              top: "50%",
-              left: "50%",
+              top: "45%",
+              left: "55%",
               zIndex: 20,
               pointerEvents: "none",
             }}
             variants={chipVariants}
-            custom={{ tx: "155px", ty: "15px" }}
+            custom={{ tx: "155px", ty: "35px" }}
           >
             <motion.div variants={floatVariants} custom={4}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="#a855f7">
+              {/* <svg width="24" height="24" viewBox="0 0 24 24" fill="#a855f7">
                 <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
-              </svg>
+              </svg> */}
+              <img src="/Vector (5).png" alt="" className="w-8 h-8" />
             </motion.div>
           </motion.div>
 
@@ -837,41 +845,36 @@ export default function ProfileCard() {
           <motion.div
             variants={{
               initial: { y: 60 },
-              hover: { y: -40, transition: { duration: 0.4, ease: "easeOut" } },
+              hover: { y: -2, transition: { duration: 0.4, ease: "easeOut" } },
             }}
-            style={{
-              position: "relative",
-              zIndex: 10,
-              background: "white",
-              borderRadius: "24px",
-              padding: "16px 20px",
-              display: "flex",
-              alignItems: "center",
-              gap: "16px",
-              width: "320px",
-              boxShadow: "0 15px 35px rgba(0,0,0,0.07)",
-              border: "1px solid rgba(0,0,0,0.02)",
-            }}
+          // style={{
+          //   position: "relative",
+          //   zIndex: 10,
+          //   background: "white",
+          //   borderRadius: "24px",
+          //   padding: "16px 20px",
+          //   display: "flex",
+          //   alignItems: "center",
+          //   gap: "16px",
+          //   width: "320px",
+          //   boxShadow: "0 15px 35px rgba(0,0,0,0.07)",
+          //   border: "1px solid rgba(0,0,0,0.02)",
+          // }}
           >
             <img
-              style={{
-                width: "68px",
-                height: "68px",
-                borderRadius: "50%",
-                objectFit: "cover",
-                border: "3px solid #71d7fe",
-              }}
-              src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=200"
+
+              src="/Frame 112.png"
               alt="Elizabeth"
+              className="w-92 h-36"
             />
-            <div>
+            {/* <div>
               <h3 style={{ margin: 0, fontSize: "20px", fontWeight: 700 }}>
                 Elizabeth (25)
               </h3>
               <p style={{ margin: "2px 0 0", color: "#777", fontSize: "15px" }}>
                 7 km away
               </p>
-            </div>
+            </div> */}
           </motion.div>
         </div>
 

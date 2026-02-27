@@ -25,9 +25,9 @@ export default function PeopleAnimation() {
   const textY = useTransform(scrollYProgress, [0.25, 0.45], [30, 0]);
 
   return (
-    <section className="w-full h-auto px-2 sm:px-6 md:px-10 lg:px-20 py-10 sm:py-16 md:py-20">
-      {/* Space above for scroll room */}
-      <div className="h-[30vh] sm:h-[40vh] md:h-[50vh]" />
+    <section className="w-full h-auto px-4 sm:px-6 md:px-10 lg:px-20 py-12 md:py-16">
+      {/* Space above for scroll room - Reduced for better feel */}
+      <div className="h-16 md:h-24 lg:h-32" />
 
       <main ref={sectionRef} className="mx-auto max-w-7xl h-auto">
         <div
@@ -120,8 +120,8 @@ export default function PeopleAnimation() {
         </div>
       </main>
 
-      {/* Space below */}
-      <div className="h-[30vh] sm:h-[40vh] md:h-[50vh]" />
+      {/* Space below - Reduced for better feel */}
+      <div className="h-16 md:h-24 lg:h-32" />
     </section>
   );
 }

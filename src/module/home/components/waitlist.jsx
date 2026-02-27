@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 
 
 import React, { useState } from "react";
@@ -27,7 +28,7 @@ const Waitlist = () => {
 
   return (
 
-    <section className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 md:py-10 lg:py-14 flex justify-center">
+    <section className="w-full pt-44 lg:pt-44 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 md:py-10 lg:py-14 flex justify-center">
       <div className="max-w-7xl w-full flex flex-col lg:flex-row items-start justify-center gap-6">
         {/* Left Side: Phone Mockup Container */}
         <div className="w-[280px] xs:w-[320px] sm:w-[350px] md:w-[380px] lg:w-[400px] xl:w-[450px] h-auto">

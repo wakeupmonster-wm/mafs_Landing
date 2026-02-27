@@ -67,6 +67,7 @@ export default {
           aqua: "hsl(var(--brand-aqua))",
           bg: "hsl(var(--bg-gray))",
         },
+        aqua: "hsl(var(--bg-aqua))",
         grey: {
           50: "hsl(var(--grey-50))",
           100: "hsl(var(--grey-100))",

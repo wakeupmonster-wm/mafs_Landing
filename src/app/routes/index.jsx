@@ -7,12 +7,24 @@ import TermsAndConditionsPage from "@/module/home/pages/terms-conditions.page";
 import FeaturesPage from "@/module/home/pages/features.page";
 import HowItWorksPage from "@/module/home/pages/how-it-works.page";
 import WaitlistPage from "@/module/home/pages/waitlist.page";
+// <<<<<<< HEAD
 import AboutPage from "@/module/home/pages/about.page";
+// =======
+import HomePage from "@/module/home/pages/home.page";
+import NewHome from "@/module/home/pages/NewHome";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+  },
+  {
+    path: "/home",
+    element: <HomePage />,
+  },
+  {
+    path: "/new",
+    element: <NewHome />,
   },
   {
     path: "/privacy",
