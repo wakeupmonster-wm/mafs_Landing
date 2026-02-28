@@ -560,7 +560,7 @@ const FeaturesPage = () => {
                 </div>
 
                 <div className="absolute bottom-0 left-0 right-0">
-                    <svg viewBox="0 0 1440 60" fill="none" className="w-full h-auto" preserveAspectRatio="none">
+                    <svg viewBox="0 0 1440 59.8" fill="none" className="w-full h-auto" preserveAspectRatio="none">
                         <path d="M0 60L60 52C120 44 240 28 360 22C480 16 600 20 720 26C840 32 960 40 1080 42C1200 44 1320 40 1380 38L1440 36V60H1380C1320 60 1200 60 1080 60C960 60 840 60 720 60C600 60 480 60 360 60C240 60 120 60 60 60H0Z" fill="#F0F1F3" />
                     </svg>
                 </div>

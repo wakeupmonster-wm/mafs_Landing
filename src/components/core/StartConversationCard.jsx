@@ -151,6 +151,7 @@ export default function StartConversationCard() {
               position: "absolute",
               zIndex: 30,
             }}
+            loading="lazy"
             variants={{
               initial: { x: 30, y: 20, scale: 0.9 },
               hover: { x: 160, y: 75, scale: 1, transition: smoothSpring },
@@ -176,6 +177,7 @@ export default function StartConversationCard() {
               alt=""
               style={{ width: "24px", height: "24px" }}
               variants={floatVariants}
+              loading="lazy"
               custom={1}
             />
           </motion.div>

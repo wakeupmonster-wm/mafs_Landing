@@ -5,12 +5,14 @@ import mafsphone from "@/assets/mafsphone.png";
 import QRcode from "@/assets/qrcode.png";
 import Border from "@/components/core/border";
 import JoinModal from "./JoinModal";
+import { useNavigate } from "react-router";
 
 const Waitlist = () => {
   const [isJoinModalOpen, setIsJoinModalOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -30,7 +32,12 @@ const Waitlist = () => {
       <div className="max-w-7xl w-full flex flex-col xl:flex-row items-center sm:items-start justify-center gap-6">
         {/* Left Side: Phone Mockup Container */}
         <div className="w-[310px] xs:w-[330px] sm:w-[350px] md:w-[380px] lg:w-[400px] xl:w-[450px] mx-auto h-auto">
-          <img src={mafsphone} alt="Phone Frame" className="w-full h-full" />
+          <img
+            src={mafsphone}
+            alt="Phone Frame"
+            className="w-full h-full"
+            loading="lazy"
+          />
         </div>
 
         {/* Right Side: Waitlist Card */}
@@ -45,7 +52,12 @@ const Waitlist = () => {
               <p className="text-base lg:text-lg text-gray-500 font-inter">
                 First 1000 users get 3 months free
               </p>
-              <button className="max-w-max bg-[#2cc1df] hover:bg-[#04def6] active:bg-[#0077A0] border-4 border-[#e0ecfe] text-white font-semibold sm:font-bold text-sm sm:text-base py-3 sm:py-4 px-6 sm:px-8 lg:px-10 rounded-full transition-all shadow-md sm:shadow-lg shadow-[#00B4D8]/20 sm:shadow-[#00B4D8]/30 transform hover:scale-105 active:scale-100">
+              <button
+                className="max-w-max text-white font-semibold sm:font-bold text-sm sm:text-base 
+                  py-3 sm:py-4 px-8 sm:px-10 rounded-full transition-all transform duration-600 hover:scale-105 active:scale-95 
+                  whitespace-nowrap bg-join-gradient border-4 border-[#F0F1F2] btn-shadow"
+                onClick={() => navigate("/waitlist")}
+              >
                 Join the Waitlist
               </button>
             </div>
@@ -56,6 +68,7 @@ const Waitlist = () => {
                 <img
                   src={QRcode}
                   alt="Join QR Code"
+                  loading="lazy"
                   className="w-full h-full object-contain border-[5px] border-white shadow-md rounded-[26px]"
                 />
               </div>

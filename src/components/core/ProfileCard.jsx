@@ -728,7 +728,12 @@ export default function ProfileCard() {
                   fill="#71D7FE"
                 />
               </svg> */}
-              <img src="public/Verified badge.png" alt="" className="w-8 h-8" />
+              <img
+                src="public/Verified badge.png"
+                alt=""
+                className="w-8 h-8"
+                loading="lazy"
+              />
             </motion.div>
           </motion.div>
 
@@ -762,7 +767,12 @@ export default function ProfileCard() {
               >
                 Music 🎵
               </div> */}
-              <img src="/Frame 114.png" alt="" className="w-24 h-10" />
+              <img
+                src="/Frame 114.png"
+                alt=""
+                className="w-24 h-10"
+                loading="lazy"
+              />
             </motion.div>
           </motion.div>
 
@@ -779,7 +789,12 @@ export default function ProfileCard() {
             custom={{ tx: "-150px", ty: "80px" }}
           >
             <motion.div variants={floatVariants} custom={2}>
-              <img src="/Frame 113.png" alt="" className="w-24 h-10" />
+              <img
+                src="/Frame 113.png"
+                alt=""
+                className="w-24 h-10"
+                loading="lazy"
+              />
             </motion.div>
           </motion.div>
 
@@ -813,7 +828,12 @@ export default function ProfileCard() {
               >
                 Basketball 🏀
               </div> */}
-              <img src="/Frame 115.png" alt="" className="w-28 h-10" />
+              <img
+                src="/Frame 115.png"
+                alt=""
+                className="w-28 h-10"
+                loading="lazy"
+              />
             </motion.div>
           </motion.div>
 
@@ -833,7 +853,12 @@ export default function ProfileCard() {
               {/* <svg width="24" height="24" viewBox="0 0 24 24" fill="#a855f7">
                 <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
               </svg> */}
-              <img src="/Vector (5).png" alt="" className="w-8 h-8" />
+              <img
+                src="/Vector (5).png"
+                alt=""
+                className="w-8 h-8"
+                loading="lazy"
+              />
             </motion.div>
           </motion.div>
 
@@ -857,7 +882,12 @@ export default function ProfileCard() {
             //   border: "1px solid rgba(0,0,0,0.02)",
             // }}
           >
-            <img src="/Frame 112.png" alt="Elizabeth" className="w-92 h-36" />
+            <img
+              src="/Frame 112.png"
+              alt="Elizabeth"
+              className="w-92 h-36"
+              loading="lazy"
+            />
             {/* <div>
               <h3 style={{ margin: 0, fontSize: "20px", fontWeight: 700 }}>
                 Elizabeth (25)

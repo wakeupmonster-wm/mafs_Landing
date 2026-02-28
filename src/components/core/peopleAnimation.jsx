@@ -66,6 +66,7 @@ export default function PeopleAnimation() {
                   <img
                     src="/image.png"
                     alt="Logo"
+                    loading="lazy"
                     className="mx-auto w-20 h-12 sm:w-24 sm:h-14 md:w-32 md:h-[72px] lg:w-36 lg:h-[86px]"
                   />
                   <h2
@@ -78,6 +79,7 @@ export default function PeopleAnimation() {
                     <span className="flex gap-1 sm:gap-2 items-center">
                       <img
                         src="/australiaIcon.png"
+                        loading="lazy"
                         className="w-[22px] h-[22px] sm:w-[28px] sm:h-[28px] md:w-[32px] md:h-[32px] lg:w-[35px] lg:h-[35px]"
                       />
                       Built for
@@ -168,17 +170,9 @@ function ScrollCard({
   const targetX = Math.cos(angle) * radius;
   const targetY = Math.sin(angle) * radius;
 
-  const x = useTransform(
-    scrollYProgress,
-    [cardStart, cardEnd],
-    [0, targetX]
-  );
+  const x = useTransform(scrollYProgress, [cardStart, cardEnd], [0, targetX]);
 
-  const y = useTransform(
-    scrollYProgress,
-    [cardStart, cardEnd],
-    [0, targetY]
-  );
+  const y = useTransform(scrollYProgress, [cardStart, cardEnd], [0, targetY]);
 
   // Smooth opacity - fade in gradually
   const opacity = useTransform(
@@ -230,8 +224,8 @@ function ScrollCard({
         <img
           src={img}
           alt={`User ${index}`}
-          className="h-full w-full rounded-[8px] sm:rounded-[10px] md:rounded-xl pointer-events-none object-cover"
           loading="lazy"
+          className="h-full w-full rounded-[8px] sm:rounded-[10px] md:rounded-xl pointer-events-none object-cover"
         />
       </div>
     </motion.div>

@@ -1,11 +1,5 @@
 export default function StarsBackground() {
   const stars = [
-    // {
-    //   top: "15%",
-    //   left: "8%",
-    //   size: "text-xl sm:text-2xl",
-    //   opacity: "text-white/30",
-    // },
     {
       top: "34%",
       left: "6%",

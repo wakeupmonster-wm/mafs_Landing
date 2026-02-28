@@ -41,13 +41,13 @@ export default function PremiumRewardsAnimation() {
     const rightFadeEnd = rightVisible + 70;
 
     const mask = `linear-gradient(to right,
-      transparent 0px,
-      transparent ${Math.max(0, leftFadeStart)}px,
-      black ${Math.max(0, leftVisible)}px,
-      black ${rightVisible}px,
-      transparent ${rightFadeEnd}px,
-      transparent 100%
-    )`;
+        transparent 0px,
+        transparent ${Math.max(0, leftFadeStart)}px,
+        black ${Math.max(0, leftVisible)}px,
+        black ${rightVisible}px,
+        transparent ${rightFadeEnd}px,
+        transparent 100%
+      )`;
 
     setMaskGradient(mask);
   }, []);
@@ -109,41 +109,33 @@ export default function PremiumRewardsAnimation() {
       <img
         src="/aqua-blurBg.png"
         alt=""
+        loading="lazy"
         className="absolute z-0 w-full h-[65rem]"
       />
-            
       <div className="absolute inset-0 flex flex-col">
-                {/* Header */}
-                
+        {/* Header */}
         <div className="relative z-20 px-8 py-12 text-center">
-                    
           <img
             src="/Light → Figure - Line Gradient → ZzXR4Xa701pprKwAZYChrznQWE.png.png"
             className="inline-block w-48 h-2 mb-6"
+            loading="lazy"
             alt=""
           />
-                    
           <h1 className="text-3xl font-sans md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
-                        A Little More Than Just             
+            A Little More Than Just
             <br />
-                        Matching           
+            Matching
           </h1>
-                    
           <p className="text-gray-600 text-sm md:text-base max-w-md mx-auto">
-                        Every Premium member is included in a daily reward
-                        
+            Every Premium member is included in a daily reward
             <br />
-                        draw, at no extra effort.           
+            draw, at no extra effort.
           </p>
-                  
         </div>
-                {/* Main Content */}
-                
+        {/* Main Content */}
         <div className="flex-1 flex items-center justify-center relative">
-                    {/* Cards Track */}
-                    
+          {/* Cards Track */}
           <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 z-0">
-                        
             <div
               ref={containerRef}
               className="mx-auto overflow-hidden"
@@ -153,75 +145,59 @@ export default function PremiumRewardsAnimation() {
                 WebkitMaskImage: maskGradient,
               }}
             >
-                            
               <div ref={trackRef} className="flex gap-6 will-change-transform">
-                                
                 {repeatedCards.map((card, index) => (
                   <div
                     key={index}
                     className="flex-shrink-0 w-20 h-32 sm:w-24 sm:h-32 md:w-24 md:h-32 flex items-center justify-center"
                   >
-                                        
                     <img
                       src={card.image}
                       alt=""
+                      loading="lazy"
                       className="w-full h-full object-contain"
                       draggable={false}
                     />
-                                      
                   </div>
                 ))}
-                              
               </div>
-                          
             </div>
-                      
           </div>
-                    {/* Phone Mockup */}
-                    
+          {/* Phone Mockup */}
           <div ref={phoneRef} className="relative z-10">
-                        
             <div className="relative">
-                            
               <img
                 className="md:w-80 md:h-[580px] sm:w-36 sm:h-[260px] w-52 h-[400px]"
                 src="/Phone → Phone (1).png"
                 alt="Phone mockup"
+                loading="lazy"
                 onLoad={calculateMask}
               />
-                            
               <div
                 className="absolute flex items-center justify-center"
                 style={{ top: "15%", left: "10%", width: "80%", height: "70%" }}
               >
-                                
                 <img
                   key={currentCardIndex}
                   src={cards[currentCardIndex].phoneImage}
+                  loading="lazy"
                   alt="Card image"
                   className="max-w-full h-32 ml-6 object-contain animate-fadeIn mb-[235px]"
                 />
-                              
               </div>
-                          
             </div>
-                      
           </div>
-                  
         </div>
-              
       </div>
-            
       <style>{`
-        @keyframes fadeIn {
-          from { opacity: 0; transform: scale(0.9); }
-          to { opacity: 1; transform: scale(1); }
-        }
-        .animate-fadeIn {
-          animation: fadeIn 0.3s ease-out forwards;
-        }
-      `}</style>
-          
+        @keyframes fadeIn {
+          from { opacity: 0; transform: scale(0.9); }
+          to { opacity: 1; transform: scale(1); }
+        }
+        .animate-fadeIn {
+              animation: fadeIn 0.3s ease-out forwards;
+        }
+      `}</style>
     </div>
   );
 }

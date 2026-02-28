@@ -114,6 +114,7 @@ export default function Dashboard() {
           src="/Light → Figure - Line Gradient → ZzXR4Xa701pprKwAZYChrznQWE.png.png"
           className="w-48 h-2 mb-6 mx-auto"
           alt=""
+          loading="lazy"
         />
         <div className="dashboard-header">
           <h1 className="!font-sans">How MATCH AT FIRST SWIPE Works</h1>
