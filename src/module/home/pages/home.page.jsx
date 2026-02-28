@@ -1,14 +1,4 @@
-// import React from "react";
-
-// const HomePage = () => {
-//   return (
-//     <div className="min-h-screen flex flex-col bg-aqua">MainHeroAnimation</div>
-//   );
-// };
-
-// export default HomePage;
-
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Header from "../components/core/Header";
@@ -22,6 +12,7 @@ export default function HomePage() {
   const compRef = useRef(null);
   const phoneRef = useRef(null);
   const concentricRef = useRef(null);
+    const [phoneArrived, setPhoneArrived] = useState(false);
 
   useEffect(() => {
   let ctx = gsap.context(() => {
@@ -35,7 +26,7 @@ export default function HomePage() {
           start: "top top",
           endTrigger: "#benefits-section",
           end: "center center",
-          scrub: 1,
+          scrub: 1.5,
           onUpdate: (self) => {
             if (concentricRef.current) {
               concentricRef.current.classList.toggle(
@@ -43,9 +34,12 @@ export default function HomePage() {
                 self.progress > 0.7
               );
             }
+             setPhoneArrived(self.progress > 0.75);
+            //  setPhoneArrived(self.progress > 0.95);
+
           },
         },
-        y: "100vh",
+        y: "110vh",
         ease: "power2.inOut",
       });
     });
@@ -66,9 +60,10 @@ export default function HomePage() {
                 self.progress > 0.82
               );
             }
+            setPhoneArrived(self.progress > 0.85);
           },
         },
-        y: "136vh",
+        y: "163vh",
         ease: "power2.inOut",
       });
     });
@@ -89,9 +84,10 @@ export default function HomePage() {
                 self.progress > 0.88
               );
             }
+             setPhoneArrived(self.progress > 0.86)
           },
         },
-        y: "150vh",
+        y: "170vh",
         ease: "power2.inOut",
       });
     });
@@ -144,16 +140,27 @@ export default function HomePage() {
 
         <StarsBackground />
         <Header />
-        <HeroContent phoneRef={phoneRef} />
+        <HeroContent phoneRef={phoneRef} phoneArrived={phoneArrived}/>
       </section>
 
       {/* ===== BENEFITS SECTION ===== */}
-      <section
+      {/* <section
         id="benefits-section"
         className="relative min-h-screen flex items-center justify-center py-16 sm:py-20 md:py-20 lg:py-32 overflow-hidden px-4"
       >
         <ConcentricCircles ref={concentricRef} />
-      </section>
+      </section> */}
+      <section
+  id="benefits-section"
+  className="relative flex items-center justify-center overflow-hidden px-4"
+  style={{
+    minHeight: "150vh", 
+    paddingTop: "15vh",
+    paddingBottom: "15vh",
+  }}
+>
+  <ConcentricCircles ref={concentricRef} phoneArrived={phoneArrived} />
+</section>
     </div>
   );
 }

@@ -9,7 +9,7 @@ const cards = [
 
 const REPEAT_COUNT = 10;
 const GAP = 24;
-const SPEED = 0.4;
+const SPEED = 1;
 
 export default function PremiumRewardsAnimation() {
   const [currentCardIndex, setCurrentCardIndex] = useState(0);

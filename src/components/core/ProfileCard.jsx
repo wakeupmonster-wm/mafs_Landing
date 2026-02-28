@@ -652,7 +652,7 @@ export default function ProfileCard() {
     <Border>
       <motion.div
         initial="initial"
-         animate={isActive ? "hover" : "initial"}
+        animate={isActive ? "hover" : "initial"}
         whileHover="hover"
         onTouchStart={() => setIsActive(true)}
         onTouchEnd={() => setIsActive(false)}
@@ -667,7 +667,6 @@ export default function ProfileCard() {
         }}
         className="shadow-lg"
       >
-        
         <div
           style={{
             position: "relative",
@@ -707,7 +706,10 @@ export default function ProfileCard() {
             }}
             variants={chipVariants}
             // custom={{ tx: "-100px", ty: "-100px" }}
-            custom={{ tx: "clamp(-90px, -8vw, -100px)", ty: "clamp(-95px, -8vw, -85px)" }}
+            custom={{
+              tx: "clamp(-90px, -8vw, -100px)",
+              ty: "clamp(-95px, -8vw, -85px)",
+            }}
           >
             <motion.div variants={floatVariants} custom={0}>
               {/* <svg width="34" height="34" viewBox="0 0 24 24" fill="none">
@@ -731,10 +733,12 @@ export default function ProfileCard() {
             }}
             variants={chipVariants}
             // custom={{ tx: "60px", ty: "-120px" }}
-            custom={{ tx: "clamp(28px, 5vw, 60px)", ty: "clamp(-115px, -9vw, -100px)" }}
+            custom={{
+              tx: "clamp(28px, 5vw, 60px)",
+              ty: "clamp(-115px, -9vw, -100px)",
+            }}
           >
             <motion.div variants={floatVariants} custom={1}>
-              
               <img src="/Frame 114.png" alt="" className="w-24 h-10" />
             </motion.div>
           </motion.div>
@@ -750,7 +754,10 @@ export default function ProfileCard() {
             }}
             variants={chipVariants}
             // custom={{ tx: "-150px", ty: "80px" }}
-            custom={{ tx: "clamp(-115px, -11vw, -150px)", ty: "clamp(80px, 6vw, 60px)" }}
+            custom={{
+              tx: "clamp(-115px, -11vw, -150px)",
+              ty: "clamp(80px, 6vw, 60px)",
+            }}
           >
             <motion.div variants={floatVariants} custom={2}>
               <img src="/Frame 113.png" alt="" className="w-24 h-10" />
@@ -768,10 +775,12 @@ export default function ProfileCard() {
             }}
             variants={chipVariants}
             // custom={{ tx: "45px", ty: "105px" }}
-            custom={{ tx: "clamp(12px, 4vw, 45px)", ty: "clamp(75px, 8vw, 105px)" }}
+            custom={{
+              tx: "clamp(12px, 4vw, 45px)",
+              ty: "clamp(75px, 8vw, 105px)",
+            }}
           >
             <motion.div variants={floatVariants} custom={3}>
-          
               <img src="/Frame 115.png" alt="" className="w-28 h-10" />
             </motion.div>
           </motion.div>
@@ -787,10 +796,12 @@ export default function ProfileCard() {
             }}
             variants={chipVariants}
             // custom={{ tx: "155px", ty: "35px" }}
-            custom={{ tx: "clamp(95px, 11vw, 143px)", ty: "clamp(18px, 3vw, 35px)" }}
+            custom={{
+              tx: "clamp(95px, 11vw, 143px)",
+              ty: "clamp(18px, 3vw, 35px)",
+            }}
           >
             <motion.div variants={floatVariants} custom={4}>
-            
               <img src="/Vector (5).png" alt="" className="w-8 h-8" />
             </motion.div>
           </motion.div>
@@ -801,23 +812,36 @@ export default function ProfileCard() {
               initial: { y: 60 },
               hover: { y: -2, transition: { duration: 0.4, ease: "easeOut" } },
             }}
-        
           >
             {/* <img src="/Frame 112.png" alt="Elizabeth" className="w-92 h-24 md:w-92 md:h-36" /> */}
-             <img
-    src="/Frame 112.png"
-    alt="Elizabeth"
-    className="w-60 h-44 sm:w-72 sm:h-24 md:w-80 md:h-28 lg:w-92 lg:h-36 object-contain"
-  />
-        
+            <img
+              src="/Frame 112.png"
+              alt="Elizabeth"
+              className="w-60 h-44 sm:w-72 sm:h-24 md:w-80 md:h-28 lg:w-92 lg:h-36 object-contain"
+            />
           </motion.div>
         </div>
+        <div className="px-6 py-6 sm:px-8 sm:py-7 md:px-10 md:py-8 lg:px-[32px] lg:py-[35px]">
+          <h2
+            className="text-[18px] sm:text-[22px] md:text-[26px] lg:text-[24px] font-extrabold text-[#222]"
+            style={{ margin: "0 0 1px" }}
+          >
+            Create Your Profile
+          </h2>
+          <p
+            className="text-[12px] sm:text-[13px] md:text-[14px] lg:text-[16px] text-[#707070] leading-relaxed"
+            style={{ margin: "2px" }}
+          >
+            Set up your profile in just a few minutes and choose what
+            you&apos;re looking for.
+          </p>
+        </div>
 
-        {/* <div style={{ padding: "35px 12px" }}>
+        {/* <div style={{ padding: "35px 40px" }}>
           <h2
             style={{
-              fontSize: "28px",
-              margin: "0 0 8px",
+              fontSize: "32px",
+              margin: "0 0 10px",
               fontWeight: 800,
               color: "#222",
             }}
@@ -836,7 +860,7 @@ export default function ProfileCard() {
             you&apos;re looking for.
           </p>
         </div> */}
-        <div className="px-3 py-5 sm:px-[12px] sm:py-[35px]">
+        {/* <div className="px-3 py-5 sm:px-[12px] sm:py-[35px]">
   <h2
     className="text-[18px] sm:text-[28px] font-extrabold text-[#222]"
     style={{ margin: "0 0 8px" }}
@@ -850,7 +874,7 @@ export default function ProfileCard() {
     Set up your profile in just a few minutes and choose what
     you&apos;re looking for.
   </p>
-</div>
+</div> */}
       </motion.div>
     </Border>
   );

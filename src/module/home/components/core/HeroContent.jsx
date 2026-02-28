@@ -1,4 +1,4 @@
-export default function HeroContent({ phoneRef }) {
+export default function HeroContent({ phoneRef , phoneArrived}) {
   return (
     <div className="relative z-20 w-full min-h-screen top-16 flex flex-col justify-center px-6 sm:px-8 md:px-10 lg:px-14 pt-24 pb-10">
       <div className="text-center mb-5 lg:mb-10">
@@ -41,15 +41,70 @@ export default function HeroContent({ phoneRef }) {
           alt="ellipse.png"
           className="absolute w-80 h-72 left-[450px] md:left-[460px] xl:left-[490px] top-72"
         />
-        <div className="flex justify-center items-end order-1 lg:order-2">
-          <div ref={phoneRef} className="pointer-events-none mt-10">
+        {/* <div className="flex justify-center items-end order-1 lg:order-2">
+      
+            <div ref={phoneRef} className="pointer-events-none mt-10 relative">
+            
             <img
               src="/Phone.png"
               alt="Phone"
               className="w-[140px] sm:w-[220px] md:w-[260px] lg:w-[280px] xl:w-[290px] drop-shadow-[0_25px_50px_rgba(5,5,5,0.70)]"
+              style={{
+                opacity: phoneArrived ? 0 : 1,
+                transition: "opacity 0.8s ease-in-out", // ✅ smooth fade
+                position: "relative",
+                zIndex: 2,
+              }}
+            />
+
+            <img
+              src="/After Scroll (1).png" 
+              alt="Phone New"
+              className="w-[140px] sm:w-[220px] md:w-[260px] lg:w-[280px] xl:w-[290px] drop-shadow-[0_25px_50px_rgba(5,5,5,0.70)]"
+              style={{
+                opacity: phoneArrived ? 1 : 0,
+                transition: "opacity 0.8s ease-in-out", 
+                position: "absolute",
+                top: 0,
+                left: 0,
+                zIndex: 1,
+              }}
             />
           </div>
-        </div>
+        </div> */}
+
+
+        {/* Middle (Phone) */}
+<div className="flex justify-center items-end order-1 lg:order-2">
+  <div ref={phoneRef} className="pointer-events-none mt-10 relative">
+    
+    {/* ✅ Phone 1 - fade out jab center pe aaye */}
+    <img
+      src="/Phone.png"
+      alt="Phone"
+      className="w-[140px] sm:w-[220px] md:w-[260px] lg:w-[280px] xl:w-[290px] drop-shadow-[0_25px_50px_rgba(5,5,5,0.70)]"
+      style={{
+        opacity: phoneArrived ? 0 : 1,
+        transition: "opacity 0.8s ease-in-out",
+        display: "block",
+      }}
+    />
+
+    {/* ✅ Phone 2 - fade in jab center pe aaye */}
+    <img
+      src="/After Scroll (1).png"
+      alt="Phone New"
+      className="w-[140px] sm:w-[220px] md:w-[260px] lg:w-[280px] xl:w-[290px] drop-shadow-[0_25px_50px_rgba(5,5,5,0.70)]"
+      style={{
+        opacity: phoneArrived ? 1 : 0,
+        transition: "opacity 0.8s ease-in-out",
+        position: "absolute",
+        top: 0,
+        left: 0,
+      }}
+    />
+  </div>
+</div>
 
         {/* Right Widget */}
         <div className="flex flex-col items-center lg:items-end text-center mb-14 gap-3 order-3">
