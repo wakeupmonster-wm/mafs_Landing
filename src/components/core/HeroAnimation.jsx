@@ -364,9 +364,6 @@
 //   );
 // }
 
-
-
-
 import { useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -456,6 +453,7 @@ export default function HeroAnimation() {
           <img
             src="/Background.png"
             alt="Hero Background"
+            loading="lazy"
             className="w-full h-full object-cover"
           />
         </div>
@@ -485,6 +483,7 @@ export default function HeroAnimation() {
           <img
             src="/Vector (4).png"
             alt="Logo"
+            loading="lazy"
             className="h-6 sm:h-7 md:h-8 lg:h-10 w-auto"
           />
         </div>
@@ -600,6 +599,7 @@ export default function HeroAnimation() {
                       src="/Frame 120.png"
                       className="w-6 h-6"
                       alt="App Store"
+                      loading="lazy"
                     />
                   </div>
                   <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">
@@ -607,6 +607,7 @@ export default function HeroAnimation() {
                       src="/Frame 121.png"
                       className="w-6 h-6"
                       alt="Play Store"
+                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -620,8 +621,7 @@ export default function HeroAnimation() {
           <div className="text-center mb-8 sm:mb-10 md:mb-14 lg:mb-16 xl:mb-20">
             <h1 className="text-[28px] xs:text-[34px] sm:text-[48px] md:text-[64px] lg:text-[80px] xl:text-[100px] font-black text-white tracking-tight leading-[0.92] mb-2 sm:mb-3 md:mb-4">
               MATCH AT
-              <br className="sm:hidden" />
-              {" "}FIRST SWIPE
+              <br className="sm:hidden" /> FIRST SWIPE
             </h1>
             <p className="text-white/90 text-xs sm:text-sm md:text-base lg:text-lg font-inter font-medium tracking-wide max-w-[90%] sm:max-w-none mx-auto">
               Australia's newest dating app with a spin
@@ -641,6 +641,7 @@ export default function HeroAnimation() {
                       src="/Frame 120.png"
                       className="w-5 h-5 sm:w-6 sm:h-6 md:w-10 md:h-10"
                       alt="App Store"
+                      loading="lazy"
                     />
                   </div>
                   <div className="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 bg-white rounded-full flex items-center justify-center shadow-lg hover:scale-105 transition-transform cursor-pointer">
@@ -648,6 +649,7 @@ export default function HeroAnimation() {
                       src="/Frame 121.png"
                       className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8"
                       alt="Play Store"
+                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -701,6 +703,7 @@ export default function HeroAnimation() {
                 <img
                   src="/Phone.png"
                   alt="Phone"
+                  loading="lazy"
                   className="w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] xl:w-[300px] drop-shadow-[0_25px_50px_rgba(0,0,0,0.15)]"
                 />
               </div>
@@ -723,6 +726,7 @@ export default function HeroAnimation() {
                 <img
                   src="/Image (6).png"
                   alt="QR Code"
+                  loading="lazy"
                   className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40 rounded-xl"
                 />
               </div>
@@ -752,6 +756,7 @@ export default function HeroAnimation() {
             <img
               src="/Pop-out 1.png"
               alt=""
+              loading="lazy"
               className="w-full h-10 sm:h-12 md:h-16 lg:h-20 xl:h-24"
             />
           </div>
@@ -761,6 +766,7 @@ export default function HeroAnimation() {
             <img
               src="/Pop-out 2.png"
               alt=""
+              loading="lazy"
               className="w-full h-10 sm:h-12 md:h-16 lg:h-20 xl:h-24"
             />
           </div>
@@ -770,6 +776,7 @@ export default function HeroAnimation() {
             <img
               src="/Pop-out 3.png"
               alt=""
+              loading="lazy"
               className="w-full h-10 sm:h-12 md:h-16 lg:h-20 xl:h-24"
             />
           </div>
@@ -779,6 +786,7 @@ export default function HeroAnimation() {
             <img
               src="/Pop-out 4.png"
               alt=""
+              loading="lazy"
               className="w-full h-10 sm:h-12 md:h-16 lg:h-20 xl:h-24"
             />
           </div>

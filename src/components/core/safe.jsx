@@ -102,6 +102,7 @@ export default function PremiumBenefitsCard() {
                 src="/Action=Like Matches, Filled=False, Component=Matches Action.png"
                 alt=""
                 style={{ width: "58px", height: "58px" }}
+                loading="lazy"
               />
             </div>
           </motion.div>
@@ -139,6 +140,7 @@ export default function PremiumBenefitsCard() {
                 src="/Action=Like Matches, Filled=False, Component=Matches Action (1).png"
                 alt=""
                 style={{ width: "58px", height: "58px" }}
+                loading="lazy"
               />
             </div>
           </motion.div>
@@ -176,6 +178,7 @@ export default function PremiumBenefitsCard() {
                 src="/Action=Like Matches, Filled=False, Component=Matches Action (2).png"
                 alt=""
                 style={{ width: "58px", height: "58px" }}
+                loading="lazy"
               />
             </div>
           </motion.div>

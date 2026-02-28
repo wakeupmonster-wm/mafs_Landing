@@ -1,63 +1,3 @@
-// // // import ProfileCard from "../components/core/ProfileCard"; // Aapka pehle wala card
-// // // import PremiumBenefitsCard from "../components/core/PremiumBenefitsCard"; // Naya wala card
-// // // import StartConversationCard from "../components/core/StartConversationCard";
-// // // import ExploreMatchesCard from "../components/core/ExploreMatchesCard";
-// // // export default function Dashboard() {
-// // //   return (
-// // //     <>
-// // //       <style>{`
-// // //         .main-wrapper {
-// // //           display: flex;
-// // //           justify-content: center;
-// // //           align-items: center;
-// // //           gap: 40px; /* Cards ke beech ka gap */
-// // //           min-height: 100vh;
-// // //           background-color: #f5f5f7;
-// // //           padding: 20px;
-// // //           flex-wrap: wrap; /* Mobile par cards upar-neeche ho jayein */
-// // //         }
-
-// // //         /* Dono cards ki width control karne ke liye */
-// // //         .card-column {
-// // //           flex: 1;
-// // //           max-width: 480px;
-// // //           display: flex;
-// // //           justify-content: center;
-// // //         }
-// // //         .wide-card {
-// // //   max-width: 900px;   /* yahan jitni chahiye utni */
-// // //     }
-
-// // //         @media (max-width: 1024px) {
-// // //           .main-wrapper {
-// // //             gap: 20px;
-// // //           }
-// // //         }
-// // //       `}</style>
-
-// // //       <div className="main-wrapper">
-// // //         <div className="card-column">
-// // //           <ProfileCard />
-// // //         </div>
-// // //           <div className="card-column">
-// // //           <ExploreMatchesCard />
-// // //         </div>
-
-// // //       </div>
-// // //        <div className="main-wrapper">
-// // //         <div className="card-column">
-// // //           <StartConversationCard />
-// // //         </div>
-
-// // //         <div className="card-column">
-// // //           <PremiumBenefitsCard />
-// // //         </div>
-// // //       </div>
-// // //     </>
-// // //   );
-// // // }
-
-
 import ProfileCard from "../components/core/ProfileCard";
 import ExploreMatchesCard from "../components/core/ExploreMatchesCard";
 import StartConversationCard from "../components/core/StartConversationCard";
@@ -118,23 +58,23 @@ export default function Dashboard() {
 
         /* Row 1: SMALL left, BIG right */
         .profile { 
-          grid-column: 1 / 6; /* 3 columns = SMALL */
+          grid-column: 1 / 5; /* 3 columns = SMALL */
           grid-row: 1;
         }
         
         .explore { 
-          grid-column: 6 / 12; /* 7 columns = BIG */
+          grid-column: 5 / 12; /* 7 columns = BIG */
           grid-row: 1;
         }
         
         /* Row 2: BIG left, SMALL right - DIAGONAL! */
         .start { 
-          grid-column: 1 / 7; /* 6 columns = BIG */
+          grid-column: 1 / 6; /* 6 columns = BIG */
           grid-row: 2;
         }
         
         .premium { 
-          grid-column: 7 / 11; /* 4 columns = SMALL */
+          grid-column: 6 / 12; /* 4 columns = SMALL */
           grid-row: 2;
         }
 
@@ -174,6 +114,7 @@ export default function Dashboard() {
           src="/Light → Figure - Line Gradient → ZzXR4Xa701pprKwAZYChrznQWE.png.png"
           className="w-48 h-2 mb-6 mx-auto"
           alt=""
+          loading="lazy"
         />
         <div className="dashboard-header">
           <h1 className="!font-sans">How MATCH AT FIRST SWIPE Works</h1>

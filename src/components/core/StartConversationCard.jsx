@@ -44,7 +44,7 @@ export default function StartConversationCard() {
         <div
           style={{
             position: "relative",
-            height: "325px",
+            height: "360px",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -151,6 +151,7 @@ export default function StartConversationCard() {
               position: "absolute",
               zIndex: 30,
             }}
+            loading="lazy"
             variants={{
               initial: { x: 30, y: 20, scale: 0.9 },
               hover: { x: 160, y: 75, scale: 1, transition: smoothSpring },
@@ -176,6 +177,7 @@ export default function StartConversationCard() {
               alt=""
               style={{ width: "24px", height: "24px" }}
               variants={floatVariants}
+              loading="lazy"
               custom={1}
             />
           </motion.div>
@@ -229,8 +231,8 @@ export default function StartConversationCard() {
           </h2>
           <p
             style={{
-              color: "#6b6b6b",
-              marginTop: "4px",
+              color: "#707070",
+              marginTop: "2px",
               fontSize: "16px",
               lineHeight: 1.6,
             }}

@@ -37,7 +37,10 @@ const FAQAccordion = () => {
   };
 
   return (
-    <div className="min-h-screen pt-44 md:pt-96 md:px-4 sm:px-6 lg:px-8" id="faq-section">
+    <div
+      className="min-h-screen pt-44 md:pt-96 md:px-4 sm:px-6 lg:px-8"
+      id="faq-section"
+    >
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Section - Title and Description */}
@@ -46,7 +49,11 @@ const FAQAccordion = () => {
               {/* Decorative accent */}
               {/* <div className="absolute -top-4 left-0 w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"></div> */}
 
-              <img src="/3a7805e8d1f06e0e2c0b22ed0359b0ef6faa8399.png" alt="" />
+              <img
+                src="/3a7805e8d1f06e0e2c0b22ed0359b0ef6faa8399.png"
+                alt=""
+                loading="lazy"
+              />
               <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 mt-8 mb-6 leading-tight">
                 Answers to Your Top Questions
               </h1>
@@ -88,8 +95,9 @@ const FAQAccordion = () => {
 
                     <div className="flex-shrink-0">
                       <div
-                        className={`w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-100 to-blue-100 flex items-center justify-center transition-transform duration-300 ${openIndex === index ? "rotate-45" : ""
-                          }`}
+                        className={`w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-100 to-blue-100 flex items-center justify-center transition-transform duration-300 ${
+                          openIndex === index ? "rotate-45" : ""
+                        }`}
                       >
                         <svg
                           className="w-5 h-5 text-cyan-600"
@@ -109,10 +117,11 @@ const FAQAccordion = () => {
                   </button>
 
                   <div
-                    className={`overflow-hidden transition-all duration-300 ${openIndex === index
-                      ? "max-h-96 opacity-100"
-                      : "max-h-0 opacity-0"
-                      }`}
+                    className={`overflow-hidden transition-all duration-300 ${
+                      openIndex === index
+                        ? "max-h-96 opacity-100"
+                        : "max-h-0 opacity-0"
+                    }`}
                   >
                     <div className="px-6 pb-6 pt-2">
                       <p
