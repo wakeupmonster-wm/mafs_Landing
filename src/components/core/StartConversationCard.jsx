@@ -558,7 +558,7 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import Border from "./border";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const smoothSpring = {
   type: "spring",
@@ -583,15 +583,40 @@ export default function StartConversationCard() {
   // ✅ Sirf mobile ke liye
   const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
   const [activeState, setActiveState] = useState(false);
+  const cardRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveState(true);  // ✅ visible hua
+          } else {
+            setActiveState(false); // ✅ screen se gaya
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <Border>
       <motion.div
+       ref={cardRef}
         initial="initial"
          animate={activeState ? "hover" : "initial"}
         whileHover="hover"
-         onTouchStart={() => setActiveState(true)}   // ✅ mobile touch start
-        onTouchEnd={() => setActiveState(false)}
+        //  onTouchStart={() => setActiveState(true)}   // ✅ mobile touch start
+        // onTouchEnd={() => setActiveState(false)}
+        onPointerEnter={() => setActiveState(true)}
+        onPointerLeave={() => setActiveState(false)}
         className="shadow-lg"
         style={{
           width: "100%",

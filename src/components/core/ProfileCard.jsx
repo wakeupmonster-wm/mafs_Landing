@@ -606,7 +606,7 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import Border from "./border";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const smoothSpring = {
   type: "spring",
@@ -648,14 +648,39 @@ const floatVariants = {
 
 export default function ProfileCard() {
   const [isActive, setIsActive] = useState(false);
+  const cardRef = useRef(null);
+
+    useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsActive(true);  // ✅ visible hua - animate start
+          } else {
+            setIsActive(false); // ✅ screen se gaya - animate stop
+          }
+        });
+      },
+      { threshold: 0.5 } // ✅ 50% visible hone par trigger
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
   return (
     <Border>
       <motion.div
+      ref={cardRef}
         initial="initial"
         animate={isActive ? "hover" : "initial"}
         whileHover="hover"
-        onTouchStart={() => setIsActive(true)}
-        onTouchEnd={() => setIsActive(false)}
+         onPointerEnter={() => setIsActive(true)}
+        onPointerLeave={() => setIsActive(false)}
+        // onTouchStart={() => setIsActive(true)}
+        // onTouchEnd={() => setIsActive(false)}
         style={{
           borderRadius: "28px",
           overflow: "hidden",

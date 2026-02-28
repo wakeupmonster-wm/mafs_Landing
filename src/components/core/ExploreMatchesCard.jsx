@@ -249,7 +249,7 @@
 
 
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Border from "./border";
 
 const images = [
@@ -273,11 +273,52 @@ export default function ExploreMatchesCard() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [delayedIndex, setDelayedIndex] = useState(1);
   const [isHovered, setIsHovered] = useState(false);
-  const [isExiting, setIsExiting] = useState(false);
-   const [activeState, setActiveState] = useState(false);
+  // const [isExiting, setIsExiting] = useState(false);
+  //  const [activeState, setActiveState] = useState(false);
+    const cardRef = useRef(null);
 
    const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
 
+
+    useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // ✅ Card visible hua - animation start karo
+            setIsHovered(true);
+          } else {
+            // ✅ Card screen se gaya - animation band karo
+            setIsHovered(false);
+          }
+        });
+      },
+      {
+        threshold: 0.5, // ✅ 50% card visible hone par trigger
+      }
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  // ✅ Cards auto change karo
+  useEffect(() => {
+    let interval;
+    if (isHovered) {
+      interval = setInterval(() => {
+        setTimeout(() => {
+          setCurrentIndex((prev) => (prev + 1) % images.length);
+        }, 850);
+      }, 3500);
+    }
+    return () => clearInterval(interval);
+  }, [isHovered]);
+
+  // ✅ Delayed index
   useEffect(() => {
     const next = (currentIndex + 1) % images.length;
     const timer = setTimeout(() => {
@@ -286,23 +327,36 @@ export default function ExploreMatchesCard() {
     return () => clearTimeout(timer);
   }, [currentIndex]);
 
-  useEffect(() => {
-    let interval;
-    if (isHovered) {
-      interval = setInterval(() => {
-        setIsExiting(true);
-        setTimeout(() => {
-          setCurrentIndex((prev) => (prev + 1) % images.length);
-          setIsExiting(false);
-        }, 850);
-      }, 3500);
-    }
-    return () => clearInterval(interval);
-  }, [isHovered]);
+
+
+
+
+  // useEffect(() => {
+  //   const next = (currentIndex + 1) % images.length;
+  //   const timer = setTimeout(() => {
+  //     setDelayedIndex(next);
+  //   }, 1000);
+  //   return () => clearTimeout(timer);
+  // }, [currentIndex]);
+
+  // useEffect(() => {
+  //   let interval;
+  //   if (isHovered) {
+  //     interval = setInterval(() => {
+  //       setIsExiting(true);
+  //       setTimeout(() => {
+  //         setCurrentIndex((prev) => (prev + 1) % images.length);
+  //         setIsExiting(false);
+  //       }, 850);
+  //     }, 3500);
+  //   }
+  //   return () => clearInterval(interval);
+  // }, [isHovered]);
 
   return (
     <Border>
       <motion.div
+      ref={cardRef}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         //  onMouseEnter={() => setActiveState(true)}
