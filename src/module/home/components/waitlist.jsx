@@ -77,8 +77,6 @@
 
 // export default Waitlist;
 
-
-
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom"; // ✅ URL params
@@ -119,10 +117,10 @@ const Waitlist = () => {
   };
 
   return (
-    <section className="w-full pt-18 md:pt-44 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-20 md:py-16 lg:py-44 flex justify-center">
+    <section className="wrapper w-full flex justify-center">
       <div className="max-w-7xl w-full flex flex-col xl:flex-row items-center sm:items-start justify-center gap-6">
         {/* Left Side: Phone Mockup */}
-        <div className="w-[310px] xs:w-[330px] sm:w-[350px] md:w-[380px] lg:w-[400px] xl:w-[450px] mx-auto h-auto">
+        <div className="w-[310px] xs:w-[330px] sm:w-[350px] md:w-[380px] lg:w-[400px] xl:w-[450px] mx-auto h-full">
           <img
             src={mafsphone}
             alt="Phone Frame"
@@ -147,7 +145,8 @@ const Waitlist = () => {
               {/* ✅ Button pe bhi modal open */}
               <button
                 onClick={() => setIsJoinModalOpen(true)}
-                className="max-w-max bg-[#2cc1df] hover:bg-[#04def6] active:bg-[#0077A0] border-4 border-[#e0ecfe] text-white font-semibold sm:font-bold text-sm sm:text-base py-3 sm:py-4 px-6 sm:px-8 lg:px-10 rounded-full transition-all shadow-md sm:shadow-lg shadow-[#00B4D8]/20 sm:shadow-[#00B4D8]/30 transform hover:scale-105 active:scale-100"
+                className="max-w-max text-white font-medium font-inter text-sm sm:text-base py-3 sm:py-4 px-6 sm:px-8 rounded-full transition-all 
+                transform duration-600 hover:scale-105 active:scale-95 whitespace-nowrap bg-join-gradient border-4 border-[#cfe0f7ed] btn-shadow"
               >
                 Join the Waitlist
               </button>

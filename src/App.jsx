@@ -27,8 +27,6 @@
 //   );
 // }
 
-
-
 import { Routes, Route } from "react-router-dom";
 import FAQAccordion from "./components/core/FAQAccordion";
 import PeopleAnimation from "./components/core/peopleAnimation";
@@ -61,8 +59,8 @@ export default function App() {
       <Route path="/" element={<MainLayout />} />
 
       {/* ✅ Waitlist form page - QR scan karne par yahan aayega */}
-      <Route path="/waitlist" element={<Waitlist/>} />
-       <Route path="/join" element={<WaitlistPage />} />
+      <Route path="/waitlist" element={<Waitlist />} />
+      <Route path="/join" element={<WaitlistPage />} />
     </Routes>
   );
 }

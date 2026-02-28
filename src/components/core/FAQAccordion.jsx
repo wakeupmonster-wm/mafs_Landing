@@ -140,7 +140,6 @@
 // };
 // export default FAQAccordion;
 
-
 import React, { useState } from "react";
 import Border from "./border";
 
@@ -180,17 +179,20 @@ const FAQAccordion = () => {
   };
 
   return (
-    <div className="min-h-screen pt-44 md:pt-96 md:px-4 sm:px-6 lg:px-8" id="faq-section">
+    <div className="wrapper pt-44 md:pt-0 lg:pt-32" id="faq-section">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start px-4">
           {/* Left Section - Title and Description */}
           <div className="lg:sticky lg:top-16">
             <div className="relative">
               {/* Decorative accent */}
               {/* <div className="absolute -top-4 left-0 w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"></div> */}
 
-              <img src="/3a7805e8d1f06e0e2c0b22ed0359b0ef6faa8399.png" alt="" />
+              <img
+                src="/3a7805e8d1f06e0e2c0b22ed0359b0ef6faa8399.png"
+                alt=""
+                loading="lazy"
+              />
               <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 mt-8 mb-6 leading-tight">
                 Answers to Your Top Questions
               </h1>
@@ -235,8 +237,9 @@ const FAQAccordion = () => {
                     {/* Toggle icon */}
                     <div className="flex-shrink-0">
                       <div
-                        className={`w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-100 to-blue-100 flex items-center justify-center transition-transform duration-300 ${openIndex === index ? "rotate-45" : ""
-                          }`}
+                        className={`w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-100 to-blue-100 flex items-center justify-center transition-transform duration-300 ${
+                          openIndex === index ? "rotate-45" : ""
+                        }`}
                       >
                         <svg
                           className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-600"

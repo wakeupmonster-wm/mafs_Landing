@@ -55,7 +55,7 @@ const WaitlistPage = () => {
         {/* Bottom Wave SVG to match the theme */}
         <div className="absolute bottom-0 left-0 right-0 leading-[0] overflow-hidden">
           <svg
-            viewBox="0 0 1440 59.5"
+            viewBox="0 0 1440 59.2"
             fill="none"
             preserveAspectRatio="none"
             className="w-full h-auto"

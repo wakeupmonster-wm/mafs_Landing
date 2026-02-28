@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 export default function StarsBackground() {
   const stars = [
     {
@@ -52,7 +54,12 @@ export default function StarsBackground() {
           transition={{
             // ✅ Entry transition
             opacity: { duration: 0.8, delay: star.delay },
-            scale: { duration: 0.8, delay: star.delay, type: "spring", stiffness: 200 },
+            scale: {
+              duration: 0.8,
+              delay: star.delay,
+              type: "spring",
+              stiffness: 200,
+            },
             rotate: { duration: 0.8, delay: star.delay },
             // ✅ Continuous loop
             y: {

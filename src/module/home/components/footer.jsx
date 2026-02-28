@@ -116,7 +116,7 @@ const Footer = () => {
         <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 text-gray-500">
           {/* Copyright */}
           <p className="font-['Inter'] font-normal text-[16px] leading-[24px] align-middle text-center sm:text-left order-2 sm:order-1">
-            © 2025 MATCH AT FIRST SWIPE.
+            {`© ${new Date().getFullYear()} MATCH AT FIRST SWIPE.`}
           </p>
 
           {/* Built for Australia */}
