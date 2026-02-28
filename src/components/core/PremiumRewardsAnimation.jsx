@@ -9,7 +9,7 @@ const cards = [
 
 const REPEAT_COUNT = 10;
 const GAP = 24;
-const SPEED = 0.6;
+const SPEED = 0.4;
 
 export default function PremiumRewardsAnimation() {
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
@@ -75,17 +75,57 @@ const rightFadeEnd = rightVisible + cardStep * 2;
     const track = trackRef.current;
     if (!track || !track.children[0]) return;
 
-    const cardW = track.children[0].offsetWidth;
-    const cardStep = cardW + GAP;
-    const oneSetWidth = cards.length * cardStep;
-
     let x = 0;
+    let lastIndex = -1;
 
     const animate = () => {
+      // ✅ Har frame pe fresh card width lo - mobile resize ke liye
+      const cardW = track.children[0].offsetWidth;
+      const cardStep = cardW + GAP;
+      const oneSetWidth = cards.length * cardStep;
+
       x -= SPEED;
 
-      const newIndex = Math.floor(Math.abs(x) / cardStep) % cards.length;
-      if (newIndex !== currentIndexRef.current) {
+      // ✅ Phone ki position ke relative card calculate karo
+      const phone = phoneRef.current;
+      const container = containerRef.current;
+
+      let newIndex = 0;
+
+      if (phone && container) {
+        const phoneRect = phone.getBoundingClientRect();
+        const containerRect = container.getBoundingClientRect();
+        const phoneCenterX = phoneRect.left + phoneRect.width / 2 - containerRect.left;
+
+        // ✅ Track ke andar kaun sa card phone ke center pe hai
+        const trackChildren = Array.from(track.children);
+        let closestIndex = 0;
+        let closestDistance = Infinity;
+
+        trackChildren.forEach((child, i) => {
+          const childRect = child.getBoundingClientRect();
+          const childCenterX = childRect.left + childRect.width / 2 - containerRect.left;
+          const distance = Math.abs(childCenterX - phoneCenterX);
+
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closestIndex = i % cards.length;
+          }
+        });
+
+//         if (closestDistance < 1) {
+//   newIndex = closestIndex;
+// } else {
+//   newIndex = lastIndex === -1 ? 0 : lastIndex; // pehle wala rakho
+// }
+
+        newIndex = closestIndex;
+      } else {
+        newIndex = Math.floor(Math.abs(x) / cardStep) % cards.length;
+      }
+
+      if (newIndex !== lastIndex) {
+        lastIndex = newIndex;
         currentIndexRef.current = newIndex;
         setCurrentCardIndex(newIndex);
       }
@@ -103,6 +143,39 @@ const rightFadeEnd = rightVisible + cardStep * 2;
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
   }, []);
+
+  // useEffect(() => {
+  //   const track = trackRef.current;
+  //   if (!track || !track.children[0]) return;
+
+  //   const cardW = track.children[0].offsetWidth;
+  //   const cardStep = cardW + GAP;
+  //   const oneSetWidth = cards.length * cardStep;
+
+  //   let x = 0;
+
+  //   const animate = () => {
+  //     x -= SPEED;
+
+  //     const newIndex = Math.floor(Math.abs(x) / cardStep) % cards.length;
+  //     if (newIndex !== currentIndexRef.current) {
+  //       currentIndexRef.current = newIndex;
+  //       setCurrentCardIndex(newIndex);
+  //     }
+
+  //     if (Math.abs(x) >= oneSetWidth) {
+  //       x += oneSetWidth;
+  //     }
+
+  //     track.style.transform = `translate3d(${x}px, 0, 0)`;
+  //     rafRef.current = requestAnimationFrame(animate);
+  //   };
+
+  //   rafRef.current = requestAnimationFrame(animate);
+  //   return () => {
+  //     if (rafRef.current) cancelAnimationFrame(rafRef.current);
+  //   };
+  // }, []);
 
   const repeatedCards = Array.from(
     { length: REPEAT_COUNT },
@@ -179,10 +252,19 @@ const rightFadeEnd = rightVisible + cardStep * 2;
                 onLoad={calculateMask}
               />
 
-              <div
+              {/* <div
                 className="absolute flex items-center justify-center"
                 style={{ top: "18%", left: "10%", width: "80%", height: "70%" }}
-              >
+              > */}
+              <div
+  className="absolute flex items-center justify-center"
+  style={{
+    top: window.innerWidth < 640 ? "24%" : "16%",
+    left: window.innerWidth < 640 ? "25%" : "10%",
+    width: window.innerWidth < 640 ? "50%" : "80%",
+    height: "70%"
+  }}
+>
                 <img
                   key={currentCardIndex}
                   src={cards[currentCardIndex].phoneImage}

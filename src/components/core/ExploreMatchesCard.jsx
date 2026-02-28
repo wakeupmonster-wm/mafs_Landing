@@ -276,6 +276,8 @@ export default function ExploreMatchesCard() {
   const [isExiting, setIsExiting] = useState(false);
    const [activeState, setActiveState] = useState(false);
 
+   const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
+
   useEffect(() => {
     const next = (currentIndex + 1) % images.length;
     const timer = setTimeout(() => {
@@ -306,8 +308,8 @@ export default function ExploreMatchesCard() {
         //  onMouseEnter={() => setActiveState(true)}
         // onMouseLeave={() => setActiveState(false)}
         // ✅ Mobile touch
-        onTouchStart={() => setActiveState(true)}
-        onTouchEnd={() => setActiveState(false)}
+        onTouchStart={() => setIsHovered(true)}
+        onTouchEnd={() => setIsHovered(false)}
         style={{
           width: "100%",
           borderRadius: "28px",
@@ -348,7 +350,7 @@ export default function ExploreMatchesCard() {
           {/* ── BACK CARD ── */}
           <motion.div
             className="
-              absolute rounded-[15px] bg-cover bg-center
+              absolute  bg-cover bg-center
               w-[100px] h-[175px]
               sm:w-[130px] sm:h-[225px]
               md:w-[145px] md:h-[255px]
@@ -372,7 +374,7 @@ export default function ExploreMatchesCard() {
             <motion.div
               key={currentIndex}
               className="
-                absolute rounded-[15px] bg-cover bg-center
+                absolute  bg-cover bg-center
                 flex flex-col justify-end
                 w-[100px] h-[175px]
                 sm:w-[130px] sm:h-[225px]
@@ -388,7 +390,8 @@ export default function ExploreMatchesCard() {
               initial={{ rotate: 0, x: 0, opacity: 1, scale: 1 }}
               animate={
                 isHovered
-                  ? { rotate: 16, x: 100, scale: 1, opacity: 1 }
+                  // ? { rotate: 16, x: 100, scale: 1, opacity: 1 }
+                  ? { rotate: isMobile ? 10 : 16, x: isMobile ? 70 : 100, scale: 1, opacity: 1 }
                   : { rotate: 0, x: 0, scale: 1, opacity: 1 }
               }
               exit={{
