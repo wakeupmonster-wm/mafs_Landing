@@ -606,6 +606,7 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import Border from "./border";
+import { useEffect, useRef, useState } from "react";
 
 const smoothSpring = {
   type: "spring",
@@ -646,11 +647,40 @@ const floatVariants = {
 };
 
 export default function ProfileCard() {
+  const [isActive, setIsActive] = useState(false);
+  const cardRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsActive(true); // ✅ visible hua - animate start
+          } else {
+            setIsActive(false); // ✅ screen se gaya - animate stop
+          }
+        });
+      },
+      { threshold: 0.5 } // ✅ 50% visible hone par trigger
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
   return (
     <Border>
       <motion.div
+        ref={cardRef}
         initial="initial"
+        animate={isActive ? "hover" : "initial"}
         whileHover="hover"
+        onPointerEnter={() => setIsActive(true)}
+        onPointerLeave={() => setIsActive(false)}
+        // onTouchStart={() => setIsActive(true)}
+        // onTouchEnd={() => setIsActive(false)}
         style={{
           borderRadius: "28px",
           overflow: "hidden",
@@ -662,25 +692,6 @@ export default function ProfileCard() {
         }}
         className="shadow-lg"
       >
-        {/* <motion.div
-        initial="initial"
-        whileHover="hover"
-        style={{
-          width: "100%",
-          overflow: "hidden",
-          cursor: "pointer",
-          borderRadius: "28px",
-          // boxShadow: "0 5px 20px rgba(0,0,0,0.03)",
-          // border: "4px solid white",
-          // outline: "2.5px solid rgba(200, 220, 230, 0.25)",
-          backdropFilter: "blur(10px)",
-          WebkitBackdropFilter: "blur(10px)",
-          height: "100%",
-          display: "flex",
-          flexDirection: "column",
-        }}
-        className="shadow-lg"
-      > */}
         <div
           style={{
             position: "relative",
@@ -719,7 +730,11 @@ export default function ProfileCard() {
               pointerEvents: "none",
             }}
             variants={chipVariants}
-            custom={{ tx: "-100px", ty: "-100px" }}
+            // custom={{ tx: "-100px", ty: "-100px" }}
+            custom={{
+              tx: "clamp(-90px, -8vw, -100px)",
+              ty: "clamp(-95px, -8vw, -85px)",
+            }}
           >
             <motion.div variants={floatVariants} custom={0}>
               {/* <svg width="34" height="34" viewBox="0 0 24 24" fill="none">
@@ -729,7 +744,7 @@ export default function ProfileCard() {
                 />
               </svg> */}
               <img
-                src="public/Verified badge.png"
+                src="/Verified badge.png"
                 alt=""
                 className="w-8 h-8"
                 loading="lazy"
@@ -747,32 +762,14 @@ export default function ProfileCard() {
               pointerEvents: "none",
             }}
             variants={chipVariants}
-            custom={{ tx: "60px", ty: "-120px" }}
+            // custom={{ tx: "60px", ty: "-120px" }}
+            custom={{
+              tx: "clamp(28px, 5vw, 60px)",
+              ty: "clamp(-115px, -9vw, -100px)",
+            }}
           >
             <motion.div variants={floatVariants} custom={1}>
-              {/* <div
-                style={{
-                  background: "white",
-                  padding: "10px 20px",
-                  borderRadius: "100px",
-                  fontSize: "15px",
-                  fontWeight: 500,
-                  color: "#1a1a1a",
-                  boxShadow: "0 10px 25px rgba(0,0,0,0.06)",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "8px",
-                  border: "1px solid rgba(0,0,0,0.04)",
-                }}
-              >
-                Music 🎵
-              </div> */}
-              <img
-                src="/Frame 114.png"
-                alt=""
-                className="w-24 h-10"
-                loading="lazy"
-              />
+              <img src="/Frame 114.png" alt="" className="w-24 h-10" />
             </motion.div>
           </motion.div>
 
@@ -786,7 +783,11 @@ export default function ProfileCard() {
               pointerEvents: "none",
             }}
             variants={chipVariants}
-            custom={{ tx: "-150px", ty: "80px" }}
+            // custom={{ tx: "-150px", ty: "80px" }}
+            custom={{
+              tx: "clamp(-115px, -11vw, -150px)",
+              ty: "clamp(80px, 6vw, 60px)",
+            }}
           >
             <motion.div variants={floatVariants} custom={2}>
               <img
@@ -808,32 +809,14 @@ export default function ProfileCard() {
               pointerEvents: "none",
             }}
             variants={chipVariants}
-            custom={{ tx: "45px", ty: "105px" }}
+            // custom={{ tx: "45px", ty: "105px" }}
+            custom={{
+              tx: "clamp(12px, 4vw, 45px)",
+              ty: "clamp(75px, 8vw, 105px)",
+            }}
           >
             <motion.div variants={floatVariants} custom={3}>
-              {/* <div
-                style={{
-                  background: "white",
-                  padding: "10px 20px",
-                  borderRadius: "100px",
-                  fontSize: "15px",
-                  fontWeight: 500,
-                  color: "#1a1a1a",
-                  boxShadow: "0 10px 25px rgba(0,0,0,0.06)",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "8px",
-                  border: "1px solid rgba(0,0,0,0.04)",
-                }}
-              >
-                Basketball 🏀
-              </div> */}
-              <img
-                src="/Frame 115.png"
-                alt=""
-                className="w-28 h-10"
-                loading="lazy"
-              />
+              <img src="/Frame 115.png" alt="" className="w-28 h-10" />
             </motion.div>
           </motion.div>
 
@@ -847,18 +830,14 @@ export default function ProfileCard() {
               pointerEvents: "none",
             }}
             variants={chipVariants}
-            custom={{ tx: "155px", ty: "35px" }}
+            // custom={{ tx: "155px", ty: "35px" }}
+            custom={{
+              tx: "clamp(95px, 11vw, 143px)",
+              ty: "clamp(18px, 3vw, 35px)",
+            }}
           >
             <motion.div variants={floatVariants} custom={4}>
-              {/* <svg width="24" height="24" viewBox="0 0 24 24" fill="#a855f7">
-                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
-              </svg> */}
-              <img
-                src="/Vector (5).png"
-                alt=""
-                className="w-8 h-8"
-                loading="lazy"
-              />
+              <img src="/Vector (5).png" alt="" className="w-8 h-8" />
             </motion.div>
           </motion.div>
 
@@ -868,42 +847,36 @@ export default function ProfileCard() {
               initial: { y: 60 },
               hover: { y: -2, transition: { duration: 0.4, ease: "easeOut" } },
             }}
-            // style={{
-            //   position: "relative",
-            //   zIndex: 10,
-            //   background: "white",
-            //   borderRadius: "24px",
-            //   padding: "16px 20px",
-            //   display: "flex",
-            //   alignItems: "center",
-            //   gap: "16px",
-            //   width: "320px",
-            //   boxShadow: "0 15px 35px rgba(0,0,0,0.07)",
-            //   border: "1px solid rgba(0,0,0,0.02)",
-            // }}
           >
+            {/* <img src="/Frame 112.png" alt="Elizabeth" className="w-92 h-24 md:w-92 md:h-36" /> */}
             <img
               src="/Frame 112.png"
               alt="Elizabeth"
-              className="w-92 h-36"
-              loading="lazy"
+              className="w-60 h-44 sm:w-72 sm:h-24 md:w-80 md:h-28 lg:w-92 lg:h-36 object-contain"
             />
-            {/* <div>
-              <h3 style={{ margin: 0, fontSize: "20px", fontWeight: 700 }}>
-                Elizabeth (25)
-              </h3>
-              <p style={{ margin: "2px 0 0", color: "#777", fontSize: "15px" }}>
-                7 km away
-              </p>
-            </div> */}
           </motion.div>
         </div>
+        <div className="px-6 py-6 sm:px-8 sm:py-7 md:px-10 md:py-8 lg:px-[32px] lg:py-[35px]">
+          <h2
+            className="text-[18px] sm:text-[22px] md:text-[26px] lg:text-[24px] font-extrabold text-[#222]"
+            style={{ margin: "0 0 1px" }}
+          >
+            Create Your Profile
+          </h2>
+          <p
+            className="text-[12px] sm:text-[13px] md:text-[14px] lg:text-[16px] text-[#707070] leading-relaxed"
+            style={{ margin: "2px" }}
+          >
+            Set up your profile in just a few minutes and choose what
+            you&apos;re looking for.
+          </p>
+        </div>
 
-        <div style={{ padding: "35px 40px" }}>
+        {/* <div style={{ padding: "35px 40px" }}>
           <h2
             style={{
               fontSize: "32px",
-              margin: "0 0 12px",
+              margin: "0 0 10px",
               fontWeight: 800,
               color: "#222",
             }}
@@ -921,7 +894,22 @@ export default function ProfileCard() {
             Set up your profile in just a few minutes and choose what
             you&apos;re looking for.
           </p>
-        </div>
+        </div> */}
+        {/* <div className="px-3 py-5 sm:px-[12px] sm:py-[35px]">
+  <h2
+    className="text-[18px] sm:text-[28px] font-extrabold text-[#222]"
+    style={{ margin: "0 0 8px" }}
+  >
+    Create Your Profile
+  </h2>
+  <p
+    className="text-[12px] sm:text-[16px] text-[#707070] leading-relaxed"
+    style={{ margin: "2px" }}
+  >
+    Set up your profile in just a few minutes and choose what
+    you&apos;re looking for.
+  </p>
+</div> */}
       </motion.div>
     </Border>
   );

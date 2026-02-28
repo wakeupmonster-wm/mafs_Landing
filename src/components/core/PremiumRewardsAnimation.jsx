@@ -9,7 +9,7 @@ const cards = [
 
 const REPEAT_COUNT = 10;
 const GAP = 24;
-const SPEED = 0.6;
+const SPEED = 1;
 
 export default function PremiumRewardsAnimation() {
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
@@ -34,20 +34,26 @@ export default function PremiumRewardsAnimation() {
     const phoneRight = phoneRect.right - containerRect.left;
     const cardStep = track.children[0].offsetWidth + GAP;
 
-    const leftVisible = phoneLeft - cardStep * 1;
-    const leftFadeStart = leftVisible - 70;
+    // const leftVisible = phoneLeft - cardStep * 1;
+    // const leftFadeStart = leftVisible - 70;
 
-    const rightVisible = phoneRight + cardStep * 3;
-    const rightFadeEnd = rightVisible + 70;
+    // const rightVisible = phoneRight + cardStep * 3;
+    // const rightFadeEnd = rightVisible + 70;
+
+    const leftVisible = phoneLeft - cardStep * 1;
+const leftFadeStart = Math.max(0, leftVisible - cardStep * 2);
+
+const rightVisible = phoneRight + cardStep * 3;
+const rightFadeEnd = rightVisible + cardStep * 2;
 
     const mask = `linear-gradient(to right,
-        transparent 0px,
-        transparent ${Math.max(0, leftFadeStart)}px,
-        black ${Math.max(0, leftVisible)}px,
-        black ${rightVisible}px,
-        transparent ${rightFadeEnd}px,
-        transparent 100%
-      )`;
+      transparent 0px,
+      transparent ${Math.max(0, leftFadeStart)}px,
+      black ${Math.max(0, leftVisible)}px,
+      black ${rightVisible}px,
+      transparent ${rightFadeEnd}px,
+      transparent 100%
+    )`;
 
     setMaskGradient(mask);
   }, []);
@@ -69,17 +75,57 @@ export default function PremiumRewardsAnimation() {
     const track = trackRef.current;
     if (!track || !track.children[0]) return;
 
-    const cardW = track.children[0].offsetWidth;
-    const cardStep = cardW + GAP;
-    const oneSetWidth = cards.length * cardStep;
-
     let x = 0;
+    let lastIndex = -1;
 
     const animate = () => {
+      // ✅ Har frame pe fresh card width lo - mobile resize ke liye
+      const cardW = track.children[0].offsetWidth;
+      const cardStep = cardW + GAP;
+      const oneSetWidth = cards.length * cardStep;
+
       x -= SPEED;
 
-      const newIndex = Math.floor(Math.abs(x) / cardStep) % cards.length;
-      if (newIndex !== currentIndexRef.current) {
+      // ✅ Phone ki position ke relative card calculate karo
+      const phone = phoneRef.current;
+      const container = containerRef.current;
+
+      let newIndex = 0;
+
+      if (phone && container) {
+        const phoneRect = phone.getBoundingClientRect();
+        const containerRect = container.getBoundingClientRect();
+        const phoneCenterX = phoneRect.left + phoneRect.width / 2 - containerRect.left;
+
+        // ✅ Track ke andar kaun sa card phone ke center pe hai
+        const trackChildren = Array.from(track.children);
+        let closestIndex = 0;
+        let closestDistance = Infinity;
+
+        trackChildren.forEach((child, i) => {
+          const childRect = child.getBoundingClientRect();
+          const childCenterX = childRect.left + childRect.width / 2 - containerRect.left;
+          const distance = Math.abs(childCenterX - phoneCenterX);
+
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closestIndex = i % cards.length;
+          }
+        });
+
+//         if (closestDistance < 1) {
+//   newIndex = closestIndex;
+// } else {
+//   newIndex = lastIndex === -1 ? 0 : lastIndex; // pehle wala rakho
+// }
+
+        newIndex = closestIndex;
+      } else {
+        newIndex = Math.floor(Math.abs(x) / cardStep) % cards.length;
+      }
+
+      if (newIndex !== lastIndex) {
+        lastIndex = newIndex;
         currentIndexRef.current = newIndex;
         setCurrentCardIndex(newIndex);
       }
@@ -98,22 +144,52 @@ export default function PremiumRewardsAnimation() {
     };
   }, []);
 
+  // useEffect(() => {
+  //   const track = trackRef.current;
+  //   if (!track || !track.children[0]) return;
+
+  //   const cardW = track.children[0].offsetWidth;
+  //   const cardStep = cardW + GAP;
+  //   const oneSetWidth = cards.length * cardStep;
+
+  //   let x = 0;
+
+  //   const animate = () => {
+  //     x -= SPEED;
+
+  //     const newIndex = Math.floor(Math.abs(x) / cardStep) % cards.length;
+  //     if (newIndex !== currentIndexRef.current) {
+  //       currentIndexRef.current = newIndex;
+  //       setCurrentCardIndex(newIndex);
+  //     }
+
+  //     if (Math.abs(x) >= oneSetWidth) {
+  //       x += oneSetWidth;
+  //     }
+
+  //     track.style.transform = `translate3d(${x}px, 0, 0)`;
+  //     rafRef.current = requestAnimationFrame(animate);
+  //   };
+
+  //   rafRef.current = requestAnimationFrame(animate);
+  //   return () => {
+  //     if (rafRef.current) cancelAnimationFrame(rafRef.current);
+  //   };
+  // }, []);
+
   const repeatedCards = Array.from(
     { length: REPEAT_COUNT },
-    () => cards
+    () => cards,
   ).flat();
 
   return (
-    <div className="relative w-full h-screen py-20">
+    <div className="relative w-full h-[65rem] py-32">
       {/* Background Image replacing radial-gradient */}
-      <img
-        src="/aqua-blurBg.png"
-        alt=""
-        loading="lazy"
-        className="absolute z-0 w-full h-[65rem]"
-      />
+      <img src="/aqua-blurBg.png" alt="" className="absolute w-full h-full" />
+
       <div className="absolute inset-0 flex flex-col">
         {/* Header */}
+
         <div className="relative z-20 px-8 py-12 text-center">
           <img
             src="/Light → Figure - Line Gradient → ZzXR4Xa701pprKwAZYChrznQWE.png.png"
@@ -121,11 +197,13 @@ export default function PremiumRewardsAnimation() {
             loading="lazy"
             alt=""
           />
+
           <h1 className="text-3xl font-sans md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
             A Little More Than Just
             <br />
             Matching
           </h1>
+
           <p className="text-gray-600 text-sm md:text-base max-w-md mx-auto">
             Every Premium member is included in a daily reward
             <br />
@@ -133,8 +211,10 @@ export default function PremiumRewardsAnimation() {
           </p>
         </div>
         {/* Main Content */}
+
         <div className="flex-1 flex items-center justify-center relative">
           {/* Cards Track */}
+
           <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 z-0">
             <div
               ref={containerRef}
@@ -164,6 +244,7 @@ export default function PremiumRewardsAnimation() {
             </div>
           </div>
           {/* Phone Mockup */}
+
           <div ref={phoneRef} className="relative z-10">
             <div className="relative">
               <img
@@ -173,10 +254,20 @@ export default function PremiumRewardsAnimation() {
                 loading="lazy"
                 onLoad={calculateMask}
               />
-              <div
+
+              {/* <div
                 className="absolute flex items-center justify-center"
-                style={{ top: "15%", left: "10%", width: "80%", height: "70%" }}
-              >
+                style={{ top: "18%", left: "10%", width: "80%", height: "70%" }}
+              > */}
+              <div
+  className="absolute flex items-center justify-center"
+  style={{
+    top: window.innerWidth < 640 ? "24%" : "16%",
+    left: window.innerWidth < 640 ? "25%" : "10%",
+    width: window.innerWidth < 640 ? "50%" : "80%",
+    height: "70%"
+  }}
+>
                 <img
                   key={currentCardIndex}
                   src={cards[currentCardIndex].phoneImage}
@@ -189,13 +280,14 @@ export default function PremiumRewardsAnimation() {
           </div>
         </div>
       </div>
+
       <style>{`
         @keyframes fadeIn {
           from { opacity: 0; transform: scale(0.9); }
           to { opacity: 1; transform: scale(1); }
         }
         .animate-fadeIn {
-              animation: fadeIn 0.3s ease-out forwards;
+          animation: fadeIn 0.3s ease-out forwards;
         }
       `}</style>
     </div>

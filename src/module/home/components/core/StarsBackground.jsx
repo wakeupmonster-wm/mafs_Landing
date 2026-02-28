@@ -32,13 +32,45 @@ export default function StarsBackground() {
   return (
     <div className="absolute inset-0 z-[2] overflow-hidden pointer-events-none">
       {stars.map((star, i) => (
-        <div
+        <motion.div
           key={i}
           className={`absolute ${star.opacity} ${star.size}`}
           style={{ top: star.top, left: star.left, right: star.right }}
+          // ✅ Entry animation - pehle fade in aur scale up
+          initial={{
+            opacity: 0,
+            scale: 0,
+            rotate: -30,
+          }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            rotate: 0,
+            // ✅ Continuous float animation
+            ...star.animation,
+          }}
+          transition={{
+            // ✅ Entry transition
+            opacity: { duration: 0.8, delay: star.delay },
+            scale: { duration: 0.8, delay: star.delay, type: "spring", stiffness: 200 },
+            rotate: { duration: 0.8, delay: star.delay },
+            // ✅ Continuous loop
+            y: {
+              duration: star.duration,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: star.delay,
+            },
+            x: {
+              duration: star.duration * 1.2,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: star.delay + 0.3,
+            },
+          }}
         >
           ✦
-        </div>
+        </motion.div>
       ))}
     </div>
   );

@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -12,6 +13,7 @@ export default function HomePage() {
   const compRef = useRef(null);
   const phoneRef = useRef(null);
   const concentricRef = useRef(null);
+    const [phoneArrived, setPhoneArrived] = useState(false);
 
   // gsap.context properly scopes our animations and makes cleanup effortless
   // gsap.to(phoneRef.current, {
@@ -35,6 +37,83 @@ export default function HomePage() {
   //   ease: "power2.inOut",
   // });
   useEffect(() => {
+  let ctx = gsap.context(() => {
+    const mm = gsap.matchMedia();
+
+    // ✅ Desktop
+    mm.add("(min-width: 1024px)", () => {
+      gsap.to(phoneRef.current, {
+        scrollTrigger: {
+          trigger: "#hero-section",
+          start: "top top",
+          endTrigger: "#benefits-section",
+          end: "center center",
+          scrub: 1.5,
+          onUpdate: (self) => {
+            if (concentricRef.current) {
+              concentricRef.current.classList.toggle(
+                "is-active",
+                self.progress > 0.7
+              );
+            }
+             setPhoneArrived(self.progress > 0.75);
+            //  setPhoneArrived(self.progress > 0.95);
+
+          },
+        },
+        y: "110vh",
+        ease: "power2.inOut",
+      });
+    });
+
+    // ✅ Tablet
+    mm.add("(min-width: 768px) and (max-width: 1023px)", () => {
+      gsap.to(phoneRef.current, {
+        scrollTrigger: {
+          trigger: "#hero-section",
+          start: "top top",
+          endTrigger: "#benefits-section",
+          end: "center center",
+          scrub: 1,
+          onUpdate: (self) => {
+            if (concentricRef.current) {
+              concentricRef.current.classList.toggle(
+                "is-active",
+                self.progress > 0.82
+              );
+            }
+            setPhoneArrived(self.progress > 0.85);
+          },
+        },
+        y: "163vh",
+        ease: "power2.inOut",
+      });
+    });
+
+    // ✅ Mobile
+    mm.add("(max-width: 767px)", () => {
+      gsap.to(phoneRef.current, {
+        scrollTrigger: {
+          trigger: "#hero-section",
+          start: "top top",
+          endTrigger: "#benefits-section",
+          end: "center center",
+          scrub: 1,
+          onUpdate: (self) => {
+            if (concentricRef.current) {
+              concentricRef.current.classList.toggle(
+                "is-active",
+                self.progress > 0.88
+              );
+            }
+             setPhoneArrived(self.progress > 0.86)
+          },
+        },
+        y: "170vh",
+        ease: "power2.inOut",
+      });
+    });
+  }, compRef);
     // matchMedia perfect responsiveness handle karta hai
     let mm = gsap.matchMedia();
 
@@ -74,6 +153,36 @@ export default function HomePage() {
       }
     );
 
+  return () => ctx.revert();
+}, []);
+
+  // useEffect(() => {
+  //   // gsap.context properly scopes our animations and makes cleanup effortless
+  //   let ctx = gsap.context(() => {
+  //     gsap.to(phoneRef.current, {
+  //       scrollTrigger: {
+  //         trigger: "#hero-section",
+  //         start: "top top",
+  //         endTrigger: "#benefits-section",
+  //         end: "center center",
+  //         scrub: 1,
+  //         onUpdate: (self) => {
+  //           if (concentricRef.current) {
+  //             // Toggle class based on scroll progress
+  //             concentricRef.current.classList.toggle(
+  //               "is-active",
+  //               self.progress > 0.7
+  //             );
+  //           }
+  //         },
+  //       },
+  //       y: "100vh",
+  //       ease: "power2.inOut",
+  //     });
+  //   }, compRef);
+
+  //   return () => ctx.revert(); // Perfect React cleanup
+  // }, []);
     return () => mm.revert(); // Best practice cleanup
   }, []);
 
@@ -96,16 +205,27 @@ export default function HomePage() {
 
         <StarsBackground />
         <Header />
-        <HeroContent phoneRef={phoneRef} />
+        <HeroContent phoneRef={phoneRef} phoneArrived={phoneArrived}/>
       </section>
 
       {/* ===== BENEFITS SECTION ===== */}
-      <section
+      {/* <section
         id="benefits-section"
         className="relative h-[80vh] lg:h-[130vh] flex items-center justify-center py-16 sm:py-20 md:py-20 lg:py-44 overflow-hidden px-4"
       >
         <ConcentricCircles ref={concentricRef} />
-      </section>
+      </section> */}
+      <section
+  id="benefits-section"
+  className="relative flex items-center justify-center overflow-hidden px-4"
+  style={{
+    minHeight: "150vh", 
+    paddingTop: "15vh",
+    paddingBottom: "15vh",
+  }}
+>
+  <ConcentricCircles ref={concentricRef} phoneArrived={phoneArrived} />
+</section>
     </div>
   );
 }

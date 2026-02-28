@@ -1,3 +1,4 @@
+
 import React, { useRef } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -62,7 +63,7 @@ export default function PeopleAnimation() {
                   text-center z-10
                 "
               >
-                <div className="flex flex-col items-center text-center justify-center px-2 sm:px-4 md:px-6 lg:px-10">
+                {/* <div className="flex flex-col items-center text-center justify-center px-2 sm:px-4 md:px-6 lg:px-10">
                   <img
                     src="/image.png"
                     alt="Logo"
@@ -97,7 +98,43 @@ export default function PeopleAnimation() {
                     Designed exclusively for Australians, with a focused and
                     local dating experience.
                   </p>
-                </div>
+                </div> */}
+
+
+                <div className="flex flex-col items-center text-center justify-center px-2 sm:px-4 md:px-6 lg:px-10">
+  <img
+    src="/image.png"
+    alt="Logo"
+    className="mx-auto w-14 h-8 sm:w-24 sm:h-14 md:w-32 md:h-[72px] lg:w-36 lg:h-[86px]"
+  />
+  <h2
+    className="
+      text-[15px] sm:text-[28px] md:text-[33px] lg:text-[38px]
+      leading-tight font-extrabold text-gray-900 tracking-tighter
+      flex flex-col items-center mb-2 sm:mb-3 md:mb-4
+    "
+  >
+    <span className="flex gap-1 sm:gap-2 items-center">
+      <img
+        src="/australiaIcon.png"
+        className="w-[15px] h-[15px] sm:w-[28px] sm:h-[28px] md:w-[32px] md:h-[32px] lg:w-[35px] lg:h-[35px]"
+      />
+      Built for
+    </span>
+    Australia
+  </h2>
+  <p
+    className="
+      text-gray-500
+      text-[8px] sm:text-[12px] md:text-[13px] lg:text-[14px]
+      max-w-[100px] sm:max-w-[220px] md:max-w-[250px] lg:max-w-[270px]
+      leading-relaxed
+    "
+  >
+    Designed exclusively for Australians, with a focused and
+    local dating experience.
+  </p>
+</div>
               </motion.div>
 
               {/* Cards */}
@@ -137,11 +174,11 @@ function ScrollCard({
   scrollYProgress,
 }) {
   // Stagger logic - smoother and longer animation window
-  const staggerWindow = 0.2;
+  const staggerWindow = 0.15;
   const perCardDelay = (index / totalItems) * staggerWindow;
 
-  const cardStart = 0.15 + perCardDelay;
-  const cardEnd = Math.min(cardStart + 0.35, 0.65);
+  const cardStart = 0.05 + perCardDelay;
+  const cardEnd = Math.min(cardStart + 0.25, 0.5);
 
   // Use CSS custom properties approach for responsive radius
   // We'll compute for the largest and use CSS clamp via multiple transforms
