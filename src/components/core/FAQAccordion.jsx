@@ -140,7 +140,6 @@
 // };
 // export default FAQAccordion;
 
-
 import React, { useState } from "react";
 import Border from "./border";
 
@@ -180,26 +179,21 @@ const FAQAccordion = () => {
   };
 
   return (
-    <div
-      className="min-h-screen pt-16 sm:pt-24 md:pt-32 lg:pt-44 px-4 sm:px-6 lg:px-8"
-      id="faq-section"
-    >
+    <div className="wrapper pt-44 md:pt-0 lg:pt-52" id="faq-section">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start px-4">
           {/* Left Section - Title and Description */}
           <div className="lg:sticky lg:top-16">
             <div className="relative">
+              {/* Decorative accent */}
+              {/* <div className="absolute -top-4 left-0 w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"></div> */}
 
-              {/* Image - responsive sizing */}
               <img
                 src="/3a7805e8d1f06e0e2c0b22ed0359b0ef6faa8399.png"
-                alt="FAQ illustration"
-                className="w-32 sm:w-40 md:w-48 lg:w-auto max-w-full h-auto"
+                alt=""
+                loading="lazy"
               />
-
-              {/* Heading - responsive font sizes */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mt-6 mb-4 sm:mb-6 leading-tight">
+              <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 mt-8 mb-6 leading-tight">
                 Answers to Your Top Questions
               </h1>
 
@@ -243,7 +237,7 @@ const FAQAccordion = () => {
                     {/* Toggle icon */}
                     <div className="flex-shrink-0">
                       <div
-                        className={`w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-br from-cyan-100 to-blue-100 flex items-center justify-center transition-transform duration-300 ${
+                        className={`w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-100 to-blue-100 flex items-center justify-center transition-transform duration-300 ${
                           openIndex === index ? "rotate-45" : ""
                         }`}
                       >

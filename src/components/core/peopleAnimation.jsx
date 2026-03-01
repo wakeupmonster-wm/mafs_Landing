@@ -1,4 +1,3 @@
-
 import React, { useRef } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -26,9 +25,10 @@ export default function PeopleAnimation() {
   const textY = useTransform(scrollYProgress, [0.25, 0.45], [30, 0]);
 
   return (
-    <section className="w-full h-auto px-4 sm:px-6 md:px-10 lg:px-20 py-12 md:py-16">
+    // px-4 sm:px-6 md:px-10 lg:px-20 py-12 md:py-16
+    <section className="wrapper w-full h-[60vh] lg:h-auto py-16">
       {/* Space above for scroll room - Reduced for better feel */}
-      <div className="h-16 md:h-24 lg:h-32" />
+      {/* <div className="h-16 md:h-24 lg:h-32" /> */}
 
       <main ref={sectionRef} className="mx-auto max-w-7xl h-auto">
         <div
@@ -67,6 +67,7 @@ export default function PeopleAnimation() {
                   <img
                     src="/image.png"
                     alt="Logo"
+                    loading="lazy"
                     className="mx-auto w-20 h-12 sm:w-24 sm:h-14 md:w-32 md:h-[72px] lg:w-36 lg:h-[86px]"
                   />
                   <h2
@@ -79,6 +80,7 @@ export default function PeopleAnimation() {
                     <span className="flex gap-1 sm:gap-2 items-center">
                       <img
                         src="/australiaIcon.png"
+                        loading="lazy"
                         className="w-[22px] h-[22px] sm:w-[28px] sm:h-[28px] md:w-[32px] md:h-[32px] lg:w-[35px] lg:h-[35px]"
                       />
                       Built for
@@ -98,41 +100,40 @@ export default function PeopleAnimation() {
                   </p>
                 </div> */}
 
-
                 <div className="flex flex-col items-center text-center justify-center px-2 sm:px-4 md:px-6 lg:px-10">
-  <img
-    src="/image.png"
-    alt="Logo"
-    className="mx-auto w-14 h-8 sm:w-24 sm:h-14 md:w-32 md:h-[72px] lg:w-36 lg:h-[86px]"
-  />
-  <h2
-    className="
+                  <img
+                    src="/image.png"
+                    alt="Logo"
+                    className="mx-auto w-14 h-8 sm:w-24 sm:h-14 md:w-32 md:h-[72px] lg:w-36 lg:h-[86px]"
+                  />
+                  <h2
+                    className="
       text-[15px] sm:text-[28px] md:text-[33px] lg:text-[38px]
       leading-tight font-extrabold text-gray-900 tracking-tighter
       flex flex-col items-center mb-2 sm:mb-3 md:mb-4
     "
-  >
-    <span className="flex gap-1 sm:gap-2 items-center">
-      <img
-        src="/australiaIcon.png"
-        className="w-[15px] h-[15px] sm:w-[28px] sm:h-[28px] md:w-[32px] md:h-[32px] lg:w-[35px] lg:h-[35px]"
-      />
-      Built for
-    </span>
-    Australia
-  </h2>
-  <p
-    className="
+                  >
+                    <span className="flex gap-1 sm:gap-2 items-center">
+                      <img
+                        src="/australiaIcon.png"
+                        className="w-[15px] h-[15px] sm:w-[28px] sm:h-[28px] md:w-[32px] md:h-[32px] lg:w-[35px] lg:h-[35px]"
+                      />
+                      Built for
+                    </span>
+                    Australia
+                  </h2>
+                  <p
+                    className="
       text-gray-500
       text-[8px] sm:text-[12px] md:text-[13px] lg:text-[14px]
       max-w-[100px] sm:max-w-[220px] md:max-w-[250px] lg:max-w-[270px]
       leading-relaxed
     "
-  >
-    Designed exclusively for Australians, with a focused and
-    local dating experience.
-  </p>
-</div>
+                  >
+                    Designed exclusively for Australians, with a focused and
+                    local dating experience.
+                  </p>
+                </div>
               </motion.div>
 
               {/* Cards */}
@@ -158,7 +159,7 @@ export default function PeopleAnimation() {
       </main>
 
       {/* Space below - Reduced for better feel */}
-      <div className="h-16 md:h-24 lg:h-32" />
+      {/* <div className="h-16 md:h-24 lg:h-32" /> */}
     </section>
   );
 }
@@ -205,17 +206,9 @@ function ScrollCard({
   const targetX = Math.cos(angle) * radius;
   const targetY = Math.sin(angle) * radius;
 
-  const x = useTransform(
-    scrollYProgress,
-    [cardStart, cardEnd],
-    [0, targetX]
-  );
+  const x = useTransform(scrollYProgress, [cardStart, cardEnd], [0, targetX]);
 
-  const y = useTransform(
-    scrollYProgress,
-    [cardStart, cardEnd],
-    [0, targetY]
-  );
+  const y = useTransform(scrollYProgress, [cardStart, cardEnd], [0, targetY]);
 
   // Smooth opacity - fade in gradually
   const opacity = useTransform(
@@ -267,8 +260,8 @@ function ScrollCard({
         <img
           src={img}
           alt={`User ${index}`}
-          className="h-full w-full rounded-[8px] sm:rounded-[10px] md:rounded-xl pointer-events-none object-cover"
           loading="lazy"
+          className="h-full w-full rounded-[8px] sm:rounded-[10px] md:rounded-xl pointer-events-none object-cover"
         />
       </div>
     </motion.div>

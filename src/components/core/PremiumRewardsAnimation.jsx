@@ -41,10 +41,10 @@ export default function PremiumRewardsAnimation() {
     // const rightFadeEnd = rightVisible + 70;
 
     const leftVisible = phoneLeft - cardStep * 1;
-const leftFadeStart = Math.max(0, leftVisible - cardStep * 2);
+    const leftFadeStart = Math.max(0, leftVisible - cardStep * 2);
 
-const rightVisible = phoneRight + cardStep * 3;
-const rightFadeEnd = rightVisible + cardStep * 2;
+    const rightVisible = phoneRight + cardStep * 3;
+    const rightFadeEnd = rightVisible + cardStep * 2;
 
     const mask = `linear-gradient(to right,
       transparent 0px,
@@ -95,7 +95,8 @@ const rightFadeEnd = rightVisible + cardStep * 2;
       if (phone && container) {
         const phoneRect = phone.getBoundingClientRect();
         const containerRect = container.getBoundingClientRect();
-        const phoneCenterX = phoneRect.left + phoneRect.width / 2 - containerRect.left;
+        const phoneCenterX =
+          phoneRect.left + phoneRect.width / 2 - containerRect.left;
 
         // ✅ Track ke andar kaun sa card phone ke center pe hai
         const trackChildren = Array.from(track.children);
@@ -104,7 +105,8 @@ const rightFadeEnd = rightVisible + cardStep * 2;
 
         trackChildren.forEach((child, i) => {
           const childRect = child.getBoundingClientRect();
-          const childCenterX = childRect.left + childRect.width / 2 - containerRect.left;
+          const childCenterX =
+            childRect.left + childRect.width / 2 - containerRect.left;
           const distance = Math.abs(childCenterX - phoneCenterX);
 
           if (distance < closestDistance) {
@@ -113,11 +115,11 @@ const rightFadeEnd = rightVisible + cardStep * 2;
           }
         });
 
-//         if (closestDistance < 1) {
-//   newIndex = closestIndex;
-// } else {
-//   newIndex = lastIndex === -1 ? 0 : lastIndex; // pehle wala rakho
-// }
+        //         if (closestDistance < 1) {
+        //   newIndex = closestIndex;
+        // } else {
+        //   newIndex = lastIndex === -1 ? 0 : lastIndex; // pehle wala rakho
+        // }
 
         newIndex = closestIndex;
       } else {
@@ -179,13 +181,19 @@ const rightFadeEnd = rightVisible + cardStep * 2;
 
   const repeatedCards = Array.from(
     { length: REPEAT_COUNT },
-    () => cards,
+    () => cards
   ).flat();
 
   return (
-    <div className="relative w-full h-[65rem] py-32" >
+
+    <div className="relative w-full h-screen py-10">
       {/* Background Image replacing radial-gradient */}
-      <img src="/aqua-blurBg.png" alt="" className="absolute w-full h-full" />
+      <img
+        src="/aqua-blurBg.png"
+        alt=""
+        className="absolute w-full h-full"
+        loading="lazy"
+      />
 
       <div className="absolute inset-0 flex flex-col">
         {/* Header */}
@@ -194,6 +202,7 @@ const rightFadeEnd = rightVisible + cardStep * 2;
           <img
             src="/Light → Figure - Line Gradient → ZzXR4Xa701pprKwAZYChrznQWE.png.png"
             className="inline-block w-48 h-2 mb-6"
+            loading="lazy"
             alt=""
           />
 
@@ -233,6 +242,7 @@ const rightFadeEnd = rightVisible + cardStep * 2;
                     <img
                       src={card.image}
                       alt=""
+                      loading="lazy"
                       className="w-full h-full object-contain"
                       draggable={false}
                     />
@@ -249,6 +259,7 @@ const rightFadeEnd = rightVisible + cardStep * 2;
                 className="md:w-80 md:h-[580px] sm:w-36 sm:h-[260px] w-52 h-[400px]"
                 src="/Phone → Phone (1).png"
                 alt="Phone mockup"
+                loading="lazy"
                 onLoad={calculateMask}
               />
 
@@ -257,18 +268,19 @@ const rightFadeEnd = rightVisible + cardStep * 2;
                 style={{ top: "18%", left: "10%", width: "80%", height: "70%" }}
               > */}
               <div
-  className="absolute flex items-center justify-center"
-  style={{
-    top: window.innerWidth < 640 ? "24%" : "16%",
-    left: window.innerWidth < 640 ? "25%" : "10%",
-    width: window.innerWidth < 640 ? "50%" : "80%",
-    height: "70%",
-    
-  }}
->
+
+                className="absolute flex items-center justify-center"
+                style={{
+                  top: window.innerWidth < 640 ? "24%" : "16%",
+                  left: window.innerWidth < 640 ? "25%" : "10%",
+                  width: window.innerWidth < 640 ? "50%" : "80%",
+                  height: "70%",
+                }}
+              >
                 <img
                   key={currentCardIndex}
                   src={cards[currentCardIndex].phoneImage}
+                  loading="lazy"
                   alt="Card image"
                   className="max-w-full h-32 ml-6 object-contain animate-fadeIn mb-[235px]"
                 />

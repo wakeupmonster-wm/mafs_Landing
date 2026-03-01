@@ -69,12 +69,12 @@ export default function WaitlistPage() {
 
   return (
     <div className="min-h-screen relative overflow-hidden flex items-center justify-center px-4 py-12">
-
       {/* ✅ Background */}
       <div className="absolute inset-0 z-0">
         <img
           src="/aqua-bg.jpg"
           alt="bg"
+          loading="lazy"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/30" />
@@ -110,7 +110,6 @@ export default function WaitlistPage() {
         className="relative z-10 w-full max-w-lg"
       >
         <div className="bg-white/95 backdrop-blur-xl rounded-[32px] shadow-2xl overflow-hidden">
-
           {/* ✅ Header */}
           <div className="bg-gradient-to-r from-[#22D3EE] to-[#0891B2] px-6 sm:px-8 pt-8 pb-6">
             <motion.div
@@ -210,9 +209,7 @@ export default function WaitlistPage() {
                                 ? "0 0 0 4px rgba(34,211,238,0.1)"
                                 : "none",
                             background:
-                              focusedField === field.name
-                                ? "#F0FDFF"
-                                : "white",
+                              focusedField === field.name ? "#F0FDFF" : "white",
                           }}
                         />
 
@@ -247,8 +244,7 @@ export default function WaitlistPage() {
                       whileTap={{ scale: 0.97 }}
                       className="w-full py-4 rounded-2xl text-white font-bold text-base sm:text-lg relative overflow-hidden"
                       style={{
-                        background:
-                          "linear-gradient(135deg, #22D3EE, #0891B2)",
+                        background: "linear-gradient(135deg, #22D3EE, #0891B2)",
                         boxShadow: "0 8px 25px rgba(34,211,238,0.35)",
                       }}
                     >
@@ -337,20 +333,22 @@ export default function WaitlistPage() {
                   </div>
 
                   {/* ✅ Perks */}
-                  {["3 months FREE Premium", "Early Access", "Exclusive Rewards"].map(
-                    (perk, i) => (
-                      <motion.div
-                        key={perk}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.3 + i * 0.1 }}
-                        className="flex items-center gap-2 bg-[#F0FDFF] rounded-xl px-4 py-2.5 text-sm font-medium text-[#0891B2]"
-                      >
-                        <span className="text-[#22D3EE]">✓</span>
-                        {perk}
-                      </motion.div>
-                    )
-                  )}
+                  {[
+                    "3 months FREE Premium",
+                    "Early Access",
+                    "Exclusive Rewards",
+                  ].map((perk, i) => (
+                    <motion.div
+                      key={perk}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.3 + i * 0.1 }}
+                      className="flex items-center gap-2 bg-[#F0FDFF] rounded-xl px-4 py-2.5 text-sm font-medium text-[#0891B2]"
+                    >
+                      <span className="text-[#22D3EE]">✓</span>
+                      {perk}
+                    </motion.div>
+                  ))}
                 </motion.div>
               )}
             </AnimatePresence>

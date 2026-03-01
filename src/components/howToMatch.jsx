@@ -10,7 +10,7 @@
 //         * {
 //           margin: 0;
 //           padding: 0;
-//           box-sizing: border-box; 
+//           box-sizing: border-box;
 //         }
 
 //         .dashboard-wrapper {
@@ -57,23 +57,23 @@
 //         }
 
 //         /* Row 1: SMALL left, BIG right */
-//         .profile { 
+//         .profile {
 //           grid-column: 1 / 5; /* 3 columns = SMALL */
 //           grid-row: 1;
 //         }
-        
-//         .explore { 
+
+//         .explore {
 //           grid-column: 5 / 12; /* 7 columns = BIG */
 //           grid-row: 1;
 //         }
-        
+
 //         /* Row 2: BIG left, SMALL right - DIAGONAL! */
-//         .start { 
+//         .start {
 //           grid-column: 1 / 6; /* 6 columns = BIG */
 //           grid-row: 2;
 //         }
-        
-//         .premium { 
+
+//         .premium {
 //           grid-column: 6 / 12; /* 4 columns = SMALL */
 //           grid-row: 2;
 //         }
@@ -147,7 +147,6 @@
 //   );
 // }
 
-
 import ProfileCard from "../components/core/ProfileCard";
 import ExploreMatchesCard from "../components/core/ExploreMatchesCard";
 import StartConversationCard from "../components/core/StartConversationCard";
@@ -165,7 +164,6 @@ export default function Dashboard() {
 
         .dashboard-wrapper {
           min-height: 100vh;
-          padding: 40px 32px;
         }
 
         .dashboard-header {
@@ -270,11 +268,12 @@ export default function Dashboard() {
         }
       `}</style>
 
-      <div className="dashboard-wrapper">
+      <div className="dashboard-wrapper wrapper">
         <img
           src="/Light → Figure - Line Gradient → ZzXR4Xa701pprKwAZYChrznQWE.png.png"
           className="w-48 h-2 mb-6 mx-auto"
           alt=""
+          loading="lazy"
         />
 
         {/* ✅ Only this div changed - added max-w-full to prevent overflow */}

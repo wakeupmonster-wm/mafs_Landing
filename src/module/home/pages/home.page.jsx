@@ -12,127 +12,104 @@ export default function HomePage() {
   const compRef = useRef(null);
   const phoneRef = useRef(null);
   const concentricRef = useRef(null);
-    const [phoneArrived, setPhoneArrived] = useState(false);
+  const [phoneArrived, setPhoneArrived] = useState(false);
 
   useEffect(() => {
-  let ctx = gsap.context(() => {
-    const mm = gsap.matchMedia();
+    let ctx = gsap.context(() => {
+      const mm = gsap.matchMedia();
 
-    // ✅ Desktop
-    mm.add("(min-width: 1024px)", () => {
-      gsap.to(phoneRef.current, {
-        scrollTrigger: {
-          trigger: "#hero-section",
-          start: "top top",
-          endTrigger: "#benefits-section",
-          end: "center center",
-          scrub: 1.5,
-          onUpdate: (self) => {
-            if (concentricRef.current) {
-              concentricRef.current.classList.toggle(
-                "is-active",
-                self.progress > 0.7
-              );
-            }
-             setPhoneArrived(self.progress > 0.75);
-            //  setPhoneArrived(self.progress > 0.95);
-
+      // ✅ Desktop
+      mm.add("(min-width: 1024px)", () => {
+        gsap.to(phoneRef.current, {
+          scrollTrigger: {
+            trigger: "#hero-section",
+            start: "top top",
+            endTrigger: "#benefits-section",
+            end: "center center",
+            scrub: 1.5,
+            onUpdate: (self) => {
+              if (concentricRef.current) {
+                concentricRef.current.classList.toggle(
+                  "is-active",
+                  self.progress > 0.7
+                );
+              }
+              setPhoneArrived(self.progress > 0.75);
+              //  setPhoneArrived(self.progress > 0.95);
+            },
           },
-        },
-        y: "110vh",
-        ease: "power2.inOut",
+          y: "90vh",
+          ease: "power2.inOut",
+        });
       });
-    });
 
-    // ✅ Tablet
-    mm.add("(min-width: 768px) and (max-width: 1023px)", () => {
-      gsap.to(phoneRef.current, {
-        scrollTrigger: {
-          trigger: "#hero-section",
-          start: "top top",
-          endTrigger: "#benefits-section",
-          end: "center center",
-          scrub: 1,
-          onUpdate: (self) => {
-            if (concentricRef.current) {
-              concentricRef.current.classList.toggle(
-                "is-active",
-                self.progress > 0.82
-              );
-            }
-            setPhoneArrived(self.progress > 0.85);
+      // ✅ Tablet
+      mm.add("(max-width: 1024px) and (min-width: 760px)", () => {
+        gsap.to(phoneRef.current, {
+          scrollTrigger: {
+            trigger: "#hero-section",
+            start: "top top",
+            endTrigger: "#benefits-section",
+            end: "center center",
+            scrub: 1,
+            onUpdate: (self) => {
+              if (concentricRef.current) {
+                concentricRef.current.classList.toggle(
+                  "is-active",
+                  self.progress > 0.82
+                );
+              }
+              setPhoneArrived(self.progress > 0.85);
+            },
           },
-        },
-        y: "163vh",
-        ease: "power2.inOut",
+          y: "55vh",
+          ease: "power2.inOut",
+        });
       });
-    });
 
-    // ✅ Mobile
-    mm.add("(max-width: 767px)", () => {
-      gsap.to(phoneRef.current, {
-        scrollTrigger: {
-          trigger: "#hero-section",
-          start: "top top",
-          endTrigger: "#benefits-section",
-          end: "center center",
-          scrub: 1,
-          onUpdate: (self) => {
-            if (concentricRef.current) {
-              concentricRef.current.classList.toggle(
-                "is-active",
-                self.progress > 0.88
-              );
-            }
-             setPhoneArrived(self.progress > 0.86)
+      // ✅ Mobile
+      mm.add("(max-width: 428px) and (min-width: 360px)", () => {
+        gsap.to(phoneRef.current, {
+          scrollTrigger: {
+            trigger: "#hero-section",
+            start: "top top",
+            endTrigger: "#benefits-section",
+            end: "center center",
+            scrub: 1,
+            onUpdate: (self) => {
+              if (concentricRef.current) {
+                concentricRef.current.classList.toggle(
+                  "is-active",
+                  self.progress > 0.88
+                );
+              }
+              setPhoneArrived(self.progress > 0.86);
+            },
           },
-        },
-        y: "170vh",
-        ease: "power2.inOut",
+          y: "61vh",
+          ease: "power2.inOut",
+        });
       });
-    });
-  }, compRef);
+    }, compRef);
 
-  return () => ctx.revert();
-}, []);
+    return () => ctx.revert();
+  }, []);
 
-  // useEffect(() => {
-  //   // gsap.context properly scopes our animations and makes cleanup effortless
-  //   let ctx = gsap.context(() => {
-  //     gsap.to(phoneRef.current, {
-  //       scrollTrigger: {
-  //         trigger: "#hero-section",
-  //         start: "top top",
-  //         endTrigger: "#benefits-section",
-  //         end: "center center",
-  //         scrub: 1,
-  //         onUpdate: (self) => {
-  //           if (concentricRef.current) {
-  //             // Toggle class based on scroll progress
-  //             concentricRef.current.classList.toggle(
-  //               "is-active",
-  //               self.progress > 0.7
-  //             );
-  //           }
-  //         },
-  //       },
-  //       y: "100vh",
-  //       ease: "power2.inOut",
-  //     });
-  //   }, compRef);
-
-  //   return () => ctx.revert(); // Perfect React cleanup
-  // }, []);
+  console.log("window.innerWidth: ", window.innerWidth);
 
   return (
-    <div ref={compRef} className="overflow-x-hidden w-full">
+    <div ref={compRef} className="overflow-hidden w-full h-auto">
       {/* ===== HERO SECTION ===== */}
-      <section id="hero-section" className="relative min-h-screen">
+      <section
+        id="hero-section"
+        className="relative h-[80vh] md:h-[75vh] lg:h-[110vh]"
+      >
         {/* Backgrounds */}
-        <div className="absolute z-0">
+        <div className="absolute z-0 h-[75vh] md:h-[70vh] lg:h-[110vh] w-full">
           <img
             src="/aqua-bg.jpg"
             alt="Hero Background"
+            loading="lazy"
             className="w-full h-full object-cover"
           />
         </div>
@@ -140,27 +117,22 @@ export default function HomePage() {
 
         <StarsBackground />
         <Header />
-        <HeroContent phoneRef={phoneRef} phoneArrived={phoneArrived}/>
+        <HeroContent phoneRef={phoneRef} phoneArrived={phoneArrived} />
       </section>
 
       {/* ===== BENEFITS SECTION ===== */}
       {/* <section
         id="benefits-section"
-        className="relative min-h-screen flex items-center justify-center py-16 sm:py-20 md:py-20 lg:py-32 overflow-hidden px-4"
+        className="relative h-[80vh] lg:h-[130vh] flex items-center justify-center py-16 sm:py-20 md:py-20 lg:py-44 overflow-hidden px-4"
       >
         <ConcentricCircles ref={concentricRef} />
       </section> */}
       <section
-  id="benefits-section"
-  className="relative flex items-center justify-center overflow-hidden px-4"
-  style={{
-    minHeight: "150vh", 
-    paddingTop: "15vh",
-    paddingBottom: "15vh",
-  }}
->
-  <ConcentricCircles ref={concentricRef} phoneArrived={phoneArrived} />
-</section>
+        id="benefits-section"
+        className="relative flex items-center justify-center overflow-hidden px-4 min-h-[65vh] lg:min-h-[120vh]"
+      >
+        <ConcentricCircles ref={concentricRef} phoneArrived={phoneArrived} />
+      </section>
     </div>
   );
 }

@@ -759,6 +759,7 @@ export default function StartConversationCard() {
               position: "absolute",
               zIndex: 30,
             }}
+            loading="lazy"
             variants={{
               initial: { x: 30, y: 20, scale: 0.9 },
               hover: {
@@ -793,6 +794,7 @@ export default function StartConversationCard() {
                 lg:w-[24px] lg:h-[24px]
               "
               variants={floatVariants}
+              loading="lazy"
               custom={1}
             />
           </motion.div>

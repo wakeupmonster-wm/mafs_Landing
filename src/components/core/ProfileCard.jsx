@@ -650,12 +650,12 @@ export default function ProfileCard() {
   const [isActive, setIsActive] = useState(false);
   const cardRef = useRef(null);
 
-    useEffect(() => {
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setIsActive(true);  // ✅ visible hua - animate start
+            setIsActive(true); // ✅ visible hua - animate start
           } else {
             setIsActive(false); // ✅ screen se gaya - animate stop
           }
@@ -673,11 +673,11 @@ export default function ProfileCard() {
   return (
     <Border>
       <motion.div
-      ref={cardRef}
+        ref={cardRef}
         initial="initial"
         animate={isActive ? "hover" : "initial"}
         whileHover="hover"
-         onPointerEnter={() => setIsActive(true)}
+        onPointerEnter={() => setIsActive(true)}
         onPointerLeave={() => setIsActive(false)}
         // onTouchStart={() => setIsActive(true)}
         // onTouchEnd={() => setIsActive(false)}
@@ -743,7 +743,12 @@ export default function ProfileCard() {
                   fill="#71D7FE"
                 />
               </svg> */}
-              <img src="/Verified badge.png" alt="" className="w-8 h-8" />
+              <img
+                src="/Verified badge.png"
+                alt=""
+                className="w-8 h-8"
+                loading="lazy"
+              />
             </motion.div>
           </motion.div>
 
@@ -764,7 +769,12 @@ export default function ProfileCard() {
             }}
           >
             <motion.div variants={floatVariants} custom={1}>
-              <img src="/Frame 114.png" alt="" className="w-24 h-10" />
+              <img
+                src="/Frame 114.png"
+                alt=""
+                className="w-24 h-10"
+                loading="lazy"
+              />
             </motion.div>
           </motion.div>
 
@@ -785,7 +795,12 @@ export default function ProfileCard() {
             }}
           >
             <motion.div variants={floatVariants} custom={2}>
-              <img src="/Frame 113.png" alt="" className="w-24 h-10" />
+              <img
+                src="/Frame 113.png"
+                alt=""
+                className="w-24 h-10"
+                loading="lazy"
+              />
             </motion.div>
           </motion.div>
 
@@ -806,7 +821,12 @@ export default function ProfileCard() {
             }}
           >
             <motion.div variants={floatVariants} custom={3}>
-              <img src="/Frame 115.png" alt="" className="w-28 h-10" />
+              <img
+                src="/Frame 115.png"
+                alt=""
+                className="w-28 h-10"
+                loading="lazy"
+              />
             </motion.div>
           </motion.div>
 
@@ -827,7 +847,12 @@ export default function ProfileCard() {
             }}
           >
             <motion.div variants={floatVariants} custom={4}>
-              <img src="/Vector (5).png" alt="" className="w-8 h-8" />
+              <img
+                src="/Vector (5).png"
+                alt=""
+                className="w-8 h-8"
+                loading="lazy"
+              />
             </motion.div>
           </motion.div>
 
@@ -842,6 +867,7 @@ export default function ProfileCard() {
             <img
               src="/Frame 112.png"
               alt="Elizabeth"
+              loading="lazy"
               className="w-60 h-44 sm:w-72 sm:h-24 md:w-80 md:h-28 lg:w-92 lg:h-36 object-contain"
             />
           </motion.div>

@@ -34,14 +34,14 @@ const floatAnimation = {
 export default function PremiumBenefitsCard() {
   const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
   const [activeState, setActiveState] = useState(false);
-  const cardRef = useRef  (null); 
+  const cardRef = useRef(null);
 
-    useEffect(() => {
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setActiveState(true);  // ✅ visible hua
+            setActiveState(true); // ✅ visible hua
           } else {
             setActiveState(false); // ✅ screen se gaya
           }
@@ -137,6 +137,7 @@ export default function PremiumBenefitsCard() {
                   sm:w-[48px] sm:h-[48px]
                   lg:w-[58px] lg:h-[58px]
                 "
+                loading="lazy"
               />
             </motion.div>
           </motion.div>
@@ -157,8 +158,18 @@ export default function PremiumBenefitsCard() {
             }}
           >
             <motion.div
-              animate={activeState ? { ...floatAnimation, transition: { ...floatAnimation.transition, duration: 3 } } : {}}
-              whileHover={{ ...floatAnimation, transition: { ...floatAnimation.transition, duration: 3 } }}
+              animate={
+                activeState
+                  ? {
+                      ...floatAnimation,
+                      transition: { ...floatAnimation.transition, duration: 3 },
+                    }
+                  : {}
+              }
+              whileHover={{
+                ...floatAnimation,
+                transition: { ...floatAnimation.transition, duration: 3 },
+              }}
             >
               <img
                 src="/Action=Like Matches, Filled=False, Component=Matches Action (1).png"
@@ -168,6 +179,8 @@ export default function PremiumBenefitsCard() {
                   sm:w-[48px] sm:h-[48px]
                   lg:w-[58px] lg:h-[58px]
                 "
+                loading="lazy"
+                style={{ width: "58px", height: "58px" }}
               />
             </motion.div>
           </motion.div>
@@ -188,8 +201,21 @@ export default function PremiumBenefitsCard() {
             }}
           >
             <motion.div
-              animate={activeState ? { ...floatAnimation, transition: { ...floatAnimation.transition, duration: 2.8 } } : {}}
-              whileHover={{ ...floatAnimation, transition: { ...floatAnimation.transition, duration: 2.8 } }}
+              animate={
+                activeState
+                  ? {
+                      ...floatAnimation,
+                      transition: {
+                        ...floatAnimation.transition,
+                        duration: 2.8,
+                      },
+                    }
+                  : {}
+              }
+              whileHover={{
+                ...floatAnimation,
+                transition: { ...floatAnimation.transition, duration: 2.8 },
+              }}
             >
               <img
                 src="/Action=Like Matches, Filled=False, Component=Matches Action (2).png"
@@ -199,6 +225,8 @@ export default function PremiumBenefitsCard() {
                   sm:w-[48px] sm:h-[48px]
                   lg:w-[58px] lg:h-[58px]
                 "
+                loading="lazy"
+                style={{ width: "58px", height: "58px" }}
               />
             </motion.div>
           </motion.div>
@@ -224,7 +252,13 @@ export default function PremiumBenefitsCard() {
               border: "1px solid rgba(0,0,0,0.04)",
             }}
           >
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
               <h4
                 className="text-[11px] sm:text-[14px] lg:text-[16px]"
                 style={{ margin: 0 }}

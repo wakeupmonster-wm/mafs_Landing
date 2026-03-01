@@ -480,7 +480,7 @@ export default function ExploreMatchesCard() {
                     gap: "5px",
                   }}
                 >
-                  <span style={{ fontWeight: 800, fontSize: "15px" }}>
+                  <span style={{ fontWeight: 800, fontSize: "10px" }}>
                     {images[currentIndex].name}
                   </span>
                   <span
