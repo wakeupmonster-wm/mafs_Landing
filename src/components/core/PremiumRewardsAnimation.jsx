@@ -183,7 +183,7 @@ const rightFadeEnd = rightVisible + cardStep * 2;
   ).flat();
 
   return (
-    <div className="relative w-full h-[65rem] py-32">
+    <div className="relative w-full h-[65rem] py-32" >
       {/* Background Image replacing radial-gradient */}
       <img src="/aqua-blurBg.png" alt="" className="absolute w-full h-full" />
 
@@ -262,7 +262,8 @@ const rightFadeEnd = rightVisible + cardStep * 2;
     top: window.innerWidth < 640 ? "24%" : "16%",
     left: window.innerWidth < 640 ? "25%" : "10%",
     width: window.innerWidth < 640 ? "50%" : "80%",
-    height: "70%"
+    height: "70%",
+    
   }}
 >
                 <img
