@@ -6,9 +6,8 @@ import ContactUsPage from "@/module/home/pages/contact-us.page";
 import TermsAndConditionsPage from "@/module/home/pages/terms-conditions.page";
 import FeaturesPage from "@/module/home/pages/features.page";
 import HowItWorksPage from "@/module/home/pages/how-it-works.page";
-import WaitlistLandingPage from "@/module/home/pages/waitlist.page";
-import WaitlistFormPage from "@/module/home/components/WaitlistPage";
-import ErrorPage from "@/module/home/pages/error.page";
+import WaitlistPage from "@/module/home/pages/waitlist.page";
+import AboutPage from "@/module/home/pages/about.page";
 import HomePage from "@/module/home/pages/home.page";
 import BackgroundPattern from "@/module/home/pages/NewHome";
 
@@ -16,7 +15,6 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <ErrorPage />,
   },
   {
     path: "/home",
@@ -52,10 +50,6 @@ export const router = createBrowserRouter([
   },
   {
     path: "/waitlist",
-    element: <WaitlistLandingPage />,
-  },
-  {
-    path: "/join",
-    element: <WaitlistFormPage />,
+    element: <WaitlistPage />,
   },
 ]);

@@ -189,7 +189,7 @@ export default function PremiumRewardsAnimation() {
     <div className="relative w-full h-screen py-10">
       {/* Background Image replacing radial-gradient */}
       <img
-        src="/aqua-blurBg.png"
+        src="/aqua-blurBg.webp"
         alt=""
         className="absolute w-full h-full"
         loading="lazy"
@@ -257,7 +257,7 @@ export default function PremiumRewardsAnimation() {
             <div className="relative">
               <img
                 className="md:w-80 md:h-[580px] sm:w-36 sm:h-[260px] w-52 h-[400px]"
-                src="/Phone → Phone (1).png"
+                src="/Phone_Render.webp"
                 alt="Phone mockup"
                 loading="lazy"
                 onLoad={calculateMask}

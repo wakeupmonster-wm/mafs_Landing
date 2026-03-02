@@ -451,7 +451,7 @@ export default function HeroAnimation() {
       <section id="hero-section" className="relative min-h-screen">
         <div className="absolute inset-0 z-0">
           <img
-            src="/Background.png"
+            src="/Background.webp"
             alt="Hero Background"
             loading="lazy"
             className="w-full h-full object-cover"
