@@ -1153,11 +1153,10 @@ export default function ContactUsPage() {
                             key={i}
                             type="button"
                             onClick={() => handleSubjectSelect(option)}
-                            className={`w-full text-left px-4 py-2.5 text-sm hover:bg-blue-50 transition-colors duration-150 ${
-                              formData.subject === option
+                            className={`w-full text-left px-4 py-2.5 text-sm hover:bg-blue-50 transition-colors duration-150 ${formData.subject === option
                                 ? "text-[#46C7CD] font-medium bg-blue-50"
                                 : "text-slate-700"
-                            }`}
+                              }`}
                           >
                             {option}
                           </button>
@@ -1252,7 +1251,7 @@ export default function ContactUsPage() {
           </div>
         </div>
       </div>
-        <Footer />
+      <Footer />
     </div>
   );
 }
