@@ -374,26 +374,28 @@ const POP_OUTS = [
     src: "/Pop-out 1.png",
     delay: "delay-0",
     translate:
-      // Mobile → sm → md → lg → xl → 2xl
-      "group-[.is-active]:-translate-x-[100px] group-[.is-active]:-translate-y-[60px] sm:group-[.is-active]:-translate-x-[140px] sm:group-[.is-active]:-translate-y-[80px] md:group-[.is-active]:-translate-x-[190px] md:group-[.is-active]:-translate-y-[100px] lg:group-[.is-active]:-translate-x-[240px] lg:group-[.is-active]:-translate-y-[120px] xl:group-[.is-active]:-translate-x-[280px] xl:group-[.is-active]:-translate-y-[140px] 2xl:group-[.is-active]:-translate-x-[320px] 2xl:group-[.is-active]:-translate-y-[160px]",
+
+      "group-[.is-active]:-translate-x-[125px] xs:group-[.is-active]:-translate-x-[135px] group-[.is-active]:-translate-y-[90px] sm:group-[.is-active]:-translate-x-[160px] sm:group-[.is-active]:-translate-y-[70px] md:group-[.is-active]:-translate-x-[220px] md:group-[.is-active]:-translate-y-[100px] lg:group-[.is-active]:-translate-x-[280px] lg:group-[.is-active]:-translate-y-[120px] xl:group-[.is-active]:-translate-x-[235px] xl:group-[.is-active]:-translate-y-[140px]",
   },
   {
     src: "/Pop-out 2.png",
     delay: "delay-75",
     translate:
-      "group-[.is-active]:translate-x-[90px] group-[.is-active]:-translate-y-[55px] sm:group-[.is-active]:translate-x-[120px] sm:group-[.is-active]:-translate-y-[70px] md:group-[.is-active]:translate-x-[160px] md:group-[.is-active]:-translate-y-[85px] lg:group-[.is-active]:translate-x-[200px] lg:group-[.is-active]:-translate-y-[100px] xl:group-[.is-active]:translate-x-[240px] xl:group-[.is-active]:-translate-y-[115px] 2xl:group-[.is-active]:translate-x-[280px] 2xl:group-[.is-active]:-translate-y-[130px]",
+
+      "group-[.is-active]:translate-x-[100px] xs:group-[.is-active]:translate-x-[110px] group-[.is-active]:-translate-y-[65px] sm:group-[.is-active]:translate-x-[130px] sm:group-[.is-active]:-translate-y-[60px] md:group-[.is-active]:translate-x-[165px] md:group-[.is-active]:-translate-y-[80px] lg:group-[.is-active]:translate-x-[210px] lg:group-[.is-active]:-translate-y-[95px] xl:group-[.is-active]:translate-x-[180px] xl:group-[.is-active]:-translate-y-[110px]",
   },
   {
     src: "/Pop-out 3.png",
     delay: "delay-150",
     translate:
-      "group-[.is-active]:-translate-x-[85px] group-[.is-active]:translate-y-[70px] sm:group-[.is-active]:-translate-x-[115px] sm:group-[.is-active]:translate-y-[100px] md:group-[.is-active]:-translate-x-[155px] md:group-[.is-active]:translate-y-[135px] lg:group-[.is-active]:-translate-x-[195px] lg:group-[.is-active]:translate-y-[165px] xl:group-[.is-active]:-translate-x-[230px] xl:group-[.is-active]:translate-y-[195px] 2xl:group-[.is-active]:-translate-x-[270px] 2xl:group-[.is-active]:translate-y-[225px]",
+
+      "group-[.is-active]:-translate-x-[100px] xs:group-[.is-active]:-translate-x-[90px] group-[.is-active]:translate-y-[100px] sm:group-[.is-active]:-translate-x-[120px] sm:group-[.is-active]:translate-y-[110px] md:group-[.is-active]:-translate-x-[160px] md:group-[.is-active]:translate-y-[150px] lg:group-[.is-active]:-translate-x-[195px] lg:group-[.is-active]:translate-y-[180px] xl:group-[.is-active]:-translate-x-[175px] xl:group-[.is-active]:translate-y-[200px]",
   },
   {
     src: "/Pop-out 4.png",
     delay: "delay-200",
     translate:
-      "group-[.is-active]:translate-x-[100px] group-[.is-active]:translate-y-[65px] sm:group-[.is-active]:translate-x-[135px] sm:group-[.is-active]:translate-y-[90px] md:group-[.is-active]:translate-x-[175px] md:group-[.is-active]:translate-y-[120px] lg:group-[.is-active]:translate-x-[220px] lg:group-[.is-active]:translate-y-[148px] xl:group-[.is-active]:translate-x-[260px] xl:group-[.is-active]:translate-y-[175px] 2xl:group-[.is-active]:translate-x-[300px] 2xl:group-[.is-active]:translate-y-[205px]",
+      "group-[.is-active]:translate-x-[125px] xs:group-[.is-active]:translate-x-[130px] group-[.is-active]:translate-y-[90px] sm:group-[.is-active]:translate-x-[160px] sm:group-[.is-active]:translate-y-[95px] md:group-[.is-active]:translate-x-[220px] md:group-[.is-active]:translate-y-[125px] lg:group-[.is-active]:translate-x-[260px] lg:group-[.is-active]:translate-y-[150px] xl:group-[.is-active]:translate-x-[230px] xl:group-[.is-active]:translate-y-[200px]",
   },
 ];
 
@@ -414,15 +416,8 @@ const ConcentricCircles = forwardRef((props, ref) => {
       {/* ✅ Circle - har device pe sahi size */}
       <div
         ref={ref}
-        className="
-          relative group flex items-center justify-center
-          w-[300px] h-[300px]
-          sm:w-[420px] sm:h-[420px]
-          md:w-[520px] md:h-[520px]
-          lg:w-[600px] lg:h-[600px]
-          xl:w-[680px] xl:h-[680px]
-          2xl:w-[760px] 2xl:h-[760px]
-        "
+
+        className="relative w-[330px] h-[330px] sm:w-[480px] sm:h-[480px] md:w-[580px] md:h-[580px] xl:w-[680px] xl:h-[680px] group flex items-center justify-center"
       >
         {/* ✅ Pop-outs */}
         {POP_OUTS.map((popout, idx) => (
@@ -443,15 +438,7 @@ const ConcentricCircles = forwardRef((props, ref) => {
               src={popout.src}
               alt="Pop Out"
               loading="lazy"
-              className="
-                h-10
-                sm:h-14
-                md:h-16
-                lg:h-20
-                xl:h-24
-                2xl:h-28
-                w-auto object-contain
-              "
+              className="w-full h-12 xs:h-14 md:h-24 object-contain"
             />
           </div>
         ))}

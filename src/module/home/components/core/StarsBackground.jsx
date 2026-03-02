@@ -89,7 +89,7 @@ import { motion } from "framer-motion";
 export default function StarsBackground() {
   const stars = [
     {
-      top: "34%",
+      top: "40%",
       left: "6%",
       size: "text-4xl",
       color: "text-white/25",
@@ -100,63 +100,44 @@ export default function StarsBackground() {
     },
     {
       top: "6%",
-      right: "32%",
-      size: "text-xl sm:text-2xl",
-      color: "text-white/30",
-      duration: 1.8,
-      delay: 0.5,
-      minOpacity: 0.1,
-      maxOpacity: 0.5,
+      right: "33%",
+      size: "text-2xl sm:text-3xl",
+      opacity: "text-white/30",
     },
     {
       top: "48%",
       left: "29%",
       size: "text-5xl",
-      color: "text-[#09c1c7]",
-      duration: 2.5,
-      delay: 0.8,
-      minOpacity: 0.3,
-      maxOpacity: 1,
+      opacity: "text-[#09c1c7]",
+      display: "hidden xl:inline",
     },
     {
-      top: "95%",
+      top: "90%",
       left: "22%",
       size: "text-5xl",
-      color: "text-white/15",
-      duration: 3,
-      delay: 1.2,
-      minOpacity: 0.05,
-      maxOpacity: 0.3,
+      opacity: "text-white/15",
+      display: "hidden xl:inline",
     },
     {
-      top: "88%",
-      left: "65%",
+      top: "92%",
+      left: "75%",
       size: "text-6xl",
-      color: "text-white/15",
-      duration: 2.8,
-      delay: 0.3,
-      minOpacity: 0.05,
-      maxOpacity: 0.25,
+      opacity: "text-white/15",
+      display: "hidden xl:inline",
     },
     {
-      top: "31%",
-      right: "21.5%",
+      top: "38%",
+      right: "21%",
       size: "text-4xl",
-      color: "text-[#09c1c7]",
-      duration: 2,
-      delay: 0.6,
-      minOpacity: 0.3,
-      maxOpacity: 1,
+      opacity: "text-[#09c1c7]",
+      display: "hidden xl:inline",
     },
     {
       top: "6%",
       left: "37.5%",
       size: "text-5xl",
-      color: "text-[#09c1c7]",
-      duration: 2.4,
-      delay: 1,
-      minOpacity: 0.3,
-      maxOpacity: 1,
+      opacity: "text-[#09c1c7]",
+      display: "hidden xl:inline",
     },
   ];
 
@@ -165,7 +146,7 @@ export default function StarsBackground() {
       {stars.map((star, i) => (
         <motion.div
           key={i}
-          className={`absolute ${star.color} ${star.size}`}
+          className={`absolute ${star.opacity} ${star.size} ${star.display}`}
           style={{ top: star.top, left: star.left, right: star.right }}
 
           // ✅ Entry - pehle appear ho

@@ -55,7 +55,7 @@ export default function Header() {
           }}
         >
           <img
-            src="/Vector (4).png"
+            src="/Vector.png"
             alt="Logo"
             loading="lazy"
             className="h-7 sm:h-8 md:h-10 w-auto transition-transform hover:scale-105"

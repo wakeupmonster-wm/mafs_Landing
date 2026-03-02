@@ -26,7 +26,7 @@ export default function PeopleAnimation() {
 
   return (
     // px-4 sm:px-6 md:px-10 lg:px-20 py-12 md:py-16
-    <section className="wrapper w-full h-[60vh] lg:h-auto py-16">
+    <section className="wrapper w-full h-[70vh] lg:h-auto py-16">
       {/* Space above for scroll room - Reduced for better feel */}
       {/* <div className="h-16 md:h-24 lg:h-32" /> */}
 

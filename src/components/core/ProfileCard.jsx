@@ -726,7 +726,7 @@ export default function ProfileCard() {
               position: "absolute",
               top: "45%",
               left: "50%",
-              zIndex: 20,
+              zIndex: 1,
               pointerEvents: "none",
             }}
             variants={chipVariants}
