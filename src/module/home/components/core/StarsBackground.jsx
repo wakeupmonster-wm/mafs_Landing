@@ -3,32 +3,52 @@ import { motion } from "framer-motion";
 export default function StarsBackground() {
   const stars = [
     {
-      top: "34%",
+      top: "40%",
       left: "6%",
       size: "text-4xl",
       opacity: "text-white/25",
     },
     {
       top: "6%",
-      right: "32%",
-      size: "text-xl sm:text-2xl",
+      right: "33%",
+      size: "text-2xl sm:text-3xl",
       opacity: "text-white/30",
     },
-    { top: "48%", left: "29%", size: "text-5xl", opacity: "text-[#09c1c7]" },
     {
-      top: "95%",
+      top: "48%",
+      left: "29%",
+      size: "text-5xl",
+      opacity: "text-[#09c1c7]",
+      display: "hidden xl:inline",
+    },
+    {
+      top: "90%",
       left: "22%",
       size: "text-5xl",
       opacity: "text-white/15",
+      display: "hidden xl:inline",
     },
     {
-      top: "88%",
-      left: "65%",
+      top: "92%",
+      left: "75%",
       size: "text-6xl",
       opacity: "text-white/15",
+      display: "hidden xl:inline",
     },
-    { top: "31%", right: "21.5%", size: "text-4xl", opacity: "text-[#09c1c7]" },
-    { top: "6%", left: "37.5%", size: "text-5xl", opacity: "text-[#09c1c7]" },
+    {
+      top: "38%",
+      right: "21%",
+      size: "text-4xl",
+      opacity: "text-[#09c1c7]",
+      display: "hidden xl:inline",
+    },
+    {
+      top: "6%",
+      left: "37.5%",
+      size: "text-5xl",
+      opacity: "text-[#09c1c7]",
+      display: "hidden xl:inline",
+    },
   ];
 
   return (
@@ -36,7 +56,7 @@ export default function StarsBackground() {
       {stars.map((star, i) => (
         <motion.div
           key={i}
-          className={`absolute ${star.opacity} ${star.size}`}
+          className={`absolute ${star.opacity} ${star.size} ${star.display}`}
           style={{ top: star.top, left: star.left, right: star.right }}
           // ✅ Entry animation - pehle fade in aur scale up
           initial={{

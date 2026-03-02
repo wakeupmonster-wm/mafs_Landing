@@ -1,15 +1,3 @@
-// export default function HeroContent({ phoneRef }) {
-//   return (
-//     <div className="relative z-20 w-full min-h-screen top-16 flex flex-col justify-center px-6 sm:px-8 md:px-10 lg:px-14 pt-24 pb-10">
-//       <div className="text-center mb-5 lg:mb-10">
-//         <h1 className="text-[40px] sm:text-[56px] md:text-[72px] lg:text-[88px] xl:text-[100px] font-black text-white tracking-tight leading-[0.92] mb-3">
-//           MATCH AT FIRST SWIPE
-//         </h1>
-//         <p className="text-white/90 mt-6 text-sm md:text-xl lg:text-2xl font-medium tracking-tight">
-//           Australia's newest dating app with a spin
-//         </p>
-//       </div>
-
 import { useNavigate } from "react-router";
 
 //       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6 xl:gap-10 items-end justify-between mx-auto w-full lg:w-11/12">
@@ -84,10 +72,10 @@ import { useNavigate } from "react-router";
 export default function HeroContent({ phoneRef, phoneArrived }) {
   const navigate = useNavigate();
   return (
-    <div className="relative z-20 w-full h-[60vh] lg:h-screen flex flex-col justify-between px-3 xs:px-6 sm:px-10 lg:px-14 pt-28 md:pt-40 pb-10">
+    <div className="relative z-20 w-full h-[60vh] lg:h-screen flex flex-col justify-between px-3 xs:px-6 sm:px-10 lg:px-14 xl:px-20 pt-28 md:pt-40 xl:pt-44 pb-10">
       {/* Title Section */}
-      <div className="text-center w-full max-w-5xl mx-auto">
-        <h1 className="text-[32px] sm:text-[50px] md:text-[60px] lg:text-[90px] font-black text-white tracking-tight leading-[1.1] lg:leading-[0.92] mb-3">
+      <div className="text-center w-full max-w-max mx-auto">
+        <h1 className="text-[28px] xs:text-[32px] sm:text-[50px] md:text-[60px] lg:text-[90px] xl:text-[100px] font-black text-white tracking-tight leading-[1.1] lg:leading-[0.92] mb-3">
           MATCH AT FIRST SWIPE
         </h1>
         <p className="text-white/90 text-sm md:text-xl lg:text-2xl font-medium tracking-tight mt-4">
@@ -96,9 +84,9 @@ export default function HeroContent({ phoneRef, phoneArrived }) {
       </div>
 
       {/* Grid Layout: Laptop mein 3 columns, Mobile mein Stacked */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 md:gap-10 items-center md:items-end w-full max-w-[1400px] mx-auto mt-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 md:gap-10 items-center md:items-end lg:items-center xl:items-end justify-center w-full max-w-[1530px] mt-10 mx-auto">
         {/* Left: App Stores & Scroll Button */}
-        <div className="hidden lg:flex flex-col items-center md:items-start mb-10 lg:mb-20 gap-6 order-1">
+        <div className="hidden lg:flex flex-col items-center md:items-start lg:items-start mb-10 lg:mb-20 xl:mb-48 2xl:mb-20 gap-14 2xl:gap-16 order-1">
           <div className="text-center lg:text-left">
             <p className="text-white text-[10px] sm:text-base mb-3 font-inter font-normal">
               Launching soon on
@@ -124,25 +112,6 @@ export default function HeroContent({ phoneRef, phoneArrived }) {
           </div>
         </div>
 
-        {/* Middle: Phone Frame (Absolute positioning se bachna hai) */}
-        {/* <div className="relative flex justify-center items-end order-2 min-h-[300px] mt-4 md:mt-14">
-          {/* Ellipse BG - centered behind the phone
-          <img
-            src="/mobellipse.png"
-            alt=""
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] sm:w-[350px] md:w-[450px] opacity-60"
-            loading="lazy"
-          />
-          <div ref={phoneRef} className="relative z-10 pointer-events-none">
-            <img
-              src="/Phone.png"
-              alt="Phone"
-              className="w-[180px] sm:w-[250px] md:w-[280px] lg:w-[290px] h-[24rem] sm:h-[30rem] lg:h-auto"
-              loading="lazy"
-            />
-          </div>
-        </div> */}
-
         <img
           src="/mobellipse.png"
           alt="mobellipse.png"
@@ -152,13 +121,13 @@ export default function HeroContent({ phoneRef, phoneArrived }) {
 
         {/* Middle (Phone) */}
         <div className="flex justify-center items-end order-1 lg:order-2">
-          <div ref={phoneRef} className="pointer-events-none mt-10 relative">
+          <div ref={phoneRef} className="pointer-events-none relative">
             {/* ✅ Phone 1 - fade out jab center pe aaye */}
             <img
               src="/Phone.png"
               alt="Phone"
               // className="w-[140px] sm:w-[220px] md:w-[260px] lg:w-[280px] xl:w-[290px] drop-shadow-[0_25px_50px_rgba(5,5,5,0.70)]"
-              className="w-[180px] sm:w-[250px] md:w-[280px] lg:w-[290px] h-[22rem] sm:h-[30rem] lg:h-auto"
+              className="w-[180px] sm:w-[250px] md:w-[280px] lg:w-[290px] xl:w-[310px] h-[22rem] sm:h-[30rem] lg:h-auto"
               style={{
                 opacity: phoneArrived ? 0 : 1,
                 transition: "opacity 0.8s ease-in-out",
@@ -172,7 +141,7 @@ export default function HeroContent({ phoneRef, phoneArrived }) {
               src="/After Scroll (1).png"
               alt="Phone New"
               // className="w-[140px] sm:w-[220px] md:w-[260px] lg:w-[280px] xl:w-[290px] drop-shadow-[0_25px_50px_rgba(5,5,5,0.70)]"
-              className="w-[180px] sm:w-[250px] md:w-[280px] lg:w-[290px] h-[20rem] sm:h-[32rem] lg:h-auto"
+              className="w-[180px] sm:w-[250px] md:w-[280px] lg:w-[290px] xl:w-[310px] h-[22rem] sm:h-[30rem] lg:h-auto"
               style={{
                 opacity: phoneArrived ? 1 : 0,
                 transition: "opacity 0.8s ease-in-out",
@@ -186,8 +155,8 @@ export default function HeroContent({ phoneRef, phoneArrived }) {
         </div>
 
         {/* Right: QR Code */}
-        <div className="hidden lg:flex flex-col items-center lg:items-end mb-24 sm:mb-5 lg:mb-16 order-3">
-          <div className="w-full max-w-[240px] text-start md:text-left space-y-2 sm:space-y-4 p-1 md:p-5 rounded-3xl lg:p-0">
+        <div className="hidden lg:flex flex-col items-center lg:items-end mb-10 lg:mb-20 xl:mb-56 2xl:mb-28 order-3">
+          <div className="w-full max-w-max text-start md:text-left space-y-2 sm:space-y-4 p-1 md:p-5 rounded-3xl lg:p-0">
             <h3 className="text-white text-sm sm:text-base md:text-xl font-bold leading-tight">
               Scan QR code to <br className="hidden lg:block" /> Join the Early
               Access
@@ -238,7 +207,7 @@ export default function HeroContent({ phoneRef, phoneArrived }) {
           {/* Right: Join the Waitlist Button */}
           <button
             onClick={() => navigate("/waitlist")}
-            className=" transition-all duration-500 bg-join-gradient btn-shadow text-white font-semibold text-[12px] sm:text-sm py-2.5 px-6 sm:px-8 rounded-full border-4 border-[#cfe0f7ed] whitespace-nowrap"
+            className=" transition-all duration-500 bg-join-gradient text-white font-semibold text-[12px] sm:text-sm py-2.5 px-6 sm:px-8 rounded-full border-4 border-[#cfe0f7ed] whitespace-nowrap"
           >
             Join the Waitlist
           </button>

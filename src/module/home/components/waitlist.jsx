@@ -118,7 +118,7 @@ const Waitlist = () => {
 
   return (
     <section className="wrapper w-full flex justify-center">
-      <div className="max-w-7xl w-full flex flex-col xl:flex-row items-center sm:items-start justify-center gap-6">
+      <div className="max-w-7xl w-full flex flex-col xl:flex-row items-center sm:items-start justify-center gap-10 md:gap-6 px-5">
         {/* Left Side: Phone Mockup */}
         <div className="w-[310px] xs:w-[330px] sm:w-[350px] md:w-[380px] lg:w-[400px] xl:w-[450px] mx-auto h-full">
           <img
@@ -130,10 +130,10 @@ const Waitlist = () => {
         </div>
 
         {/* Right Side: Waitlist Card */}
-        <Border className={"w-full max-w-[850px]"}>
+        <Border className={"w-full max-w-[830px]"}>
           <div className="flex flex-col sm:flex-row items-center sm:items-start rounded-2xl sm:rounded-3xl lg:rounded-[32px] bg-white p-4 sm:p-6 md:p-8 lg:p-10 shadow-xl sm:shadow-2xl shadow-gray-300/40 sm:shadow-gray-400/50 gap-4 sm:gap-6 md:gap-8">
             {/* Text Content */}
-            <div className="flex-1 space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6 text-center sm:text-left">
+            <div className="flex-1 space-y-5 sm:space-y-4 md:space-y-5 lg:space-y-6 text-center sm:text-left">
               <h2 className="px-2 xs:px-0 text-2xl xs:text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-gray-900 tracking-tighter leading-tight sm:leading-[1.2] lg:leading-[1.1]">
                 Be one of the first to join and get free premium access for 3
                 months

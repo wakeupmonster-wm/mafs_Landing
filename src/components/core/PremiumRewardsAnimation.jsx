@@ -185,7 +185,7 @@ export default function PremiumRewardsAnimation() {
   ).flat();
 
   return (
-    <div className="relative w-full h-screen py-10">
+    <div className="relative w-full h-screen py-16">
       {/* Background Image replacing radial-gradient */}
       <img
         src="/aqua-blurBg.png"
@@ -197,7 +197,7 @@ export default function PremiumRewardsAnimation() {
       <div className="absolute inset-0 flex flex-col">
         {/* Header */}
 
-        <div className="relative z-20 px-8 py-12 text-center">
+        <div className="relative z-1 px-8 py-12 text-center">
           <img
             src="/Light → Figure - Line Gradient → ZzXR4Xa701pprKwAZYChrznQWE.png.png"
             className="inline-block w-48 h-2 mb-6"

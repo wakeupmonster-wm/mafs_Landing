@@ -127,6 +127,7 @@ html {
     @apply text-foreground;
     font-family: "Plus Jakarta Sans", sans-serif;
     background-color: #eaebedce; /* bg-[#f0f1f2] */
+    /* overscroll-behavior-y: none; */
   }
 }
 
@@ -155,6 +156,7 @@ html {
     transform: translate3d(0, 0, 0);
   }
 }
+
 * {
   backface-visibility: hidden;
 }
@@ -192,17 +194,17 @@ html {
 }
 
 .wrapper {
-  padding: 45px 32px;
+  padding: 55px 32px;
 }
 
 @media (max-width: 1024px) and (min-width: 760px) {
   .wrapper {
-    padding: 65px 32px;
+    padding: 75px 32px;
   }
 }
 
 @media (max-width: 660px) and (min-width: 320px) {
   .wrapper {
-    padding: 40px 15px;
+    padding: 50px 32px;
   }
 }

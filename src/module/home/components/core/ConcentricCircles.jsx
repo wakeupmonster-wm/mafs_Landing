@@ -6,25 +6,25 @@ const POP_OUTS = [
     src: "/Pop-out 1.png",
     delay: "delay-0",
     translate:
-      "group-[.is-active]:-translate-x-[142px] xs:group-[.is-active]:-translate-x-[130px] group-[.is-active]:-translate-y-[90px] sm:group-[.is-active]:-translate-x-[160px] sm:group-[.is-active]:-translate-y-[70px] md:group-[.is-active]:-translate-x-[225px] md:group-[.is-active]:-translate-y-[100px] lg:group-[.is-active]:-translate-x-[280px] lg:group-[.is-active]:-translate-y-[120px] xl:group-[.is-active]:-translate-x-[220px] xl:group-[.is-active]:-translate-y-[140px]",
+      "group-[.is-active]:-translate-x-[125px] xs:group-[.is-active]:-translate-x-[135px] group-[.is-active]:-translate-y-[90px] sm:group-[.is-active]:-translate-x-[160px] sm:group-[.is-active]:-translate-y-[70px] md:group-[.is-active]:-translate-x-[220px] md:group-[.is-active]:-translate-y-[100px] lg:group-[.is-active]:-translate-x-[280px] lg:group-[.is-active]:-translate-y-[120px] xl:group-[.is-active]:-translate-x-[235px] xl:group-[.is-active]:-translate-y-[140px]",
   },
   {
     src: "/Pop-out 2.png",
     delay: "delay-75",
     translate:
-      "group-[.is-active]:translate-x-[115px] xs:group-[.is-active]:translate-x-[110px] group-[.is-active]:-translate-y-[65px] sm:group-[.is-active]:translate-x-[130px] sm:group-[.is-active]:-translate-y-[60px] md:group-[.is-active]:translate-x-[165px] md:group-[.is-active]:-translate-y-[80px] lg:group-[.is-active]:translate-x-[210px] lg:group-[.is-active]:-translate-y-[95px] xl:group-[.is-active]:translate-x-[175px] xl:group-[.is-active]:-translate-y-[110px]",
+      "group-[.is-active]:translate-x-[100px] xs:group-[.is-active]:translate-x-[110px] group-[.is-active]:-translate-y-[65px] sm:group-[.is-active]:translate-x-[130px] sm:group-[.is-active]:-translate-y-[60px] md:group-[.is-active]:translate-x-[165px] md:group-[.is-active]:-translate-y-[80px] lg:group-[.is-active]:translate-x-[210px] lg:group-[.is-active]:-translate-y-[95px] xl:group-[.is-active]:translate-x-[180px] xl:group-[.is-active]:-translate-y-[110px]",
   },
   {
     src: "/Pop-out 3.png",
     delay: "delay-150",
     translate:
-      "group-[.is-active]:-translate-x-[105px] xs:group-[.is-active]:-translate-x-[90px] group-[.is-active]:translate-y-[100px] sm:group-[.is-active]:-translate-x-[120px] sm:group-[.is-active]:translate-y-[110px] md:group-[.is-active]:-translate-x-[160px] md:group-[.is-active]:translate-y-[150px] lg:group-[.is-active]:-translate-x-[195px] lg:group-[.is-active]:translate-y-[180px] xl:group-[.is-active]:-translate-x-[165px] xl:group-[.is-active]:translate-y-[200px]",
+      "group-[.is-active]:-translate-x-[100px] xs:group-[.is-active]:-translate-x-[90px] group-[.is-active]:translate-y-[100px] sm:group-[.is-active]:-translate-x-[120px] sm:group-[.is-active]:translate-y-[110px] md:group-[.is-active]:-translate-x-[160px] md:group-[.is-active]:translate-y-[150px] lg:group-[.is-active]:-translate-x-[195px] lg:group-[.is-active]:translate-y-[180px] xl:group-[.is-active]:-translate-x-[175px] xl:group-[.is-active]:translate-y-[200px]",
   },
   {
     src: "/Pop-out 4.png",
     delay: "delay-200",
     translate:
-      "group-[.is-active]:translate-x-[140px] xs:group-[.is-active]:translate-x-[130px] group-[.is-active]:translate-y-[90px] sm:group-[.is-active]:translate-x-[160px] sm:group-[.is-active]:translate-y-[95px] md:group-[.is-active]:translate-x-[220px] md:group-[.is-active]:translate-y-[125px] lg:group-[.is-active]:translate-x-[260px] lg:group-[.is-active]:translate-y-[150px] xl:group-[.is-active]:translate-x-[220px] xl:group-[.is-active]:translate-y-[200px]",
+      "group-[.is-active]:translate-x-[125px] xs:group-[.is-active]:translate-x-[130px] group-[.is-active]:translate-y-[90px] sm:group-[.is-active]:translate-x-[160px] sm:group-[.is-active]:translate-y-[95px] md:group-[.is-active]:translate-x-[220px] md:group-[.is-active]:translate-y-[125px] lg:group-[.is-active]:translate-x-[260px] lg:group-[.is-active]:translate-y-[150px] xl:group-[.is-active]:translate-x-[230px] xl:group-[.is-active]:translate-y-[200px]",
   },
 ];
 
@@ -44,7 +44,7 @@ const ConcentricCircles = forwardRef((props, ref) => {
 
       <div
         ref={ref}
-        className="relative w-[350px] h-[350px] sm:w-[480px] sm:h-[480px] md:w-[580px] md:h-[580px] xl:w-[680px] xl:h-[680px] group flex items-center justify-center"
+        className="relative w-[330px] h-[330px] sm:w-[480px] sm:h-[480px] md:w-[580px] md:h-[580px] xl:w-[680px] xl:h-[680px] group flex items-center justify-center"
       >
         {/* Dynamic Pop-outs */}
         {POP_OUTS.map((popout, idx) => (
@@ -58,7 +58,7 @@ const ConcentricCircles = forwardRef((props, ref) => {
               src={popout.src}
               alt="Pop Out"
               loading="lazy"
-              className="w-full md:h-24 h-16 object-contain"
+              className="w-full h-12 xs:h-14 md:h-24 object-contain"
             />
           </div>
         ))}

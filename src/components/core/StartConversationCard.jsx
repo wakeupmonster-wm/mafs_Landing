@@ -243,7 +243,6 @@
 // //   );
 // // }
 
-
 // // eslint-disable-next-line no-unused-vars
 // import { motion } from "framer-motion";
 // import Border from "./border";
@@ -336,8 +335,6 @@
 //               hover: { x: -160, y: -85, scale: 1, transition: smoothSpring },
 //             }}
 //           /> */}
-
-          
 
 //           {/* Boy Avatar */}
 // <motion.img
@@ -507,7 +504,6 @@
 //   Thanks! Glad we matched.
 // </motion.div>
 
-
 //         </div>
 
 //         {/* Text Section */}
@@ -553,8 +549,6 @@
 //   );
 // }
 
-
-
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import Border from "./border";
@@ -583,14 +577,14 @@ export default function StartConversationCard() {
   // ✅ Sirf mobile ke liye
   const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
   const [activeState, setActiveState] = useState(false);
-  const cardRef = useRef(null)
+  const cardRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setActiveState(true);  // ✅ visible hua
+            setActiveState(true); // ✅ visible hua
           } else {
             setActiveState(false); // ✅ screen se gaya
           }
@@ -609,9 +603,9 @@ export default function StartConversationCard() {
   return (
     <Border>
       <motion.div
-       ref={cardRef}
+        ref={cardRef}
         initial="initial"
-         animate={activeState ? "hover" : "initial"}
+        animate={activeState ? "hover" : "initial"}
         whileHover="hover"
         //  onTouchStart={() => setActiveState(true)}   // ✅ mobile touch start
         // onTouchEnd={() => setActiveState(false)}
