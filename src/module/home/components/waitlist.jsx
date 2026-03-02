@@ -156,7 +156,7 @@ const Waitlist = () => {
             <div className="flex-shrink-0">
               <div className="w-52 h-52 bg-gray-100 rounded-[26px] p-4 flex shadow-xl items-center justify-center border-2 border-cardBorder">
                 <img
-                  src="/Untitled (1).png"
+                  src="/My_QR_Code_1-1024.png"
                   alt="Join QR Code"
                   loading="lazy"
                   className="w-full h-full object-contain border-[5px] border-white shadow-md rounded-[26px]"

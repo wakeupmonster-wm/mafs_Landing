@@ -997,7 +997,7 @@ export default function ContactUsPage() {
 
           {/* Title Section */}
           <div className="flex items-start gap-4 sm:gap-5 mb-6">
-            <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-blue-600 flex items-center justify-center">
+            <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-[#46C7CD] flex items-center justify-center">
               <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
             </div>
             <div>
@@ -1036,7 +1036,7 @@ export default function ContactUsPage() {
                 {method.href ? (
                   <a
                     href={method.href}
-                    className="text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors duration-200 break-all"
+                    className="text-sm font-semibold text-[#46C7CD] hover:text-[#46C7CD] transition-colors duration-200 break-all"
                   >
                     {method.value}
                   </a>
@@ -1155,7 +1155,7 @@ export default function ContactUsPage() {
                             onClick={() => handleSubjectSelect(option)}
                             className={`w-full text-left px-4 py-2.5 text-sm hover:bg-blue-50 transition-colors duration-150 ${
                               formData.subject === option
-                                ? "text-blue-600 font-medium bg-blue-50"
+                                ? "text-[#46C7CD] font-medium bg-blue-50"
                                 : "text-slate-700"
                             }`}
                           >
@@ -1189,7 +1189,7 @@ export default function ContactUsPage() {
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm sm:text-base py-3.5 sm:py-4 px-8 sm:px-10 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-[1.02] active:scale-100"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#46C7CD] hover:bg-[#3dabb1] text-white font-semibold text-sm sm:text-base py-3.5 sm:py-4 px-8 sm:px-10 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-[1.02] active:scale-100"
                   >
                     <Send className="w-4 h-4" />
                     Send Message
@@ -1204,7 +1204,7 @@ export default function ContactUsPage() {
             {/* Response Time Card */}
             <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl p-7 text-white">
               <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mb-4">
-                <Clock className="w-5 h-5 text-blue-400" />
+                <Clock className="w-5 h-5 text-[#46C7CD]" />
               </div>
               <h3 className="text-lg font-bold mb-2">Quick Response</h3>
               <p className="text-slate-300 text-sm leading-relaxed mb-6">
@@ -1213,11 +1213,11 @@ export default function ContactUsPage() {
               </p>
               <div className="grid grid-cols-2 gap-3">
                 <div className="bg-white/5 rounded-lg px-4 py-4 text-center border border-white/10">
-                  <p className="text-2xl font-bold text-blue-400">{"<24h"}</p>
+                  <p className="text-2xl font-bold text-[#46C7CD]">{"<24h"}</p>
                   <p className="text-xs text-slate-400 mt-1">Email Response</p>
                 </div>
                 <div className="bg-white/5 rounded-lg px-4 py-4 text-center border border-white/10">
-                  <p className="text-2xl font-bold text-blue-400">24/7</p>
+                  <p className="text-2xl font-bold text-[#46C7CD]">24/7</p>
                   <p className="text-xs text-slate-400 mt-1">Help Centre</p>
                 </div>
               </div>
@@ -1242,7 +1242,7 @@ export default function ContactUsPage() {
                     <span className="text-sm font-medium text-slate-700 group-hover:text-slate-900">
                       {item.label}
                     </span>
-                    <span className="text-xs font-medium bg-blue-100 text-blue-600 px-2.5 py-1 rounded-full">
+                    <span className="text-xs font-medium bg-blue-100 text-[#46C7CD] px-2.5 py-1 rounded-full">
                       {item.tag}
                     </span>
                   </button>
