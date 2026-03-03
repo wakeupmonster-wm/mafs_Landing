@@ -6,25 +6,25 @@ const POP_OUTS = [
     src: "/Pop-out 1.png",
     delay: "delay-0",
     translate:
-      "group-[.is-active]:-translate-x-[125px] xs:group-[.is-active]:-translate-x-[135px] group-[.is-active]:-translate-y-[90px] sm:group-[.is-active]:-translate-x-[160px] sm:group-[.is-active]:-translate-y-[70px] md:group-[.is-active]:-translate-x-[220px] md:group-[.is-active]:-translate-y-[100px] lg:group-[.is-active]:-translate-x-[280px] lg:group-[.is-active]:-translate-y-[120px] xl:group-[.is-active]:-translate-x-[235px] xl:group-[.is-active]:-translate-y-[140px]",
+      "group-[.is-active]:-translate-x-[125px] xs:group-[.is-active]:-translate-x-[135px] group-[.is-active]:-translate-y-[90px] sm:group-[.is-active]:-translate-x-[160px] sm:group-[.is-active]:-translate-y-[70px] md:group-[.is-active]:-translate-x-[220px] md:group-[.is-active]:-translate-y-[100px] lg:group-[.is-active]:-translate-x-[280px] lg:group-[.is-active]:-translate-y-[120px] xl:group-[.is-active]:-translate-x-[230px] xl:group-[.is-active]:-translate-y-[140px]",
   },
   {
     src: "/Pop-out 2.png",
     delay: "delay-75",
     translate:
-      "group-[.is-active]:translate-x-[100px] xs:group-[.is-active]:translate-x-[110px] group-[.is-active]:-translate-y-[65px] sm:group-[.is-active]:translate-x-[130px] sm:group-[.is-active]:-translate-y-[60px] md:group-[.is-active]:translate-x-[165px] md:group-[.is-active]:-translate-y-[80px] lg:group-[.is-active]:translate-x-[210px] lg:group-[.is-active]:-translate-y-[95px] xl:group-[.is-active]:translate-x-[180px] xl:group-[.is-active]:-translate-y-[110px]",
+      "group-[.is-active]:translate-x-[100px] xs:group-[.is-active]:translate-x-[110px] group-[.is-active]:-translate-y-[65px] sm:group-[.is-active]:translate-x-[130px] sm:group-[.is-active]:-translate-y-[60px] md:group-[.is-active]:translate-x-[165px] md:group-[.is-active]:-translate-y-[80px] lg:group-[.is-active]:translate-x-[210px] lg:group-[.is-active]:-translate-y-[95px] xl:group-[.is-active]:translate-x-[175px] xl:group-[.is-active]:-translate-y-[110px]",
   },
   {
     src: "/Pop-out 3.png",
     delay: "delay-150",
     translate:
-      "group-[.is-active]:-translate-x-[100px] xs:group-[.is-active]:-translate-x-[90px] group-[.is-active]:translate-y-[100px] sm:group-[.is-active]:-translate-x-[120px] sm:group-[.is-active]:translate-y-[110px] md:group-[.is-active]:-translate-x-[160px] md:group-[.is-active]:translate-y-[150px] lg:group-[.is-active]:-translate-x-[195px] lg:group-[.is-active]:translate-y-[180px] xl:group-[.is-active]:-translate-x-[175px] xl:group-[.is-active]:translate-y-[200px]",
+      "group-[.is-active]:-translate-x-[100px] xs:group-[.is-active]:-translate-x-[90px] group-[.is-active]:translate-y-[100px] sm:group-[.is-active]:-translate-x-[120px] sm:group-[.is-active]:translate-y-[110px] md:group-[.is-active]:-translate-x-[160px] md:group-[.is-active]:translate-y-[150px] lg:group-[.is-active]:-translate-x-[195px] lg:group-[.is-active]:translate-y-[180px] xl:group-[.is-active]:-translate-x-[172px] xl:group-[.is-active]:translate-y-[200px]",
   },
   {
     src: "/Pop-out 4.png",
     delay: "delay-200",
     translate:
-      "group-[.is-active]:translate-x-[125px] xs:group-[.is-active]:translate-x-[130px] group-[.is-active]:translate-y-[90px] sm:group-[.is-active]:translate-x-[160px] sm:group-[.is-active]:translate-y-[95px] md:group-[.is-active]:translate-x-[220px] md:group-[.is-active]:translate-y-[125px] lg:group-[.is-active]:translate-x-[260px] lg:group-[.is-active]:translate-y-[150px] xl:group-[.is-active]:translate-x-[230px] xl:group-[.is-active]:translate-y-[200px]",
+      "group-[.is-active]:translate-x-[125px] xs:group-[.is-active]:translate-x-[130px] group-[.is-active]:translate-y-[90px] sm:group-[.is-active]:translate-x-[160px] sm:group-[.is-active]:translate-y-[95px] md:group-[.is-active]:translate-x-[220px] md:group-[.is-active]:translate-y-[125px] lg:group-[.is-active]:translate-x-[260px] lg:group-[.is-active]:translate-y-[150px] xl:group-[.is-active]:translate-x-[222px] xl:group-[.is-active]:translate-y-[200px]",
   },
 ];
 
@@ -50,7 +50,7 @@ const ConcentricCircles = forwardRef((props, ref) => {
         {POP_OUTS.map((popout, idx) => (
           <div
             key={idx}
-            className={`absolute z-10 transition-all duration-1000 ease-[cubic-bezier(0.19,1,0.22,1)] opacity-0 scale-50 blur-sm ${
+            className={`absolute z-[100] transition-all duration-1000 ease-[cubic-bezier(0.19,1,0.22,1)] opacity-0 scale-50 blur-sm ${
               popout.delay
             } group-[.is-active]:opacity-100 group-[.is-active]:scale-100 group-[.is-active]:blur-0 ${popout.translate.replace()}`}
           >
