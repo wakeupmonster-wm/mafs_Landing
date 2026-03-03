@@ -105,19 +105,19 @@ const ConcentricCircles = forwardRef((props, ref) => {
 
         @media (min-width: 1536px) {
           :root {
-            --offset-x-1: 320px; --offset-y-1: 160px;
-            --offset-x-2: 260px; --offset-y-2: 120px;
-            --offset-x-3: 240px; --offset-y-3: 240px;
-            --offset-x-4: 310px; --offset-y-4: 240px;
+            --offset-x-1: 290px; --offset-y-1: 140px;
+            --offset-x-2: 240px; --offset-y-2: 110px;
+            --offset-x-3: 220px; --offset-y-3: 220px;
+            --offset-x-4: 280px; --offset-y-4: 220px;
           }
         }
 
         @media (min-width: 2500px) {
           :root {
-            --offset-x-1: 420px; --offset-y-1: 220px;
-            --offset-x-2: 340px; --offset-y-2: 160px;
-            --offset-x-3: 320px; --offset-y-3: 320px;
-            --offset-x-4: 410px; --offset-y-4: 320px;
+            --offset-x-1: 380px; --offset-y-1: 180px;
+            --offset-x-2: 310px; --offset-y-2: 140px;
+            --offset-x-3: 290px; --offset-y-3: 290px;
+            --offset-x-4: 370px; --offset-y-4: 290px;
           }
         }
       `}</style>

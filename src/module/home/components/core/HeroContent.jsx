@@ -4,9 +4,10 @@ export default function HeroContent({ phoneRef, phoneArrived }) {
   const navigate = useNavigate();
 
   return (
-    <div className="relative z-20 w-full flex-1 flex flex-col justify-between px-4 xs:px-6 sm:px-10 lg:px-14 xl:px-20 pt-24 xs:pt-28 md:pt-36 lg:pt-40 xl:pt-44 pb-8 xs:pb-10">
-      <div className="text-center w-full max-w-7xl mx-auto px-2">
-        <h1 className="text-[clamp(2rem,7.5vw,9rem)] font-black text-white tracking-tight leading-[1] sm:leading-[0.85] mb-2 xs:mb-4 uppercase">
+    <div className="relative z-20 w-full flex-1 flex flex-col px-4 xs:px-6 sm:px-10 lg:px-14 xl:px-20 pt-20 sm:pt-24 md:pt-28 lg:pt-32 overflow-visible">
+      {/* Top Text Area */}
+      <div className="text-center w-full max-w-7xl mx-auto px-2 mb-4 xs:mb-6 sm:mb-8">
+        <h1 className="text-[clamp(2.25rem,7.5vw,8.5rem)] font-black text-white tracking-tight uppercase leading-[0.95] sm:leading-[0.85]">
           MATCH AT FIRST SWIPE
         </h1>
         <p className="text-white/90 text-sm xs:text-base md:text-xl lg:text-2xl font-medium tracking-tight mt-2 xs:mt-4">
@@ -14,8 +15,8 @@ export default function HeroContent({ phoneRef, phoneArrived }) {
         </p>
       </div>
 
-      {/* Main Content Grid */}
-      <div className="flex-1 flex flex-col justify-center items-center relative w-full max-w-[1530px] mx-auto mt-4 xs:mt-6 sm:mt-10 lg:mt-0">
+      {/* Main Content Grid - Centered in remaining space */}
+      <div className="flex-1 flex flex-col justify-center items-center relative w-full max-w-[1530px] mx-auto overflow-visible pb-12 xs:pb-16 md:pb-20">
 
         {/* Background Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] w-full max-w-[700px] aspect-square pointer-events-none overflow-visible">
@@ -27,7 +28,7 @@ export default function HeroContent({ phoneRef, phoneArrived }) {
           />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-4 xl:gap-10 items-center lg:items-end w-full h-full relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-4 xl:gap-10 items-center lg:items-end w-full h-full relative z-10 overflow-visible">
 
           {/* Left Column: App Stores (Desktop) */}
           <div className="hidden lg:flex flex-col items-start mb-12 xl:mb-20 gap-8 xl:gap-14 order-1 self-end">
@@ -57,8 +58,8 @@ export default function HeroContent({ phoneRef, phoneArrived }) {
           </div>
 
           {/* Middle Column: Phone (GSAP Target) */}
-          <div className="flex justify-center items-center lg:items-end order-1 lg:order-2 self-center lg:self-end h-full relative py-6 md:py-0">
-            <div ref={phoneRef} className="pointer-events-none relative flex justify-center items-end will-change-transform">
+          <div className="flex justify-center items-center lg:items-end order-1 lg:order-2 self-center lg:self-end h-full relative py-6 md:py-0 overflow-visible">
+            <div ref={phoneRef} className="pointer-events-none relative flex justify-center items-end will-change-transform z-30 overflow-visible">
               {/* Phone Image 1 (Initial) */}
               <img
                 src="/Phone_main.webp"

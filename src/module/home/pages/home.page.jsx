@@ -190,10 +190,10 @@ export default function HomePage() {
       {/* ===== HERO SECTION ===== */}
       <section
         id="hero-section"
-        className="relative min-h-screen flex flex-col"
+        className="relative min-h-screen flex flex-col overflow-visible"
       >
-        {/* Backgrounds */}
-        <div className="absolute z-0 inset-0 w-full h-full">
+        {/* Background Backgrounds */}
+        <div className="absolute z-0 inset-0 w-full h-full overflow-hidden">
           <img
             src="/aqua-bg.webp"
             alt="Hero Background"
@@ -210,7 +210,7 @@ export default function HomePage() {
       {/* ===== BENEFITS SECTION ===== */}
       <section
         id="benefits-section"
-        className="relative flex items-center justify-center min-h-screen py-20 px-4 overflow-hidden"
+        className="relative flex items-center justify-center py-16 xs:py-20 sm:py-24 md:py-32 px-4 overflow-visible"
       >
         <ConcentricCircles ref={concentricRef} phoneArrived={phoneArrived} />
       </section>
