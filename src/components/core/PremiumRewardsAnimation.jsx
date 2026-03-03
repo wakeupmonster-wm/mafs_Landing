@@ -179,7 +179,7 @@ export default function PremiumRewardsAnimation() {
                 onLoad={calculateMask}
               />
 
-              <div
+              {/* <div
                 className="absolute flex items-center justify-center"
                 style={{ top: "15%", left: "10%", width: "80%", height: "70%" }}
               >
@@ -189,7 +189,7 @@ export default function PremiumRewardsAnimation() {
                   alt="Card image"
                   className="max-w-full h-32 ml-6 object-contain animate-fadeIn mb-[235px]"
                 />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
