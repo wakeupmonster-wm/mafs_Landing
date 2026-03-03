@@ -1,88 +1,3 @@
-// import { motion } from "framer-motion";
-
-// export default function StarsBackground() {
-//   const stars = [
-//     {
-//       top: "34%",
-//       left: "6%",
-//       size: "text-4xl",
-//       opacity: "text-white/25",
-//     },
-//     {
-//       top: "6%",
-//       right: "32%",
-//       size: "text-xl sm:text-2xl",
-//       opacity: "text-white/30",
-//     },
-//     { top: "48%", left: "29%", size: "text-5xl", opacity: "text-[#09c1c7]" },
-//     {
-//       top: "95%",
-//       left: "22%",
-//       size: "text-5xl",
-//       opacity: "text-white/15",
-//     },
-//     {
-//       top: "88%",
-//       left: "65%",
-//       size: "text-6xl",
-//       opacity: "text-white/15",
-//     },
-//     { top: "31%", right: "21.5%", size: "text-4xl", opacity: "text-[#09c1c7]" },
-//     { top: "6%", left: "37.5%", size: "text-5xl", opacity: "text-[#09c1c7]" },
-//   ];
-
-//   return (
-//     <div className="absolute inset-0 z-[2] overflow-hidden pointer-events-none">
-//       {stars.map((star, i) => (
-//         <motion.div
-//           key={i}
-//           className={`absolute ${star.opacity} ${star.size}`}
-//           style={{ top: star.top, left: star.left, right: star.right }}
-//           // ✅ Entry animation - pehle fade in aur scale up
-//           initial={{
-//             opacity: 0,
-//             scale: 0,
-//             rotate: -30,
-//           }}
-//           animate={{
-//             opacity: 1,
-//             scale: 1,
-//             rotate: 0,
-//             // ✅ Continuous float animation
-//             ...star.animation,
-//           }}
-//           transition={{
-//             // ✅ Entry transition
-//             opacity: { duration: 0.8, delay: star.delay },
-//             scale: {
-//               duration: 0.8,
-//               delay: star.delay,
-//               type: "spring",
-//               stiffness: 200,
-//             },
-//             rotate: { duration: 0.8, delay: star.delay },
-//             // ✅ Continuous loop
-//             y: {
-//               duration: star.duration,
-//               repeat: Infinity,
-//               ease: "easeInOut",
-//               delay: star.delay,
-//             },
-//             x: {
-//               duration: star.duration * 1.2,
-//               repeat: Infinity,
-//               ease: "easeInOut",
-//               delay: star.delay + 0.3,
-//             },
-//           }}
-//         >
-//           ✦
-//         </motion.div>
-//       ))}
-//     </div>
-//   );
-// }
-
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
@@ -92,11 +7,7 @@ export default function StarsBackground() {
       top: "40%",
       left: "6%",
       size: "text-4xl",
-      color: "text-white/25",
-      duration: 2.2,
-      delay: 0,
-      minOpacity: 0.1,
-      maxOpacity: 0.4,
+      opacity: "text-white/25",
     },
     {
       top: "6%",
@@ -148,54 +59,41 @@ export default function StarsBackground() {
           key={i}
           className={`absolute ${star.opacity} ${star.size} ${star.display}`}
           style={{ top: star.top, left: star.left, right: star.right }}
-
-          // ✅ Entry - pehle appear ho
+          // ✅ Entry animation - pehle fade in aur scale up
           initial={{
             opacity: 0,
             scale: 0,
-            rotate: -45,
+            rotate: -30,
           }}
-
-          // ✅ Twinkle - opacity aur scale se timtimana
           animate={{
-            opacity: [
-              star.minOpacity,
-              star.maxOpacity,
-              star.minOpacity * 1.5,
-              star.maxOpacity * 0.7,
-              star.minOpacity,
-            ],
-            scale: [
-              0.7,
-              1.2,
-              0.85,
-              1.1,
-              0.7,
-            ],
-            rotate: [0, 15, -10, 20, 0], // ✅ thodi rotation - alive feel
+            opacity: 1,
+            scale: 1,
+            rotate: 0,
+            // ✅ Continuous float animation
+            ...star.animation,
           }}
-
           transition={{
-            // ✅ Entry
-            opacity: {
-              duration: star.duration,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: star.delay,
-              times: [0, 0.3, 0.5, 0.7, 1],
-            },
+            // ✅ Entry transition
+            opacity: { duration: 0.8, delay: star.delay },
             scale: {
+              duration: 0.8,
+              delay: star.delay,
+              type: "spring",
+              stiffness: 200,
+            },
+            rotate: { duration: 0.8, delay: star.delay },
+            // ✅ Continuous loop
+            y: {
               duration: star.duration,
               repeat: Infinity,
               ease: "easeInOut",
               delay: star.delay,
-              times: [0, 0.3, 0.5, 0.7, 1],
             },
-            rotate: {
-              duration: star.duration * 1.5,
+            x: {
+              duration: star.duration * 1.2,
               repeat: Infinity,
               ease: "easeInOut",
-              delay: star.delay,
+              delay: star.delay + 0.3,
             },
           }}
         >
