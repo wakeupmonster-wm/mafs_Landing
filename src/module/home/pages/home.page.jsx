@@ -5,6 +5,7 @@ import Header from "../components/core/Header";
 import StarsBackground from "../components/core/StarsBackground";
 import HeroContent from "../components/core/HeroContent";
 import ConcentricCircles from "../components/core/ConcentricCircles";
+import { aquaBg } from "@/constants/files";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -202,7 +203,7 @@ export default function HomePage() {
         {/* <div className="absolute z-0 h-[75vh] md:h-[70vh] lg:h-[110vh] w-full"> */}
         <div className="absolute z-0 h-full lg:h-[75vh] xl:h-auto w-full">
           <img
-            src="/aqua-bg.jpg"
+            src={aquaBg}
             alt="Hero Background"
             loading="lazy"
             className="w-full h-full object-cover"
