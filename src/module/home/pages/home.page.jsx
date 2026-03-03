@@ -123,68 +123,62 @@ export default function HomePage() {
   // console.log("window.innerWidth: ", window.innerWidth);
 
   useEffect(() => {
-    // Mobile address bar resizing fix
-    // ScrollTrigger.config({ ignoreMobileResize: true });
-    ScrollTrigger.normalizeScroll(true); // Isse mobile scroll smooth hota hai
+    ScrollTrigger.normalizeScroll(true);
 
     let ctx = gsap.context(() => {
-      const mm = gsap.matchMedia();
+      const phone = phoneRef.current;
+      const concentric = concentricRef.current;
 
-      // Breakpoints Table for Reference:
-      // xs: < 480px | sm: 640px | md: 768px | lg: 1024px | xl: 1280px | 2xl: 1536px
+      if (!phone || !concentric) return;
 
-      mm.add(
-        {
-          is2xl: "(min-width: 1536px)",
-          isXl: "(min-width: 1280px) and (max-width: 1535px)",
-          isLg: "(min-width: 1024px) and (max-width: 1279px)",
-          isMd: "(min-width: 768px) and (max-width: 1023px)",
-          isSm: "(min-width: 480px) and (max-width: 767px)",
-          isXs: "(max-width: 479px)",
+      // Reset positioning to get clean measurements
+      gsap.set(phone, { clearProps: "all" });
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#hero-section",
+          start: "top top",
+          endTrigger: "#benefits-section",
+          end: "center center",
+          scrub: 1.2,
+          invalidateOnRefresh: true,
+          onUpdate: (self) => {
+            const threshold = window.innerWidth < 1024 ? 0.8 : 0.72;
+            if (concentricRef.current) {
+              concentricRef.current.classList.toggle(
+                "is-active",
+                self.progress > threshold
+              );
+            }
+            setPhoneArrived(self.progress > threshold);
+          },
         },
-        (context) => {
-          let { is2xl, isXl, isLg, isMd, isSm, isXs } = context.conditions;
+      });
 
-          // Dynamic Y movement based on screen size
-          let targetY = "85vh";
-          if (is2xl) targetY = "108vh";
-          if (isXl) targetY = "70vh";
-          if (isLg) targetY = "92vh";
-          if (isMd) targetY = "58vh";
-          if (isSm) targetY = "62vh";
-          if (isXs) targetY = "56vh";
+      tl.to(phone, {
+        y: () => {
+          const phoneRect = phone.getBoundingClientRect();
+          const target = document.querySelector("#benefits-section .concentric-container");
+          if (!target) return 0;
+          const targetRect = target.getBoundingClientRect();
 
-          gsap.to(phoneRef.current, {
-            scrollTrigger: {
-              trigger: "#hero-section",
-              start: "top top",
-              endTrigger: "#benefits-section",
-              end: "center center",
-              scrub: 1.5,
-              invalidateOnRefresh: true, // Resize hone par recalibrate karega
-              onUpdate: (self) => {
-                // Smooth transition for activation
-                const threshold = isMd || isSm || isXs ? 0.85 : 0.75;
+          // Current scroll position offset
+          const scrollOffset = window.scrollY;
 
-                if (concentricRef.current) {
-                  concentricRef.current.classList.toggle(
-                    "is-active",
-                    self.progress > threshold
-                  );
-                }
-                setPhoneArrived(self.progress > threshold);
-              },
-            },
-            y: targetY,
-            ease: "power1.inOut",
-          });
-        }
-      );
+          // Target Y relative to document
+          const targetYFull = targetRect.top + scrollOffset + (targetRect.height / 2);
+          // Initial Y relative to document (since we start from 0)
+          const startYFull = phoneRect.top + scrollOffset + (phoneRect.height / 2);
+
+          return targetYFull - startYFull;
+        },
+        ease: "none",
+      });
     }, compRef);
 
     return () => {
       ctx.revert();
-      ScrollTrigger.normalizeScroll(false); // Cleanup
+      ScrollTrigger.normalizeScroll(false);
     };
   }, []);
 
@@ -196,11 +190,10 @@ export default function HomePage() {
       {/* ===== HERO SECTION ===== */}
       <section
         id="hero-section"
-        className="relative h-[75vh] xl:min-h-screen flex flex-col"
+        className="relative min-h-screen flex flex-col"
       >
         {/* Backgrounds */}
-        {/* <div className="absolute z-0 h-[75vh] md:h-[70vh] lg:h-[110vh] w-full"> */}
-        <div className="absolute z-0 h-full lg:h-[75vh] xl:h-auto w-full">
+        <div className="absolute z-0 inset-0 w-full h-full">
           <img
             src="/aqua-bg.webp"
             alt="Hero Background"
@@ -208,7 +201,6 @@ export default function HomePage() {
             className="w-full h-full object-cover"
           />
         </div>
-        {/* <div className="absolute inset-0 z-[1] bg-gradient-to-b from-black/20 via-black/10 to-transparent" /> */}
 
         <StarsBackground />
         <Header />
@@ -216,13 +208,9 @@ export default function HomePage() {
       </section>
 
       {/* ===== BENEFITS SECTION ===== */}
-      {/* <section
-        id="benefits-section"
-        className="relative flex items-center justify-center overflow-hidden px-4 min-h-[65vh] lg:min-h-[120vh]"
-      > */}
       <section
         id="benefits-section"
-        className="relative flex items-end justify-center h-auto xl:min-h-screen 2xl:min-h-[135vh] py-20 px-4"
+        className="relative flex items-center justify-center min-h-screen py-20 px-4 overflow-hidden"
       >
         <ConcentricCircles ref={concentricRef} phoneArrived={phoneArrived} />
       </section>
