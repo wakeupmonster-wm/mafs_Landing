@@ -126,6 +126,7 @@ html {
   body {
     @apply text-foreground;
     font-family: "Plus Jakarta Sans", sans-serif;
+
     background-color: #eaebedce; /* bg-[#f0f1f2] */
     /* overscroll-behavior-y: none; */
   }

@@ -1,4 +1,5 @@
-import { createBrowserRouter } from "react-router";
+// import { createBrowserRouter } from "react-router";
+import { createBrowserRouter } from "react-router-dom";
 import App from "@/App";
 import PrivacyPolicyPage from "@/module/home/pages/privacy-policy.page";
 import ContactUsPage from "@/module/home/pages/contact-us.page";

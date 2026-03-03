@@ -180,7 +180,6 @@ export default function PremiumBenefitsCard() {
                   lg:w-[58px] lg:h-[58px]
                 "
                 loading="lazy"
-                style={{ width: "58px", height: "58px" }}
               />
             </motion.div>
           </motion.div>
@@ -226,7 +225,6 @@ export default function PremiumBenefitsCard() {
                   lg:w-[58px] lg:h-[58px]
                 "
                 loading="lazy"
-                style={{ width: "58px", height: "58px" }}
               />
             </motion.div>
           </motion.div>

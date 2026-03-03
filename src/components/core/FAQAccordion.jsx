@@ -179,9 +179,9 @@ const FAQAccordion = () => {
   };
 
   return (
-    <div className="wrapper pt-44 md:pt-0 lg:pt-32" id="faq-section">
+    <div className="wrapper pt-44 md:pt-0 lg:pt-52" id="faq-section">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Left Section - Title and Description */}
           <div className="lg:sticky lg:top-16">
             <div className="relative">
@@ -192,6 +192,7 @@ const FAQAccordion = () => {
                 src="/3a7805e8d1f06e0e2c0b22ed0359b0ef6faa8399.png"
                 alt=""
                 loading="lazy"
+                className="w-48 h-2"
               />
               <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 mt-8 mb-6 leading-tight">
                 Answers to Your Top Questions

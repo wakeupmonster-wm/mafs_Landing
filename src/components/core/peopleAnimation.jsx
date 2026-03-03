@@ -104,11 +104,11 @@ export default function PeopleAnimation() {
                   <img
                     src="/image.png"
                     alt="Logo"
-                    className="mx-auto w-14 h-8 sm:w-24 sm:h-14 md:w-32 md:h-[72px] lg:w-36 lg:h-[86px]"
+                    className="mx-auto w-16 h-10 sm:w-24 sm:h-14 md:w-32 md:h-[72px] lg:w-36 lg:h-[86px]"
                   />
                   <h2
                     className="
-      text-[15px] sm:text-[28px] md:text-[33px] lg:text-[38px]
+      text-[22px] sm:text-[28px] md:text-[33px] lg:text-[38px]
       leading-tight font-extrabold text-gray-900 tracking-tighter
       flex flex-col items-center mb-2 sm:mb-3 md:mb-4
     "
@@ -116,7 +116,7 @@ export default function PeopleAnimation() {
                     <span className="flex gap-1 sm:gap-2 items-center">
                       <img
                         src="/australiaIcon.png"
-                        className="w-[15px] h-[15px] sm:w-[28px] sm:h-[28px] md:w-[32px] md:h-[32px] lg:w-[35px] lg:h-[35px]"
+                        className="w-[20px] h-[20px] sm:w-[28px] sm:h-[28px] md:w-[32px] md:h-[32px] lg:w-[35px] lg:h-[35px]"
                       />
                       Built for
                     </span>
@@ -124,10 +124,11 @@ export default function PeopleAnimation() {
                   </h2>
                   <p
                     className="
+                     hidden sm:block
       text-gray-500
       text-[8px] sm:text-[12px] md:text-[13px] lg:text-[14px]
       max-w-[100px] sm:max-w-[220px] md:max-w-[250px] lg:max-w-[270px]
-      leading-relaxed
+      leading-relaxed 
     "
                   >
                     Designed exclusively for Australians, with a focused and

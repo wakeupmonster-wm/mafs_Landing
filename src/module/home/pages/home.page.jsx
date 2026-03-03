@@ -203,7 +203,7 @@ export default function HomePage() {
         {/* <div className="absolute z-0 h-[75vh] md:h-[70vh] lg:h-[110vh] w-full"> */}
         <div className="absolute z-0 h-full lg:h-[75vh] xl:h-auto w-full">
           <img
-            src={aquaBg}
+            src="/aqua-bg.webp"
             alt="Hero Background"
             loading="lazy"
             className="w-full h-full object-cover"
