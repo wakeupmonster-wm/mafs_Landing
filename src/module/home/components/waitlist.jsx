@@ -118,7 +118,7 @@ const Waitlist = () => {
 
   return (
     <section className="wrapper w-full flex justify-center">
-      <div className="max-w-7xl w-full flex flex-col xl:flex-row items-center sm:items-start justify-center gap-10 md:gap-6">
+      <div className="max-w-7xl w-full flex flex-col xl:flex-row items-center sm:items-start justify-center gap-10 md:gap-8 lg:gap-6 px-2">
         {/* Left Side: Phone Mockup */}
         <div className="w-[310px] xs:w-[330px] sm:w-[350px] md:w-[380px] lg:w-[400px] xl:w-[450px] mx-auto h-full">
           <img

@@ -270,29 +270,33 @@ import { forwardRef } from "react";
 const POP_OUTS = [
   {
     src: "/Pop-out 1.png",
-    className:
-      "group-[.is-active]:-translate-x-[var(--ox1)] group-[.is-active]:-translate-y-[var(--oy1)]",
+    delay: "delay-0",
+    translate:
+      "group-[.is-active]:-translate-x-[125px] xs:group-[.is-active]:-translate-x-[135px] group-[.is-active]:-translate-y-[90px] sm:group-[.is-active]:-translate-x-[160px] sm:group-[.is-active]:-translate-y-[70px] md:group-[.is-active]:-translate-x-[220px] md:group-[.is-active]:-translate-y-[100px] lg:group-[.is-active]:-translate-x-[280px] lg:group-[.is-active]:-translate-y-[120px] xl:group-[.is-active]:-translate-x-[230px] xl:group-[.is-active]:-translate-y-[140px]",
   },
   {
     src: "/Pop-out 2.png",
-    className:
-      "group-[.is-active]:translate-x-[var(--ox2)] group-[.is-active]:-translate-y-[var(--oy2)]",
+    delay: "delay-75",
+    translate:
+      "group-[.is-active]:translate-x-[100px] xs:group-[.is-active]:translate-x-[110px] group-[.is-active]:-translate-y-[65px] sm:group-[.is-active]:translate-x-[130px] sm:group-[.is-active]:-translate-y-[60px] md:group-[.is-active]:translate-x-[165px] md:group-[.is-active]:-translate-y-[80px] lg:group-[.is-active]:translate-x-[210px] lg:group-[.is-active]:-translate-y-[95px] xl:group-[.is-active]:translate-x-[175px] xl:group-[.is-active]:-translate-y-[110px]",
   },
   {
     src: "/Pop-out 3.png",
-    className:
-      "group-[.is-active]:-translate-x-[var(--ox3)] group-[.is-active]:translate-y-[var(--oy3)]",
+    delay: "delay-150",
+    translate:
+      "group-[.is-active]:-translate-x-[100px] xs:group-[.is-active]:-translate-x-[90px] group-[.is-active]:translate-y-[100px] sm:group-[.is-active]:-translate-x-[120px] sm:group-[.is-active]:translate-y-[110px] md:group-[.is-active]:-translate-x-[160px] md:group-[.is-active]:translate-y-[150px] lg:group-[.is-active]:-translate-x-[195px] lg:group-[.is-active]:translate-y-[180px] xl:group-[.is-active]:-translate-x-[172px] xl:group-[.is-active]:translate-y-[200px]",
   },
   {
     src: "/Pop-out 4.png",
-    className:
-      "group-[.is-active]:translate-x-[var(--ox4)] group-[.is-active]:translate-y-[var(--oy4)]",
+    delay: "delay-200",
+    translate:
+      "group-[.is-active]:translate-x-[125px] xs:group-[.is-active]:translate-x-[130px] group-[.is-active]:translate-y-[90px] sm:group-[.is-active]:translate-x-[160px] sm:group-[.is-active]:translate-y-[95px] md:group-[.is-active]:translate-x-[220px] md:group-[.is-active]:translate-y-[125px] lg:group-[.is-active]:translate-x-[260px] lg:group-[.is-active]:translate-y-[150px] xl:group-[.is-active]:translate-x-[222px] xl:group-[.is-active]:translate-y-[200px]",
   },
 ];
 
 const ConcentricCircles = forwardRef((_props, ref) => {
   return (
-    <div className="flex items-center justify-center w-full max-w-full overflow-visible py-6 sm:py-10">
+    <div className="flex items-center justify-center w-full max-w-full overflow-visible py-6 sm:py-10 2xl:mt-72 sm:mt-0 xl:mt-0 md:mt-0 lg:mt-0">
       {/* ── Responsive CSS Custom Properties ── */}
       <style>{`
         @keyframes spin-cw  { to { transform: rotate(360deg);  } }
@@ -421,14 +425,9 @@ const ConcentricCircles = forwardRef((_props, ref) => {
         {POP_OUTS.map((popout, idx) => (
           <div
             key={idx}
-            className={`
-              absolute z-20
-              transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]
-              opacity-0 scale-50 blur-md
-              group-[.is-active]:opacity-100 group-[.is-active]:scale-100 group-[.is-active]:blur-0
-              ${popout.className}
-            `}
-            style={{ transitionDelay: `${idx * 60}ms` }}
+            className={`absolute z-[100] transition-all duration-1000 ease-[cubic-bezier(0.19,1,0.22,1)] opacity-0 scale-50 blur-sm ${
+              popout.delay
+            } group-[.is-active]:opacity-100 group-[.is-active]:scale-100 group-[.is-active]:blur-0 ${popout.translate.replace()}`}
           >
             <img
               src={popout.src}
@@ -679,5 +678,5 @@ const ConcentricCircles = forwardRef((_props, ref) => {
   );
 });
 
-ConcentricCircles.displayName = "ConcentricCircles";
+
 export default ConcentricCircles;

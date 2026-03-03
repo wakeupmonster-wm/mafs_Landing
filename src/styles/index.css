@@ -115,9 +115,9 @@
   }
 }
 
-html {
+/* html {
   scroll-behavior: smooth;
-}
+} */
 
 @layer base {
   * {
@@ -126,7 +126,6 @@ html {
   body {
     @apply text-foreground;
     font-family: "Plus Jakarta Sans", sans-serif;
-
     background-color: #eaebedce; /* bg-[#f0f1f2] */
     /* overscroll-behavior-y: none; */
   }
@@ -157,10 +156,9 @@ html {
     transform: translate3d(0, 0, 0);
   }
 }
-
-* {
+/* * {
   backface-visibility: hidden;
-}
+} */
 
 .bg-join-gradient {
   background: radial-gradient(circle at 50% 100%, #33ddff 0%, #00b1c4 50%);
@@ -200,12 +198,12 @@ html {
 
 @media (max-width: 1024px) and (min-width: 760px) {
   .wrapper {
-    padding: 75px 32px;
+    padding: 75px 25px;
   }
 }
 
 @media (max-width: 660px) and (min-width: 320px) {
   .wrapper {
-    padding: 50px 32px;
+    padding: 50px 15px;
   }
 }
