@@ -480,7 +480,7 @@ const rightFadeEnd = rightVisible + cardStep * 2;
             <div className="relative">
               <img
                 className="md:w-80 md:h-[580px] sm:w-36 sm:h-[260px] w-52 h-[400px]"
-                src="/Phone → Phone (1).png"
+                src="/Phone_Render.webp"
                 alt="Phone mockup"
                 onLoad={calculateMask}
               />

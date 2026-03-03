@@ -147,7 +147,7 @@ export default function HomePage() {
 
           // Dynamic Y movement based on screen size
           let targetY = "85vh";
-          if (is2xl) targetY = "95vh";
+          if (is2xl) targetY = "108vh";
           if (isXl) targetY = "70vh";
           if (isLg) targetY = "92vh";
           if (isMd) targetY = "58vh";

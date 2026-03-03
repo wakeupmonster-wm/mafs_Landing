@@ -44,7 +44,7 @@ const ConcentricCircles = forwardRef((props, ref) => {
 
       <div
         ref={ref}
-        className="relative w-[330px] h-[330px] sm:w-[480px] sm:h-[480px] md:w-[580px] md:h-[580px] xl:w-[680px] xl:h-[680px] group flex items-center justify-center xl:mt-68 md:mt-72"
+        className="relative w-[330px] h-[330px] sm:w-[480px] sm:h-[480px] md:w-[580px] md:h-[580px] xl:w-[680px] xl:h-[680px] group flex items-center justify-center"
       >
         {/* Dynamic Pop-outs */}
         {POP_OUTS.map((popout, idx) => (

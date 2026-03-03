@@ -124,7 +124,7 @@ export default function HeroContent({ phoneRef, phoneArrived }) {
           <div ref={phoneRef} className="pointer-events-none relative">
             {/* ✅ Phone 1 - fade out jab center pe aaye */}
             <img
-              src="/Phone.png"
+              src="/Phone_main.webp"
               alt="Phone"
               // className="w-[140px] sm:w-[220px] md:w-[260px] lg:w-[280px] xl:w-[290px] drop-shadow-[0_25px_50px_rgba(5,5,5,0.70)]"
               className="w-[180px] sm:w-[250px] md:w-[280px] lg:w-[290px] xl:w-[310px] h-[22rem] sm:h-[30rem] lg:h-auto"
@@ -138,7 +138,7 @@ export default function HeroContent({ phoneRef, phoneArrived }) {
 
             {/* ✅ Phone 2 - fade in jab center pe aaye */}
             <img
-              src="/After Scroll (1).png"
+              src="/After_Scroll_1.webp"
               alt="Phone New"
               // className="w-[140px] sm:w-[220px] md:w-[260px] lg:w-[280px] xl:w-[290px] drop-shadow-[0_25px_50px_rgba(5,5,5,0.70)]"
               className="w-[180px] sm:w-[250px] md:w-[280px] lg:w-[290px] xl:w-[310px] h-[22rem] sm:h-[30rem] lg:h-auto"
