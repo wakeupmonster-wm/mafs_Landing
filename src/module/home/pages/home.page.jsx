@@ -149,11 +149,18 @@ export default function HomePage() {
           // Dynamic Y movement based on screen size
           let targetY = "85vh";
           if (is2xl) targetY = "130vh";
-          if (isXl) targetY = "70vh";
+          if (isXl) targetY = "95vh";
           if (isLg) targetY = "92vh";
           if (isMd) targetY = "65vh";
           if (isSm) targetY = "62vh";
           if (isXs) targetY = "67vh";
+
+          //  if (is2xl) targetY = "130vh";
+          // if (isXl) targetY = "95vh";
+          // if (isLg) targetY = "92vh";
+          // if (isMd) targetY = "58vh";
+          // if (isSm) targetY = "62vh";
+          // if (isXs) targetY = "56vh";
 
           gsap.to(phoneRef.current, {
             scrollTrigger: {
