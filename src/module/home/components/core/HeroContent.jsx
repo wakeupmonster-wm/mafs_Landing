@@ -1,93 +1,13 @@
-// export default function HeroContent({ phoneRef }) {
-//   return (
-//     <div className="relative z-20 w-full min-h-screen top-16 flex flex-col justify-center px-6 sm:px-8 md:px-10 lg:px-14 pt-24 pb-10">
-//       <div className="text-center mb-5 lg:mb-10">
-//         <h1 className="text-[40px] sm:text-[56px] md:text-[72px] lg:text-[88px] xl:text-[100px] font-black text-white tracking-tight leading-[0.92] mb-3">
-//           MATCH AT FIRST SWIPE
-//         </h1>
-//         <p className="text-white/90 mt-6 text-sm md:text-xl lg:text-2xl font-medium tracking-tight">
-//           Australia's newest dating app with a spin
-//         </p>
-//       </div>
-
+// HeroContent.jsx
 import { useNavigate } from "react-router";
 
-//       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6 xl:gap-10 items-end justify-between mx-auto w-full lg:w-11/12">
-//         {/* Left Widget */}
-//         <div className="flex flex-col items-start gap-6 sm:gap-8 mb-40 order-2 lg:order-1">
-//           <div className="text-center lg:text-left">
-//             <p className="text-white/70 text-xs sm:text-[13px] mb-2.5 font-medium tracking-wide uppercase">
-//               Launching soon on
-//             </p>
-//             <div className="flex gap-2.5 justify-center lg:justify-start">
-//               {["/Frame 120.png", "/Frame 121.png"].map((src, i) => (
-//                 <div
-//                   key={i}
-//                   className="w-10 h-10 sm:w-11 sm:h-11 bg-white rounded-full flex items-center justify-center shadow-lg hover:scale-105 transition-transform cursor-pointer"
-//                 >
-//                   <img
-//                     src={src}
-//                     className="w-6 h-6 sm:w-8 sm:h-8 object-contain"
-//                     alt="Store Icon"
-//                     loading="lazy"
-//                   />
-//                 </div>
-//               ))}
-//             </div>
-//           </div>
-//           <CircularScrollButton />
-//         </div>
-
-//         {/* Middle (Phone) */}
-//         <img
-//           src="/mobellipse.png"
-//           alt="ellipse.png"
-//           loading="lazy"
-//           className="absolute w-80 h-72 left-[450px] md:left-[460px] xl:left-[490px] top-72"
-//         />
-//         <div className="flex justify-center items-end order-1 lg:order-2">
-//           <div ref={phoneRef} className="pointer-events-none mt-10">
-//             <img
-//               src="/Phone.png"
-//               alt="Phone"
-//               loading="lazy"
-//               className="w-[200px] sm:w-[220px] md:w-[260px] lg:w-[280px] xl:w-[290px] drop-shadow-[0_25px_50px_rgba(5,5,5,0.70)]"
-//             />
-//           </div>
-//         </div>
-
-//         {/* Right Widget */}
-//         <div className="flex flex-col items-center lg:items-end text-center mb-28 gap-3 order-3">
-//           <div className="w-60 h-auto text-left space-y-5">
-//             <h3 className="text-white text-base md:text-xl lg:text-[22px] font-bold mb-1.5 leading-snug">
-//               Scan QR code to <br /> Join the Early Access
-//             </h3>
-//             <p className="text-white/75 text-xs sm:text-[13px] font-medium flex items-center justify-start gap-1.5">
-//               Launching soon across Australia{" "}
-//               <span className="text-sm">🇦🇺</span>
-//             </p>
-//             <img
-//               src="/QR-Code.png"
-//               alt="QR Code"
-//               loading="lazy"
-//               className="w-28 h-28 md:w-48 md:h-48 p-2 bg-transparent border border-cardBorder rounded-3xl"
-//             />
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// Sub-component for the spinning text button
-
-export default function HeroContent({ phoneRef }) {
+export default function HeroContent({ phoneRef, phoneArrived }) {
   const navigate = useNavigate();
   return (
-    <div className="relative z-20 w-full h-[60vh] lg:h-screen flex flex-col justify-between px-3 xs:px-6 sm:px-10 lg:px-14 pt-28 md:pt-40 pb-10">
+    <div className="relative z-20 w-full h-[60vh] lg:h-screen flex flex-col gap-0 2xl:gap-0 px-3 xs:px-6 sm:px-10 lg:px-14 xl:px-20 pt-28 md:pt-40 xl:pt-40 pb-10">
       {/* Title Section */}
-      <div className="text-center w-full max-w-5xl mx-auto">
-        <h1 className="text-[32px] sm:text-[50px] md:text-[60px] lg:text-[90px] font-black text-white tracking-tight leading-[1.1] lg:leading-[0.92] mb-3">
+      <div className="text-center w-full max-w-max mx-auto">
+        <h1 className="text-[28px] xs:text-[32px] sm:text-[50px] md:text-[60px] lg:text-[85px] font-black text-white tracking-tight leading-[1.1] lg:leading-[0.92] mb-3">
           MATCH AT FIRST SWIPE
         </h1>
         <p className="text-white/90 text-sm md:text-xl lg:text-2xl font-medium tracking-tight mt-4">
@@ -96,7 +16,7 @@ export default function HeroContent({ phoneRef }) {
       </div>
 
       {/* Grid Layout: Laptop mein 3 columns, Mobile mein Stacked */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 md:gap-10 items-center md:items-end w-full max-w-[1400px] mx-auto mt-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 md:gap-10 items-end justify-center w-full max-w-[1530px] 2xl:max-w-[1850px] mt-10 mx-auto">
         {/* Left: App Stores & Scroll Button */}
         <div className="hidden lg:flex flex-col items-center md:items-start mb-10 lg:mb-20 gap-6 order-1">
           <div className="text-center lg:text-left">
@@ -124,20 +44,43 @@ export default function HeroContent({ phoneRef }) {
           </div>
         </div>
 
-        {/* Middle: Phone Frame (Absolute positioning se bachna hai) */}
-        <div className="relative flex justify-center items-end order-2 min-h-[300px] mt-4 md:mt-14">
-          {/* Ellipse BG - centered behind the phone */}
-          <img
-            src="/mobellipse.png"
-            alt=""
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] sm:w-[350px] md:w-[450px] opacity-60"
-            loading="lazy"
-          />
-          <div ref={phoneRef} className="relative z-10 pointer-events-none">
+        <img
+          src="/mobellipse.webp"
+          alt="mobellipse.webp"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] sm:w-[350px] md:w-[450px] opacity-60"
+          loading="lazy"
+        />
+
+        {/* Middle (Phone) */}
+        <div className="flex justify-center items-center order-1 lg:order-2">
+          <div ref={phoneRef} className="pointer-events-none relative">
+            {/* ✅ Phone 1 - fade out jab center pe aaye */}
             <img
               src="/Phone.png"
               alt="Phone"
-              className="w-[180px] sm:w-[250px] md:w-[280px] lg:w-[290px] h-[24rem] sm:h-[30rem] lg:h-auto drop-shadow-[0_25px_50px_rgba(0,0,0,0.5)]"
+              // className="w-[140px] sm:w-[220px] md:w-[260px] lg:w-[280px] xl:w-[290px] drop-shadow-[0_25px_50px_rgba(5,5,5,0.70)]"
+              className="w-[180px] sm:w-[250px] md:w-[280px] lg:w-[290px] xl:w-[310px] 2xl:w-[320px] h-[22rem] sm:h-[30rem] lg:h-auto"
+              style={{
+                opacity: phoneArrived ? 0 : 1,
+                transition: "opacity 0.8s ease-in-out",
+                display: "block",
+              }}
+              loading="lazy"
+            />
+
+            {/* ✅ Phone 2 - fade in jab center pe aaye */}
+            <img
+              src="/After_Scroll_1.webp"
+              alt="Phone New"
+              // className="w-[140px] sm:w-[220px] md:w-[260px] lg:w-[280px] xl:w-[290px] drop-shadow-[0_25px_50px_rgba(5,5,5,0.70)]"
+              className="w-[180px] sm:w-[250px] md:w-[280px] lg:w-[290px] xl:w-[310px] 2xl:w-[380px] 3xl:w-[450px] h-[22rem] sm:h-[30rem] lg:h-auto"
+              style={{
+                opacity: phoneArrived ? 1 : 0,
+                transition: "opacity 0.8s ease-in-out",
+                position: "absolute",
+                top: 0,
+                left: 0,
+              }}
               loading="lazy"
             />
           </div>

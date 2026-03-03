@@ -1,3 +1,6 @@
+// StarsBackround.jsx
+import { motion } from "framer-motion";
+
 export default function StarsBackground() {
   const stars = [
     {

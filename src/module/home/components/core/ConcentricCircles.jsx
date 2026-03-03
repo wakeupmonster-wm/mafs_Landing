@@ -1,3 +1,4 @@
+// ConcentricCircles.jsx
 import { forwardRef } from "react";
 
 // Data configuration for popout elements to reduce JSX clutter
@@ -44,8 +45,15 @@ const ConcentricCircles = forwardRef((props, ref) => {
 
       <div
         ref={ref}
-        className="relative w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] md:w-[480px] md:h-[480px] lg:w-[580px] lg:h-[580px] xl:w-[680px] xl:h-[680px] group flex items-center justify-center"
-      >
+        // className="relative w-[330px] h-[330px] sm:w-[480px] sm:h-[480px] md:w-[580px] md:h-[580px] xl:w-[680px] xl:h-[680px] group flex items-center justify-center"
+        className="relative 
+          w-[330px] h-[330px] 
+          sm:w-[480px] sm:h-[480px] 
+          md:w-[580px] md:h-[580px] 
+          xl:w-[680px] xl:h-[680px] 
+          group flex items-center justify-center"
+          >
+        {/* 2xl:w-[750px] 2xl:h-[750px] */}
         {/* Dynamic Pop-outs */}
         {POP_OUTS.map((popout, idx) => (
           <div

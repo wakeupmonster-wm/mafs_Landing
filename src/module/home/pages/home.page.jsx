@@ -1,4 +1,5 @@
-import { useEffect, useRef } from "react";
+// home.page.jsx
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Header from "../components/core/Header";
@@ -12,87 +13,95 @@ export default function HomePage() {
   const compRef = useRef(null);
   const phoneRef = useRef(null);
   const concentricRef = useRef(null);
+  const [phoneArrived, setPhoneArrived] = useState(false);
 
-  // gsap.context properly scopes our animations and makes cleanup effortless
-  // gsap.to(phoneRef.current, {
-  //   scrollTrigger: {
-  //     trigger: "#hero-section",
-  //     start: "top top",
-  //     endTrigger: "#benefits-section",
-  //     end: "center center",
-  //     scrub: 1,
-  //     onUpdate: (self) => {
-  //       if (concentricRef.current) {
-  //         // Toggle class based on scroll progress
-  //         concentricRef.current.classList.toggle(
-  //           "is-active",
-  //           self.progress > 0.7
-  //         );
-  //       }
-  //     },
-  //   },
-  //   y: "100vh",
-  //   ease: "power2.inOut",
-  // });
   useEffect(() => {
-    // matchMedia perfect responsiveness handle karta hai
-    let mm = gsap.matchMedia();
+    // Mobile address bar resizing fix
+    // ScrollTrigger.config({ ignoreMobileResize: true });
+    ScrollTrigger.normalizeScroll(true); // Isse mobile scroll smooth hota hai
 
-    mm.add(
-      {
-        // Breakpoints define karein
-        isMobile: "(max-width: 428px) and (min-width: 360px)",
-        isTablet: "(max-width: 1024px) and (min-width: 769px)",
-        isDesktop: "(min-width: 769px)",
-      },
-      (context) => {
-        // Conditions ko access karein
-        let { isMobile, isTablet } = context.conditions;
+    let ctx = gsap.context(() => {
+      const mm = gsap.matchMedia();
 
-        gsap.to(phoneRef.current, {
-          scrollTrigger: {
-            trigger: "#hero-section",
-            start: "top top",
-            endTrigger: "#benefits-section",
-            end: "center center",
-            scrub: 1,
-            onUpdate: (self) => {
-              if (concentricRef.current) {
-                concentricRef.current.classList.toggle(
-                  "is-active",
-                  self.progress > 0.6
-                );
-              }
+      // Breakpoints Table for Reference:
+      // xs: < 480px | sm: 640px | md: 768px | lg: 1024px | xl: 1280px | 2xl: 1536px
+
+      mm.add(
+        {
+          is2xl: "(min-width: 1536px)",
+          isXl: "(min-width: 1280px) and (max-width: 1535px)",
+          isLg: "(min-width: 1024px) and (max-width: 1279px)",
+          isMd: "(min-width: 768px) and (max-width: 1023px)",
+          isSm: "(min-width: 480px) and (max-width: 767px)",
+          isXs: "(max-width: 479px)",
+        },
+        (context) => {
+          let { is2xl, isXl, isLg, isMd, isSm, isXs } = context.conditions;
+
+          // Dynamic Y movement based on screen size
+          let targetY = "85vh";
+          if (is2xl) targetY = "95vh";
+          if (isXl) targetY = "70vh";
+          if (isLg) targetY = "92vh";
+          if (isMd) targetY = "58vh";
+          if (isSm) targetY = "62vh";
+          if (isXs) targetY = "56vh";
+
+          gsap.to(phoneRef.current, {
+            scrollTrigger: {
+              trigger: "#hero-section",
+              start: "top top",
+              endTrigger: "#benefits-section",
+              end: "center center",
+              scrub: 1.5,
+              invalidateOnRefresh: true, // Resize hone par recalibrate karega
+              onUpdate: (self) => {
+                // Smooth transition for activation
+                const threshold = isMd || isSm || isXs ? 0.85 : 0.75;
+
+                if (concentricRef.current) {
+                  concentricRef.current.classList.toggle(
+                    "is-active",
+                    self.progress > threshold
+                  );
+                }
+                setPhoneArrived(self.progress > threshold);
+              },
             },
-          },
-          // Fixed Logic: Mobile aur Tablet par 60vh, Desktop par 100vh
-          y: isMobile ? "45vh" : isTablet ? "58vh" : "98vh",
-          // Phone size adjustment
-          scale: isMobile ? 0.7 : isTablet ? 0.85 : 1,
-          ease: "none",
-        });
-      }
-    );
+            y: targetY,
+            ease: "power1.inOut",
+          });
+        }
+      );
+    }, compRef);
 
-    return () => mm.revert(); // Best practice cleanup
+    return () => {
+      ctx.revert();
+      ScrollTrigger.normalizeScroll(false); // Cleanup
+    };
   }, []);
 
   console.log("window.innerWidth: ", window.innerWidth);
 
   return (
-    <div ref={compRef} className="overflow-hidden w-full">
+    <div
+      ref={compRef}
+      className="relative overflow-x-hidden flex flex-col w-full"
+    >
       {/* ===== HERO SECTION ===== */}
-      <section id="hero-section" className="relative h-[60vh] lg:h-screen">
+      <section
+        id="hero-section"
+        className="relative h-[75vh] xl:h-screen flex flex-col"
+      >
         {/* Backgrounds */}
-        <div className="absolute z-0 h-[70vh] lg:h-[110vh] w-full">
+        <div className="absolute w-full h-full lg:h-[75vh] xl:h-screen">
           <img
             src="/aqua-bg.jpg"
             alt="Hero Background"
             loading="lazy"
-            className="w-full h-full object-cover"
+            className="w-full h-auto"
           />
         </div>
-        {/* <div className="absolute inset-0 z-[1] bg-gradient-to-b from-black/20 via-black/10 to-transparent" /> */}
 
         <StarsBackground />
         <Header />
@@ -102,7 +111,7 @@ export default function HomePage() {
       {/* ===== BENEFITS SECTION ===== */}
       <section
         id="benefits-section"
-        className="relative h-[80vh] lg:h-[130vh] flex items-center justify-center py-16 sm:py-20 md:py-20 lg:py-44 overflow-hidden px-4"
+        className="relative flex items-end justify-center h-screen py-20 px-4"
       >
         <ConcentricCircles ref={concentricRef} />
       </section>
